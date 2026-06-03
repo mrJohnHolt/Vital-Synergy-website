@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electrical Estimator | Careers | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ── Vacancy: Breadcrumb ── */
+    .jv-breadcrumb { margin-top: 60px; background: #f6f6f6; border-bottom: 1px solid #e8e8e8; padding: 11px 0; }
+    .jv-breadcrumb-inner { display: flex; align-items: center; flex-wrap: wrap; }
+    .jv-bc-link { color: #666; font-size: 12px; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+    .jv-bc-link:hover { color: var(--brand); }
+    .jv-bc-sep { color: #bbb; font-size: 12px; margin: 0 8px; }
+    .jv-bc-current { color: #aaa; font-size: 12px; }
+
+    /* ── Vacancy: Hero ── */
+    .jv-hero {
+      min-height: 50vh;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .jv-hero-sub {
+      display: inline-block;
+      background: rgba(235,104,35,0.12);
+      border: 1px solid rgba(235,104,35,0.28);
+      color: var(--brand);
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 14px; border-radius: 6px; margin-top: 0;
+    }
+
+    /* ── Vacancy: Meta Bar card ── */
+    .jv-meta-bar {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 16px;
+    }
+    .jv-meta-bar .jv-hero-sub { margin-top: 0; }
+    .jv-meta-inner { display: contents; }
+    .jv-meta-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .jv-meta-value { color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600; }
+    .jv-meta-divider { color: rgba(255,255,255,0.25); font-size: 14px; }
+    .jv-meta-date { color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 500; }
+
+    /* ── Vacancy: Summary ── */
+    .jv-exec-summary {
+      max-width: 820px;
+      font-size: 16px; line-height: 1.78; color: #333;
+      border-left: 3px solid var(--brand);
+      padding-left: 20px; margin-top: 14px;
+    }
+    .jv-exec-summary + .jv-exec-summary { margin-top: 16px; }
+
+    /* ── Vacancy: Detail ── */
+    .jv-detail { max-width: 820px; }
+    .jv-detail-h4 { font-size: 14.5px; font-weight: 700; color: #1a1a1a; margin: 28px 0 10px; }
+    .jv-detail-p { color: #555; font-size: 14px; line-height: 1.78; margin-bottom: 14px; }
+
+    /* ── Vacancy: Lists ── */
+    .jv-list {
+      list-style: none; padding: 0; margin: 0 0 8px;
+      display: flex; flex-direction: column; gap: 9px;
+    }
+    .jv-list li {
+      padding-left: 22px; position: relative;
+      color: #555; font-size: 14px; line-height: 1.65;
+    }
+    .jv-list li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--brand);
+    }
+    .jv-list-two-col {
+      display: grid; grid-template-columns: 1fr; gap: 9px; margin-bottom: 8px;
+    }
+    @media (min-width: 640px) { .jv-list-two-col { grid-template-columns: 1fr 1fr; } }
+    .jv-list-two-col li {
+      padding-left: 22px; position: relative;
+      color: #555; font-size: 14px; line-height: 1.65; list-style: none;
+    }
+    .jv-list-two-col li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--brand);
+    }
+
+    /* ── Vacancy: Apply CTA ── */
+    .jv-apply-section { background: #f9f9f9; }
+    .jv-apply-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .jv-apply-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .jv-apply-contact a { color: var(--brand); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.15s; }
+    .jv-apply-contact a:hover { opacity: 0.75; }
+    .jv-apply-contact span { color: #888; font-size: 13px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="index.html#services" class="header-nav-link">Services</a>
+        <a href="index.html#sectors" class="header-nav-link">Sectors</a>
+        <a href="stpeters.html" class="header-nav-link">Case Studies</a>
+        <a href="careers.html" class="header-nav-link header-nav-link-active">Careers</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ NAV MODAL ═══ -->
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-modal-panel">
+      <div class="nav-modal-head">
+        <a href="index.html" class="nav-logo">
+          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+        </a>
+        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="nav-modal-nav">
+        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+        <a href="index.html#services" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+        <a href="index.html#sectors" class="nav-modal-link"><i class="fa-solid fa-industry"></i>Sectors</a>
+        <a href="stpeters.html" class="nav-modal-link"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ BREADCRUMB ═══ -->
+  <nav class="jv-breadcrumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <div class="jv-breadcrumb-inner">
+        <a href="index.html" class="jv-bc-link">Home</a>
+        <span class="jv-bc-sep">/</span>
+        <a href="careers.html" class="jv-bc-link">Careers</a>
+        <span class="jv-bc-sep">/</span>
+        <span class="jv-bc-current">Electrical Estimator</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-section hero-tall jv-hero">
+    <div class="hero-body">
+      <div class="wrap">
+        <div class="hero-text-md">
+          <span class="eyebrow">Vacancy / Full-Time</span>
+          <h1 class="hero-h1">Electrical Estimator</h1>
+          <div class="jv-meta-bar">
+            <span class="jv-hero-sub">Vital Synergy &nbsp;·&nbsp; Read HQ</span>
+            <div class="jv-meta-inner">
+              <div class="jv-meta-left">
+                <span class="jv-meta-value">Location: Read HQ</span>
+                <span class="jv-meta-divider">|</span>
+                <span class="jv-meta-value">Job Type: Full-Time</span>
+                <span class="jv-meta-divider">|</span>
+                <span class="jv-meta-date">Closes: 30 June 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OPENING SUMMARY ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">The Role</span>
+      <p class="jv-exec-summary">Do you have significant experience estimating and pricing work for electrical systems in commercial environments? Are you attentive to detail, committed to accuracy, and interested in contributing to the advancement of renewable energy?</p>
+      <p class="jv-exec-summary">Vital Synergy is seeking a talented and driven Electrical Estimator to join our growing team. This role goes beyond traditional estimating, it's a chance to contribute to innovative bespoke carbon reduction systems, helping organisations reduce costs, cut emissions, and futureproof their estates. You'll thrive in a purpose-led environment that values technical expertise, innovation, and engineering excellence.</p>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT VITAL SYNERGY ═══ -->
+  <section class="section" style="background:#f9f9f9; padding-top:0">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">The Company</span>
+        <h3 class="section-heading">About Vital Synergy</h3>
+        <p class="jv-detail-p">With over 20 years of engineering excellence, Vital Synergy is a trusted partner in delivering end-to-end building solutions. We support the transition to clean energy and low-carbon systems through: innovative building services engineering, renewable energy integration, energy efficiency solutions, and collaborative partnerships that drive sustainability across communities and industries.</p>
+        <h4 class="jv-detail-h4">Our Expertise</h4>
+        <p class="jv-detail-p">We specialise in the design, installation, and management of decentralised energy and multi-utility networks, focusing on low and zero carbon technologies. Our expertise spans bespoke commercial heating, industrial plumbing, and mechanical engineering. Our remote-access BMS platforms enable clients to monitor, measure, and optimise energy use for greater efficiency and sustainability.</p>
+        <h4 class="jv-detail-h4">Our Portfolio</h4>
+        <p class="jv-detail-p">Our portfolio includes projects across Commercial, Industrial, Education, Housing, Local Authority, and Agricultural sectors. From Air Source Heat Pumps to high-efficiency commercial plant rooms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE OVERVIEW ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">What You Will Do</span>
+        <h3 class="section-heading">Role Overview</h3>
+        <p class="jv-detail-p">This is a full-time hybrid position with our HQ based in the Ribble Valley. As Electrical Estimator, you'll manage day-to-day estimating tasks, analyse project requirements, prepare cost estimates, and collaborate with stakeholders to deliver accurate and timely submissions for tenders, private opportunities, and more.</p>
+
+        <h4 class="jv-detail-h4">Key Responsibilities</h4>
+        <ul class="jv-list">
+          <li>Prepare and analyse cost estimates for electrical projects</li>
+          <li>Conduct feasibility studies and cost-benefit analyses</li>
+          <li>Monitor project costs and ensure budget adherence</li>
+          <li>Collaborate with project teams to identify cost-saving opportunities</li>
+          <li>Review and negotiate contracts with suppliers and subcontractors</li>
+          <li>Evaluate and manage project risks related to cost control</li>
+          <li>Prepare progress reports and financial forecasts</li>
+          <li>Develop and issue programmes of work and risk assessments as needed</li>
+          <li>Prepare and submit quality documentation tailored to project requirements</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERIENCE & QUALIFICATIONS ═══ -->
+  <section class="section" style="background:#f9f9f9; padding-top:0">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">What We Are Looking For</span>
+        <h3 class="section-heading">Experience &amp; Qualifications</h3>
+        <ul class="jv-list">
+          <li>NVQ Level 3 Electrical Installation (or equivalent experience)</li>
+          <li>Degree in Quantity Surveying, Estimating, Construction Management, or equivalent industry experience</li>
+          <li>Proven experience as a Quantity Surveyor/Estimator or similar role</li>
+          <li>Strong knowledge of electrical methods, materials, and cost structures</li>
+          <li>Proficient in cost estimating software (Trimble) and Excel</li>
+          <li>Excellent analytical and problem-solving skills</li>
+          <li>High attention to detail and accuracy</li>
+          <li>Strong communication and negotiation abilities</li>
+          <li>Ability to build and maintain supplier and contractor relationships</li>
+          <li>Familiarity with various tender platforms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT WE OFFER ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">The Package</span>
+        <h3 class="section-heading">What We Offer</h3>
+        <ul class="jv-list-two-col">
+          <li>Competitive salary (dependent on experience)</li>
+          <li>Fuel card or mileage</li>
+          <li>Company pension scheme</li>
+          <li>On-site parking</li>
+          <li>Additional holiday day each year (after 1 years' service, up to 5 extra days)</li>
+          <li>Ongoing training and development</li>
+          <li>Clear career progression opportunities</li>
+          <li>A chance to contribute to Net Zero and low-carbon initiatives</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ APPLY CTA ═══ -->
+  <section class="section jv-apply-section">
+    <div class="wrap">
+      <div class="jv-apply-inner">
+        <span class="eyebrow">Ready to Take the Next Step?</span>
+        <h2 class="cta-h2">Apply for this <em class="em-brand">position</em></h2>
+        <p class="cta-p">If you're passionate about electricals, customer satisfaction, and making an impact we want to hear from you.</p>
+        <a href="mailto:lucia.arnone@vitalsynergy.co.uk?subject=Application%3A+Electrical+Estimator" class="btn-green">Apply Now</a>
+        <div class="jv-apply-contact">
+          <span>Email your CV and cover letter to</span>
+          <a href="mailto:lucia.arnone@vitalsynergy.co.uk">lucia.arnone@vitalsynergy.co.uk</a>
+          <span>For any initial questions, feel free to call us on</span>
+          <a href="tel:01282773338">01282 773338</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="stpeters.html" class="footer-link">Case Studies</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">What We Do</h4>
+          <a href="index.html#services" class="footer-link">Services</a>
+          <a href="index.html#sectors" class="footer-link">Sectors</a>
+        </div>
+        <div class="footer-col-support">
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847<br>Gas Safe No 593601</p>
+          <div class="socials-row">
+            <a href="#" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
