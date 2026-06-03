@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roseacre Primary Academy &amp; Nursery | Case Study | Vital Synergy</title>
+  <title>The Whitaker Museum | Case Study | Vital Synergy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
@@ -18,8 +18,8 @@
     /* ── Case Study: Hero ── */
     .cs-hero {
       background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
-        url('Assets/roseacre-1.jpg');
+        linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.28) 50%, rgba(0,0,0,0.7) 100%),
+        url('Assets/The-Whitaker.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -42,30 +42,16 @@
       padding: 11px 0;
     }
     .cs-breadcrumb-inner { display: flex; align-items: center; flex-wrap: wrap; }
-    .cs-bc-link {
-      color: #666; font-size: 12px; font-weight: 500;
-      text-decoration: none; transition: color 0.15s;
-    }
+    .cs-bc-link { color: #666; font-size: 12px; font-weight: 500; text-decoration: none; transition: color 0.15s; }
     .cs-bc-link:hover { color: var(--brand); }
     .cs-bc-sep { color: #bbb; font-size: 12px; margin: 0 8px; }
     .cs-bc-current { color: #aaa; font-size: 12px; }
 
     /* ── Case Study: Meta Bar ── */
-    .cs-meta-bar {
-      background: #fff;
-      border-bottom: 2px solid #f0f0f0;
-      padding: 16px 0;
-    }
-    .cs-meta-inner {
-      display: flex; align-items: center;
-      justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    }
+    .cs-meta-bar { background: #fff; border-bottom: 2px solid #f0f0f0; padding: 16px 0; }
+    .cs-meta-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     .cs-meta-left { display: flex; align-items: center; gap: 14px; }
-    .cs-meta-btn {
-      background: var(--brand); color: #fff;
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
-      padding: 8px 16px; border-radius: 7px; white-space: nowrap;
-    }
+    .cs-meta-btn { background: var(--brand); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 8px 16px; border-radius: 7px; white-space: nowrap; }
     .cs-meta-value { color: #1a1a1a; font-size: 15px; font-weight: 600; }
     .cs-meta-date { color: #666; font-size: 13px; font-weight: 500; }
 
@@ -80,28 +66,20 @@
     /* ── Case Study: Scope Grid (2×2) ── */
     .cs-scope-section {
       background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
-        url('Assets/PlantRoom.jpg');
+        linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 100%),
+        url('Assets/The-Whitaker.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
-    @media (max-width: 1023px) {
-      .cs-scope-section { background-attachment: scroll; }
-    }
-    .cs-scope-grid {
-      display: grid; grid-template-columns: 1fr; gap: 24px;
-    }
-    @media (min-width: 600px) {
-      .cs-scope-grid { grid-template-columns: 1fr 1fr; }
-    }
+    @media (max-width: 1023px) { .cs-scope-section { background-attachment: scroll; } }
+    .cs-scope-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 600px) { .cs-scope-grid { grid-template-columns: 1fr 1fr; } }
     .cs-scope-block {
       background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
       border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 10px;
-      padding: 28px 26px 24px;
+      border-radius: 10px; padding: 28px 26px 24px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.25);
     }
     .cs-scope-heading {
@@ -113,11 +91,46 @@
 
     /* ── Case Study: Project Detail ── */
     .cs-detail { max-width: 760px; }
-    .cs-detail-h4 {
-      font-size: 14.5px; font-weight: 700; color: #1a1a1a;
-      margin: 32px 0 10px;
-    }
+    .cs-detail-h4 { font-size: 14.5px; font-weight: 700; color: #1a1a1a; margin: 32px 0 10px; }
     .cs-detail-p { color: #555; font-size: 14px; line-height: 1.78; margin-bottom: 14px; }
+
+    /* ── Testimonial Quote ── */
+    .cs-testimonial {
+      max-width: 760px;
+      background: #f9f9f9;
+      border-left: 3px solid var(--brand);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 32px 0 0;
+    }
+    .cs-testimonial-text {
+      font-size: 14.5px; font-style: italic; color: #333; line-height: 1.7; margin-bottom: 10px;
+    }
+    .cs-testimonial-cite { font-size: 12.5px; font-weight: 600; color: var(--brand); font-style: normal; }
+
+    /* ── Before / After ── */
+    .cs-compare-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden;
+      max-width: 560px; margin-top: 16px;
+    }
+    .cs-compare-head {
+      padding: 10px 16px; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .cs-compare-head-before { background: #f2f2f2; color: #888; border-right: 1px solid #e8e8e8; }
+    .cs-compare-head-after { background: var(--brand); color: #fff; }
+    .cs-compare-row { display: contents; }
+    .cs-compare-cell {
+      padding: 11px 16px; font-size: 13px; line-height: 1.5; border-top: 1px solid #e8e8e8;
+    }
+    .cs-compare-cell-label { color: #888; border-right: 1px solid #e8e8e8; font-size: 12px; }
+    .cs-compare-cell-after { color: #1a1a1a; font-weight: 600; }
+    .cs-compare-label-col {
+      grid-column: 1 / -1;
+      padding: 9px 16px; font-size: 12px; font-weight: 700; color: #555;
+      background: #fafafa; border-top: 1px solid #e8e8e8;
+    }
 
     /* ── Case Study: Document Download ── */
     .cs-doc-box {
@@ -126,24 +139,15 @@
       padding: 20px 26px; text-decoration: none; background: #fff;
       transition: border-color 0.18s, box-shadow 0.18s;
     }
-    .cs-doc-box:hover {
-      border-color: var(--brand);
-      box-shadow: 0 4px 18px rgba(235,104,35,0.1);
-    }
+    .cs-doc-box:hover { border-color: var(--brand); box-shadow: 0 4px 18px rgba(235,104,35,0.1); }
     .cs-doc-icon { font-size: 30px; color: var(--brand); flex-shrink: 0; }
     .cs-doc-name { font-size: 14px; font-weight: 600; color: #1a1a1a; display: block; }
     .cs-doc-meta { font-size: 11.5px; color: #888; display: block; margin-top: 3px; }
-    .cs-doc-cta {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--brand); display: block; margin-top: 6px;
-    }
+    .cs-doc-cta { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); display: block; margin-top: 6px; }
 
     /* ── Case Study: Related Projects ── */
     .cs-related-section { background: #f9f9f9; }
-    .cs-related-grid {
-      display: grid; grid-template-columns: 1fr;
-      gap: 20px; margin-top: 32px;
-    }
+    .cs-related-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
     @media (min-width: 600px) { .cs-related-grid { grid-template-columns: 1fr 1fr; } }
     @media (min-width: 1024px) { .cs-related-grid { grid-template-columns: 1fr 1fr 1fr; } }
     .cs-related-card {
@@ -152,20 +156,11 @@
       overflow: hidden; background: #fff;
       transition: border-color 0.18s, box-shadow 0.18s;
     }
-    .cs-related-card:hover {
-      border-color: var(--brand);
-      box-shadow: 0 6px 24px rgba(235,104,35,0.12);
-    }
+    .cs-related-card:hover { border-color: var(--brand); box-shadow: 0 6px 24px rgba(235,104,35,0.12); }
     .cs-related-thumb { width: 100%; height: 170px; object-fit: cover; display: block; background: #1a1a1a; }
     .cs-related-body { padding: 18px 20px; }
-    .cs-related-label {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--brand); margin-bottom: 6px; display: block;
-    }
-    .cs-related-h4 {
-      font-size: 14px; font-weight: 700; color: #1a1a1a;
-      margin-bottom: 5px; line-height: 1.35;
-    }
+    .cs-related-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); margin-bottom: 6px; display: block; }
+    .cs-related-h4 { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; line-height: 1.35; }
     .cs-related-sub { font-size: 12.5px; color: #777; }
 
     /* ── Case Study: Tags ── */
@@ -182,20 +177,14 @@
     /* ── Case Study: Share Row ── */
     .cs-share-wrap { padding: 18px 0 56px; }
     .cs-share-row { display: flex; align-items: center; gap: 10px; }
-    .cs-share-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: #aaa; margin-right: 4px;
-    }
+    .cs-share-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-right: 4px; }
     .cs-share-link {
       display: flex; align-items: center; justify-content: center;
       width: 34px; height: 34px; border-radius: 50%;
       border: 1px solid #ddd; color: #666; text-decoration: none; font-size: 13px;
       transition: border-color 0.15s, color 0.15s, background 0.15s;
     }
-    .cs-share-link:hover {
-      border-color: var(--brand); color: var(--brand);
-      background: rgba(235,104,35,0.06);
-    }
+    .cs-share-link:hover { border-color: var(--brand); color: var(--brand); background: rgba(235,104,35,0.06); }
   </style>
 </head>
 
@@ -217,8 +206,8 @@
           <div class="header-nav-dropdown">
             <a href="stpeters.html" class="header-nav-dropdown-link">St Peter's Health Centre, Burnley</a>
             <a href="hamptonlvp.html" class="header-nav-dropdown-link">Hampton by Hilton, Liverpool</a>
-            <a href="roseacre.html" class="header-nav-dropdown-link header-nav-dropdown-link-active">Roseacre Primary Academy &amp; Nursery</a>
-            <a href="whitaker.html" class="header-nav-dropdown-link">The Whitaker Museum</a>
+            <a href="roseacre.html" class="header-nav-dropdown-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="header-nav-dropdown-link header-nav-dropdown-link-active">The Whitaker Museum</a>
           </div>
         </div>
         <a href="careers.html" class="header-nav-link">Careers</a>
@@ -261,7 +250,7 @@
         <span class="cs-bc-sep">/</span>
         <a href="stpeters.html" class="cs-bc-link">Case Studies</a>
         <span class="cs-bc-sep">/</span>
-        <span class="cs-bc-current">Roseacre Primary Academy &amp; Nursery</span>
+        <span class="cs-bc-current">The Whitaker Museum</span>
       </div>
     </div>
   </nav>
@@ -271,9 +260,9 @@
     <div class="hero-body">
       <div class="wrap">
         <div class="hero-text-md">
-          <span class="eyebrow">Case Study / Education</span>
-          <h1 class="hero-h1">Roseacre Primary Academy &amp; Nursery</h1>
-          <span class="cs-hero-sub">Comprehensive Heating System Upgrade</span>
+          <span class="eyebrow">Case Study / Cultural &amp; Heritage</span>
+          <h1 class="hero-h1">The Whitaker Museum</h1>
+          <span class="cs-hero-sub">Gas Safety System Upgrade and Compliance</span>
         </div>
       </div>
     </div>
@@ -284,9 +273,9 @@
     <div class="wrap cs-meta-inner">
       <div class="cs-meta-left">
         <span class="cs-meta-btn">Sector</span>
-        <span class="cs-meta-value">Education</span>
+        <span class="cs-meta-value">Cultural / Heritage</span>
       </div>
-      <span class="cs-meta-date">Blackpool, Lancashire</span>
+      <span class="cs-meta-date">Rawtenstall, Lancashire</span>
     </div>
   </div>
 
@@ -294,7 +283,7 @@
   <section class="section">
     <div class="wrap">
       <span class="eyebrow">Executive Summary</span>
-      <p class="cs-exec-summary">Roseacre Primary Academy &amp; Nursery required a full heating system upgrade to improve energy efficiency, sustainability, and comfort. Vital Synergy designed, installed, and optimised a modern heating infrastructure encompassing full replacement of distribution pipework and heating emitters, air conditioning for specific classrooms, and a comprehensive upgrade of the control system.</p>
+      <p class="cs-exec-summary">The Whitaker Museum required a review and rectification of its kitchen gas safety interlock system to ensure full compliance with safety regulations. The system had critical issues including incorrect wiring, a faulty safety push button, and a CO2 monitor not wired to isolate the gas solenoid valve when necessary. Vital Synergy investigated and resolved all system faults within a single visit, restoring compliance and operational reliability with minimal disruption to museum operations.</p>
     </div>
   </section>
 
@@ -305,23 +294,23 @@
       <div class="cs-scope-grid">
 
         <div class="cs-scope-block">
-          <span class="cs-scope-heading">Energy Performance &amp; Feasibility</span>
-          <p class="cs-scope-p">Detailed assessment of the existing heating infrastructure to identify inefficiencies and establish a strategic plan for optimisation. Site surveys and feasibility studies were carried out alongside compatibility assessments and phased installation planning to minimise disruption to daily school operations.</p>
+          <span class="cs-scope-heading">Investigation &amp; Assessment</span>
+          <p class="cs-scope-p">Full site inspection of the kitchen gas interlock system to identify compliance gaps. Assessment confirmed incorrect wiring on the S&amp;S Northern CT1250 gas interlock unit, use of temporary terminal blocks, and a faulty external gas safety push button located near the kitchen doorway.</p>
         </div>
 
         <div class="cs-scope-block">
-          <span class="cs-scope-heading">Control System Upgrade</span>
-          <p class="cs-scope-p">Upgraded controls with new actuators and localised room controls, new wiring and containment, and zoning configured for different school areas. New air conditioning controls installed for Year 4 and Year 5 classrooms, providing precise room-by-room temperature regulation.</p>
+          <span class="cs-scope-heading">Rewiring &amp; Component Replacement</span>
+          <p class="cs-scope-p">The S&amp;S Northern CT1250 gas interlock unit was fully rewired to the correct specification, eliminating temporary terminal blocks throughout. The faulty external gas safety push button was replaced with a compliant unit, restoring manual shut-off capability at the kitchen entrance.</p>
         </div>
 
         <div class="cs-scope-block">
-          <span class="cs-scope-heading">Heating Emitters &amp; Efficiency</span>
-          <p class="cs-scope-p">High-performance heating emitters installed throughout, including low-level, ceiling-mounted, and high-level fan convectors, alongside radiant panels and LST radiators in pre-school and SEN areas. Advanced phenolic insulation applied to all new pipework with automated controls integrated throughout.</p>
+          <span class="cs-scope-heading">Safety Testing &amp; Verification</span>
+          <p class="cs-scope-p">Full safety checks conducted on all system components including the gas solenoid valve and fan pressure switches. Pressure switch operations verified to confirm gas shut-off in the absence of airflow. CO2 monitor wiring corrected to ensure effective gas solenoid valve isolation in the event of a carbon monoxide detection event.</p>
         </div>
 
         <div class="cs-scope-block">
-          <span class="cs-scope-heading">Plant Room &amp; Distribution</span>
-          <p class="cs-scope-p">Upgraded plant room with new pressurisation units, dirt separation systems, and control valves. Existing boilers retrofitted to work with the new low temperature distribution design. New distribution pipework and high-efficiency fan convectors and radiant panels installed throughout the building.</p>
+          <span class="cs-scope-heading">Compliance &amp; Recommendations</span>
+          <p class="cs-scope-p">All works completed in line with current UK gas safety regulations. Expert recommendation provided to terminate fire alarm cabling in the EM safety shut-off rather than the BMS control terminal, enhancing emergency shut-off functionality and improving the system's response to fire events.</p>
         </div>
 
       </div>
@@ -334,27 +323,27 @@
       <div class="cs-detail">
         <span class="eyebrow">Project Overview</span>
         <h3 class="section-heading">Project Detail</h3>
-        <p class="body-text">Roseacre Primary Academy &amp; Nursery in Blackpool presented a familiar challenge for many schools of its age: an outdated heating system that was costly to run, difficult to control, and no longer fit for purpose. High energy consumption, uneven heat distribution across classrooms, and growing non-compliance with current energy efficiency regulations prompted the school to commission a comprehensive upgrade. Vital Synergy was appointed to design, supply, and install a complete modern heating infrastructure with minimal disruption to the school's operational timetable.</p>
-        <p class="body-text-faint">The project was delivered in a phased programme, carefully sequenced around the school calendar to ensure classrooms remained in use throughout. Close collaboration with school management at every stage ensured that programme decisions reflected the operational reality of a live educational environment.</p>
+        <p class="body-text">The Whitaker is a museum and art gallery in Rawtenstall that plays an important role in the cultural life of the Rossendale Valley. Like many heritage buildings, its operational infrastructure had evolved incrementally over time, and a routine review identified significant compliance deficiencies in the kitchen's gas safety interlock system. Vital Synergy was called to investigate, diagnose, and remediate the issues within a single planned visit to minimise disruption to the museum's day-to-day programme.</p>
+        <p class="body-text-faint">The investigation uncovered a combination of wiring errors and failed components that, in combination, meant the system could not perform its primary safety function reliably. Each fault was addressed methodically, with all remediation work completed and verified before the engineer left site.</p>
 
-        <h4 class="cs-detail-h4">Energy Performance Review &amp; Project Development</h4>
-        <p class="cs-detail-p">The project commenced with a full energy performance review of the existing infrastructure. The assessment identified the primary sources of inefficiency across the distribution network, heating emitters, and control systems, and provided the technical basis for a targeted replacement programme. Feasibility studies were carried out to confirm the compatibility of new equipment with the existing building fabric and boiler plant, and a phased installation plan was developed to support continuity of operations throughout the works.</p>
-        <p class="cs-detail-p">Working alongside school management, Vital Synergy developed a tailored heating solution that addressed both the immediate performance deficiencies and the school's longer-term sustainability objectives. All necessary regulatory approvals were obtained prior to commencement, and financial benefit calculations were prepared to support stakeholder engagement and funding exploration.</p>
+        <h4 class="cs-detail-h4">Investigation &amp; Findings</h4>
+        <p class="cs-detail-p">On arrival, a full inspection of the S&amp;S Northern CT1250 gas interlock unit was carried out. The wiring was found to be incorrect, with temporary terminal blocks present in the circuit that introduced points of potential failure and did not meet the standard required for a safety-critical installation. The external gas safety push button near the kitchen doorway was tested and found to be faulty, meaning that manual shut-off from that location was not operational.</p>
+        <p class="cs-detail-p">A further critical finding was that the CO2 monitor had not been correctly wired to isolate the gas solenoid valve in the event of an activation. This meant that in a carbon monoxide detection scenario, the system would alert but would not take the required action of isolating the gas supply, representing a significant gap in the safety response chain.</p>
 
-        <h4 class="cs-detail-h4">Control System &amp; Zoning</h4>
-        <p class="cs-detail-p">A central element of the upgrade was the replacement of the existing control infrastructure. New actuators and localised room controls were installed throughout the building, with new wiring and containment routed to serve each zone. The system was configured to allow independent temperature control across different areas of the school, including separate zoning for teaching areas, corridors, and support spaces.</p>
-        <p class="cs-detail-p">New air conditioning controls were installed specifically for the Year 4 and Year 5 classrooms, addressing the requirements of those spaces during warmer periods. The integrated control platform provides the school's facilities team with a clear, accessible interface for day-to-day management and energy monitoring.</p>
+        <h4 class="cs-detail-h4">Rewiring &amp; Rectification</h4>
+        <p class="cs-detail-p">The CT1250 interlock unit was fully rewired to the correct specification, with all temporary terminal blocks removed and replaced with permanent, compliant connections. The faulty push button near the kitchen doorway was replaced with a fully functional unit, restoring manual gas shut-off capability at that location. All remedial wiring was completed and labelled in accordance with current standards.</p>
+        <p class="cs-detail-p">The CO2 monitor wiring was corrected to ensure that an activation event would correctly trigger isolation of the gas solenoid valve. This closes what had been a fundamental gap in the emergency response sequence and ensures the system now behaves as designed in all foreseeable fault conditions.</p>
 
-        <h4 class="cs-detail-h4">Heating Emitters &amp; Pipework</h4>
-        <p class="cs-detail-p">The full complement of heating emitters was replaced as part of the works. High-performance fan convectors were installed across teaching and general-purpose areas, with ceiling-mounted and high-level units selected where floor space and aesthetic requirements demanded. Radiant panels and low surface temperature radiators were specified for pre-school and SEN areas, reflecting the particular safety and comfort requirements of those environments.</p>
-        <p class="cs-detail-p">All new distribution pipework was installed to a low temperature design, reducing system operating temperatures and improving the efficiency of the heat generation plant. Phenolic insulation was applied to all new pipework runs, minimising heat loss throughout the distribution network and contributing to the overall reduction in energy consumption.</p>
+        <h4 class="cs-detail-h4">Safety Verification &amp; Testing</h4>
+        <p class="cs-detail-p">On completion of the remedial works, a full functional test of all system components was carried out. Fan pressure switch operations were verified to confirm that gas shut-off occurs correctly in the absence of adequate airflow. The gas solenoid valve was tested to confirm correct isolation response under each demand condition. All test results were recorded and all components confirmed as fully operational before the engineer left site.</p>
 
-        <h4 class="cs-detail-h4">Plant Room &amp; Commissioning</h4>
-        <p class="cs-detail-p">The ground floor plant room was upgraded to bring the supporting infrastructure in line with the new distribution system. New pressurisation units, dirt separation systems, and control valves were installed, and the existing boilers were retrofitted to operate efficiently within the new low temperature design. The combined effect of these works materially reduced the risk of system degradation and supported the extended service life of the boiler plant.</p>
-        <p class="cs-detail-p">On completion, a full commissioning programme was carried out and the system was handed over with an energy monitoring capability that allows the school to track consumption, identify anomalies, and demonstrate compliance with current building regulations. Staff training was provided to ensure the school's facilities team could operate and manage the new controls confidently from day one.</p>
+        <h4 class="cs-detail-h4">Recommendations for Future-Proofing</h4>
+        <p class="cs-detail-p">In addition to the remedial works, a recommendation was made to terminate the fire alarm cabling at the EM safety shut-off terminal rather than the BMS control terminal. This relatively straightforward change would ensure that a fire alarm activation directly triggers an emergency gas isolation, rather than relying on the BMS to interpret and act on the signal. The recommendation was provided in writing to the museum's facilities team for consideration and scheduling.</p>
 
-        <h4 class="cs-detail-h4">Outcomes</h4>
-        <p class="cs-detail-p">The heating system upgrade at Roseacre Primary Academy &amp; Nursery has transformed the school's energy efficiency and comfort levels. Advanced heating technologies, smart controls, and efficient energy distribution have delivered a future-proof solution tailored to the school's needs. The school is now operating within, and in a number of areas exceeding, the requirements of current energy efficiency standards, with measurable reductions in both energy consumption and maintenance demand anticipated over the long term.</p>
+        <div class="cs-testimonial">
+          <p class="cs-testimonial-text">"The work carried out by Vital Synergy was exceptional. Their attention to detail and expertise ensured The Whitaker Museum's kitchen gas system is now fully compliant and safer than ever. We highly recommend their services for professional gas safety solutions."</p>
+          <cite class="cs-testimonial-cite">Teri Booth, The Whitaker Museum</cite>
+        </div>
       </div>
     </div>
   </section>
@@ -365,8 +354,8 @@
       <a href="#" class="cs-doc-box">
         <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
         <div>
-          <span class="cs-doc-name">Roseacre Primary Academy &amp; Nursery — Case Study</span>
-          <span class="cs-doc-meta">Roseacre-Primary-Academy-Case-Study.pdf · 1.3 MB</span>
+          <span class="cs-doc-name">The Whitaker Museum — Case Study</span>
+          <span class="cs-doc-meta">The-Whitaker-Museum-Case-Study.pdf · 0.9 MB</span>
           <span class="cs-doc-cta">Click Here to Download</span>
         </div>
       </a>
@@ -376,12 +365,21 @@
   <!-- ═══ 8. RELATED PROJECTS ═══ -->
   <section class="section cs-related-section">
     <div class="wrap">
-      <span class="eyebrow">Education &amp; Public Sector</span>
+      <span class="eyebrow">Cultural, Heritage &amp; Public Sector</span>
       <h2 class="section-heading">Other related projects</h2>
       <div class="cs-related-grid">
 
+        <a href="roseacre.html" class="cs-related-card">
+          <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy" class="cs-related-thumb">
+          <div class="cs-related-body">
+            <span class="cs-related-label">Education</span>
+            <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
+            <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
+          </div>
+        </a>
+
         <a href="stpeters.html" class="cs-related-card">
-          <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
+          <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre" class="cs-related-thumb">
           <div class="cs-related-body">
             <span class="cs-related-label">Healthcare</span>
             <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
@@ -398,15 +396,6 @@
           </div>
         </a>
 
-        <a href="whitaker.html" class="cs-related-card">
-          <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
-          <div class="cs-related-body">
-            <span class="cs-related-label">Cultural / Heritage</span>
-            <h4 class="cs-related-h4">The Whitaker Museum</h4>
-            <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
-          </div>
-        </a>
-
       </div>
     </div>
   </section>
@@ -415,10 +404,10 @@
   <div class="wrap">
     <div class="cs-tags-wrap">
       <div class="cs-tags-row">
-        <a href="#" class="cs-tag">Education</a>
-        <a href="#" class="cs-tag">Heating System</a>
-        <a href="#" class="cs-tag">Energy Efficiency</a>
-        <a href="#" class="cs-tag">Blackpool</a>
+        <a href="#" class="cs-tag">Cultural</a>
+        <a href="#" class="cs-tag">Gas Safety</a>
+        <a href="#" class="cs-tag">Compliance</a>
+        <a href="#" class="cs-tag">Lancashire</a>
       </div>
     </div>
   </div>
@@ -428,13 +417,13 @@
     <div class="cs-share-wrap">
       <div class="cs-share-row">
         <span class="cs-share-label">Share:</span>
-        <a href="https://twitter.com/intent/tweet?text=Roseacre+Primary+Academy+Case+Study+%7C+Vital+Synergy" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on X / Twitter">
+        <a href="https://twitter.com/intent/tweet?text=The+Whitaker+Museum+Case+Study+%7C+Vital+Synergy" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on X / Twitter">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froseacre-primary-academy" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fthe-whitaker-museum" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="mailto:?subject=Case+Study%3A+Roseacre+Primary+Academy+%26+Nursery+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+        <a href="mailto:?subject=Case+Study%3A+The+Whitaker+Museum+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
           <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
         </a>
       </div>
