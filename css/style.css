@@ -1,5 +1,6 @@
 /* === Reset === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: #fff; }
 
 /* === Tokens === */
@@ -364,7 +365,17 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
    PILL BANNER
 ───────────────────────────────────────── */
 .pill-wrap  { display: flex; justify-content: center; margin-bottom: 48px; }
-.dark-pill  { background: var(--dark); border-radius: 999px; padding: 20px 40px; max-width: 680px; width: 100%; text-align: center; }
+.dark-pill {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 20px 40px;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+}
 .dark-pill-p { color: rgba(255,255,255,0.6); font-size: 13.5px; line-height: 1.65; }
 
 /* ─────────────────────────────────────────
