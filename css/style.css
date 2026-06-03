@@ -406,11 +406,26 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 .deco-text {
   font-size: clamp(1.6rem, 4vw, 3.2rem);
   font-weight: 800; letter-spacing: -0.02em;
-  color: #efefef; white-space: nowrap; overflow: hidden;
-  text-overflow: ellipsis; pointer-events: none; user-select: none;
+  color: #efefef; white-space: nowrap;
+  pointer-events: none; user-select: none;
 }
 .deco-wrap       { margin-top: 48px; overflow: hidden; }
-.deco-text-right { text-align: right; padding-right: 24px; }
+.deco-text-right { text-align: right; padding-right: 24px; overflow: hidden; text-overflow: ellipsis; }
+
+/* Deco ticker */
+.deco-ticker {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: deco-scroll 35s linear infinite;
+}
+.deco-ticker .deco-text { padding: 0 32px; }
+.deco-sep { opacity: 0.3; padding: 0 !important; }
+
+@keyframes deco-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 /* ─────────────────────────────────────────
    CTA
