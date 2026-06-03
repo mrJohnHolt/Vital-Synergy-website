@@ -78,7 +78,17 @@
     }
 
     /* ── Case Study: Scope Grid (2×2) ── */
-    .cs-scope-section { background: #f9f9f9; }
+    .cs-scope-section {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/stPetersHealthCentre.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @media (max-width: 1023px) {
+      .cs-scope-section { background-attachment: scroll; }
+    }
     .cs-scope-grid {
       display: grid; grid-template-columns: 1fr; gap: 24px;
     }
@@ -86,16 +96,20 @@
       .cs-scope-grid { grid-template-columns: 1fr 1fr; }
     }
     .cs-scope-block {
-      background: #fff; border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
       padding: 28px 26px 24px;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
     }
     .cs-scope-heading {
-      display: block; font-size: 13.5px; font-weight: 700; color: #1a1a1a;
+      display: block; font-size: 13.5px; font-weight: 700; color: #fff;
       border-bottom: 2px solid var(--brand);
       padding-bottom: 9px; margin-bottom: 14px;
     }
-    .cs-scope-p { color: #555; font-size: 13.5px; line-height: 1.75; }
+    .cs-scope-p { color: rgba(255,255,255,0.72); font-size: 13.5px; line-height: 1.75; }
 
     /* ── Case Study: Project Detail ── */
     .cs-detail { max-width: 760px; }
