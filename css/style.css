@@ -39,27 +39,23 @@ body.page-fade-out { opacity: 0; transition: opacity 0.2s ease; }
   text-align: center;
 }
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
 }
+.footer-grid > * { flex: 1 1 180px; min-width: 0; }
+.footer-col-logo  { flex: 1 1 200px; }
 
 @media (min-width: 640px) {
   .four-col { grid-template-columns: 1fr 1fr; }
   .accred-bar { gap: 32px; }
   .accred-items { gap: 36px; }
 }
-@media (min-width: 800px) {
-  .footer-grid { grid-template-columns: 1fr 1fr 1.6fr; gap: 40px; }
-  .footer-col-logo { grid-column: 1 / -1; }
-}
 @media (min-width: 1024px) {
   .section { padding: 96px 24px; }
   .two-col { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .four-col { grid-template-columns: repeat(4, 1fr); }
   .stat-grid { grid-template-columns: repeat(4, 1fr); gap: 48px; }
-  .footer-grid { grid-template-columns: 1fr 1fr 1.6fr; gap: 48px; }
-  .footer-col-logo { grid-column: 1 / -1; }
 }
 
 /* Order helpers (used in journey two-col on mobile) */
