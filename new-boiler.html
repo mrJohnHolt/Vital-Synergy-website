@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Boiler Enquiry | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="Assets/Watermark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ── Page hero ── */
+    .nb-hero {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/Main Plant Room Header.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* ── Multi-step form ── */
+    .nb-form-section { background: #f6f6f6; padding: 64px 24px; }
+    .nb-form-card {
+      max-width: 760px; margin: 0 auto;
+      background: #fff; border-radius: 14px;
+      padding: 40px 40px 36px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) { .nb-form-card { padding: 28px 20px 24px; } }
+
+    /* Progress bar */
+    .step-progress {
+      display: flex; align-items: center; margin-bottom: 32px;
+    }
+    .step-dot {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: #e8e8e8; color: #aaa;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.2s, color 0.2s;
+    }
+    .step-dot.active { background: var(--brand); color: #fff; }
+    .step-dot.done { background: var(--blue); color: #fff; }
+    .step-line {
+      flex: 1; height: 2px; background: #e8e8e8; transition: background 0.2s;
+    }
+    .step-line.done { background: var(--blue); }
+
+    /* Step content */
+    .form-step { display: none; }
+    .form-step.active { display: block; animation: nb-fade 0.2s ease; }
+    @keyframes nb-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .step-title {
+      font-size: 1.15rem; font-weight: 700; color: #1a1a1a;
+      margin-bottom: 6px; letter-spacing: -0.01em;
+    }
+    .step-subtitle { font-size: 13px; color: #888; margin-bottom: 24px; }
+
+    /* Form fields */
+    .nb-field { margin-bottom: 20px; }
+    .nb-label {
+      display: block; font-size: 13px; font-weight: 600; color: #444;
+      margin-bottom: 6px; letter-spacing: 0.01em;
+    }
+    .nb-help { font-size: 12px; color: #999; margin-top: 5px; display: block; }
+    .nb-input, .nb-textarea, .nb-select {
+      width: 100%; padding: 11px 14px;
+      font-size: 14px; font-family: inherit; color: #1a1a1a;
+      background: #f8f8f8; border: 1.5px solid #e8e8e8; border-radius: 8px;
+      outline: none; transition: border-color 0.18s, background 0.18s;
+    }
+    .nb-input:focus, .nb-textarea:focus { border-color: var(--brand); background: #fff; }
+    .nb-input::placeholder, .nb-textarea::placeholder { color: #bbb; }
+    .nb-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+    .nb-file {
+      display: block; width: 100%;
+      padding: 10px 14px; font-size: 13px;
+      background: #f8f8f8; border: 1.5px dashed #ddd; border-radius: 8px;
+      cursor: pointer; color: #666;
+      transition: border-color 0.18s;
+    }
+    .nb-file:hover { border-color: var(--brand); }
+
+    /* Radio groups */
+    .radio-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .radio-option { position: relative; }
+    .radio-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .radio-option label {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 16px; border-radius: 8px;
+      border: 1.5px solid #e8e8e8;
+      font-size: 13px; font-weight: 500; color: #555;
+      cursor: pointer; white-space: nowrap;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      user-select: none;
+    }
+    .radio-option input:checked + label {
+      border-color: var(--brand); background: rgba(235,104,35,0.07);
+      color: var(--brand); font-weight: 600;
+    }
+
+    /* Range slider */
+    .range-wrap { display: flex; align-items: center; gap: 16px; }
+    .nb-range { flex: 1; accent-color: var(--brand); }
+    .range-val {
+      min-width: 36px; height: 36px; border-radius: 8px;
+      background: var(--brand); color: #fff;
+      font-size: 15px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Checkbox consent */
+    .consent-wrap { display: flex; gap: 12px; align-items: flex-start; }
+    .nb-checkbox { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--brand); margin-top: 2px; }
+    .consent-text { font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* Step navigation */
+    .step-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; gap: 12px; }
+    .step-counter { font-size: 12px; color: #aaa; font-weight: 500; }
+    .btn-prev {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: transparent; color: #555;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 10px 20px; border-radius: 10px; border: 1.5px solid #ddd;
+      cursor: pointer; font-family: inherit;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-prev:hover { border-color: #aaa; color: #1a1a1a; }
+    .btn-next {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue); color: #fff;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 10px; border: none;
+      cursor: pointer; font-family: inherit;
+      transition: background 0.18s, transform 0.14s;
+    }
+    .btn-next:hover { background: #174578; transform: translateY(-1px); }
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--brand); color: #fff;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 12px 28px; border-radius: 10px; border: none;
+      cursor: pointer; font-family: inherit;
+      transition: background 0.18s, transform 0.14s;
+    }
+    .btn-submit:hover { background: #c9551a; transform: translateY(-1px); }
+
+    /* Section dividers inside steps */
+    .nb-divider { border: none; border-top: 1px solid #f0f0f0; margin: 22px 0; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="services.html" class="header-nav-link">Services</a>
+        <div class="header-nav-item">
+          <a href="stpeters.html" class="header-nav-link">Case Studies <i class="fa-solid fa-chevron-down header-nav-chevron"></i></a>
+          <div class="header-nav-dropdown">
+            <a href="stpeters.html" class="header-nav-dropdown-link">St Peter's Health Centre, Burnley</a>
+            <a href="hamptonlvp.html" class="header-nav-dropdown-link">Hampton by Hilton, Liverpool</a>
+            <a href="roseacre.html" class="header-nav-dropdown-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="header-nav-dropdown-link">The Whitaker Museum</a>
+          </div>
+        </div>
+        <a href="careers.html" class="header-nav-link">Careers</a>
+        <a href="social-value.html" class="header-nav-link">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ NAV MODAL ═══ -->
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-modal-panel">
+      <div class="nav-modal-head">
+        <a href="index.html" class="nav-logo">
+          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+        </a>
+        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="nav-modal-nav">
+        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+        <div class="nav-modal-accordion">
+          <button class="nav-modal-accordion-btn" aria-expanded="false">
+            <i class="fa-solid fa-folder-open"></i>Case Studies<i class="fa-solid fa-chevron-down nav-modal-chevron"></i>
+          </button>
+          <div class="nav-modal-accordion-panel">
+            <a href="stpeters.html" class="nav-modal-sub-link">St Peter's Health Centre, Burnley</a>
+            <a href="hamptonlvp.html" class="nav-modal-sub-link">Hampton by Hilton, Liverpool</a>
+            <a href="roseacre.html" class="nav-modal-sub-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="nav-modal-sub-link">The Whitaker Museum</a>
+          </div>
+        </div>
+        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-hand-holding-heart"></i>Social Value</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-section hero-page nb-hero">
+    <div class="hero-body">
+      <div class="wrap">
+        <div class="hero-text-md">
+          <span class="eyebrow">Residential Services</span>
+          <h1 class="hero-h1">New Boiler Enquiry</h1>
+          <p class="hero-sub-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod diam vel urna gravida, nec pulvinar magna malesuada. Complete the form below and our team will be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTRO ═══ -->
+  <section class="sec-white">
+    <div class="wrap">
+      <div class="two-col">
+        <div>
+          <span class="eyebrow">Why Choose Us</span>
+          <h2 class="intro-h2">Efficient, <em class="em-brand">reliable boiler</em> installations</h2>
+          <p class="sec-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p class="sec-p-faint">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="img-stack">
+          <img class="img-back" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Boiler installation">
+          <img class="img-front" src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=480&q=80" alt="Plant room pipework">
+          <svg class="wm" viewBox="0 0 100 100" fill="none">
+            <path d="M60 5L20 55h35l-15 40 50-55h-35l5-35z" fill="#eb6823"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MULTI-STEP FORM ═══ -->
+  <section class="nb-form-section" id="boiler-form">
+    <div class="nb-form-card">
+
+      <!-- Progress indicator -->
+      <div class="step-progress" id="step-progress">
+        <div class="step-dot active" data-step="0">1</div>
+        <div class="step-line" data-line="0"></div>
+        <div class="step-dot" data-step="1">2</div>
+        <div class="step-line" data-line="1"></div>
+        <div class="step-dot" data-step="2">3</div>
+        <div class="step-line" data-line="2"></div>
+        <div class="step-dot" data-step="3">4</div>
+        <div class="step-line" data-line="3"></div>
+        <div class="step-dot" data-step="4">5</div>
+        <div class="step-line" data-line="4"></div>
+        <div class="step-dot" data-step="5">6</div>
+        <div class="step-line" data-line="5"></div>
+        <div class="step-dot" data-step="6">7</div>
+      </div>
+
+      <form method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" enctype="multipart/form-data" id="nb-form">
+        <input type="hidden" name="_subject" value="New Boiler Enquiry">
+        <input type="hidden" name="_cc" value="mrjholt@gmail.com">
+
+        <!-- ── STEP 1: Your Details ── -->
+        <div class="form-step active" id="step-0">
+          <p class="step-title">Your Details</p>
+          <p class="step-subtitle">Let us know how to reach you.</p>
+          <div class="nb-field">
+            <label class="nb-label" for="full-name">Your Full Name *</label>
+            <input class="nb-input" type="text" id="full-name" name="full_name" placeholder="e.g. John Smith" required>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="contact-number">Contact Number *</label>
+            <input class="nb-input" type="tel" id="contact-number" name="contact_number" placeholder="e.g. 01282 000 000" required>
+          </div>
+          <div class="step-nav">
+            <span class="step-counter">Step 1 of 7</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: System Overview ── -->
+        <div class="form-step" id="step-1">
+          <p class="step-title">System Overview</p>
+          <p class="step-subtitle">Tell us about your current heating setup.</p>
+          <div class="nb-field">
+            <label class="nb-label">Do you have a system filter on your heating?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="filter-yes" name="system_filter" value="Yes"><label for="filter-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="filter-no" name="system_filter" value="No"><label for="filter-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="filter-unsure" name="system_filter" value="Unsure"><label for="filter-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Is the boiler to be replaced by the same type?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="same-yes" name="same_type" value="Yes"><label for="same-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="same-no" name="same_type" value="No"><label for="same-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="same-unsure" name="same_type" value="Unsure"><label for="same-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Do you need the work carrying out within the next 14 days?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="urgent-yes" name="urgent" value="Yes"><label for="urgent-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="urgent-no" name="urgent" value="No"><label for="urgent-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="urgent-unsure" name="urgent" value="Unsure"><label for="urgent-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Is your current boiler operational?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="op-yes" name="boiler_operational" value="Yes"><label for="op-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="op-no" name="boiler_operational" value="No"><label for="op-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="op-unsure" name="boiler_operational" value="Unsure"><label for="op-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Is there a switch to isolate the boiler from electrics?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="iso-yes" name="isolate_switch" value="Yes"><label for="iso-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="iso-no" name="isolate_switch" value="No"><label for="iso-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="iso-unsure" name="isolate_switch" value="Unsure"><label for="iso-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Do you have a Water Meter?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="meter-yes" name="water_meter" value="Yes"><label for="meter-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="meter-no" name="water_meter" value="No"><label for="meter-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="meter-unsure" name="water_meter" value="Unsure"><label for="meter-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 2 of 7</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 3: Boiler & Radiators ── -->
+        <div class="form-step" id="step-2">
+          <p class="step-title">Boiler &amp; Radiators</p>
+          <p class="step-subtitle">Details about your current boiler and radiator system.</p>
+          <div class="nb-field">
+            <label class="nb-label" for="boiler-make">What's the make and model of current boiler?</label>
+            <textarea class="nb-textarea" id="boiler-make" name="boiler_make_model" placeholder="e.g. Worcester Bosch Greenstar 30i"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="boiler-position">Will the new boiler be in the same position as the current boiler? If not, please outline below:</label>
+            <textarea class="nb-textarea" id="boiler-position" name="boiler_position"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Are Thermostatic Radiator Valves fitted to your radiators?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="trv-yes" name="trv_fitted" value="Yes"><label for="trv-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="trv-no" name="trv_fitted" value="No"><label for="trv-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="trv-unsure" name="trv_fitted" value="Unsure"><label for="trv-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="rad-count">If no, how many radiators are at the property?</label>
+            <input class="nb-input" type="number" id="rad-count" name="radiator_count" placeholder="e.g. 8" min="1">
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Please Upload Photos of Your Radiators</label>
+            <input class="nb-file" type="file" name="radiator_photos" accept="image/*,video/*" multiple>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="email">Email *</label>
+            <input class="nb-input" type="email" id="email" name="email" placeholder="your@email.co.uk" required>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 3 of 7</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 4: Cold Spots & Stop Tap ── -->
+        <div class="form-step" id="step-3">
+          <p class="step-title">Cold Spots &amp; Stop Tap</p>
+          <p class="step-subtitle">Help us understand any existing issues with your heating.</p>
+          <div class="nb-field">
+            <label class="nb-label">Are there any cold spots in radiators?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="cold-yes" name="cold_spots" value="Yes"><label for="cold-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="cold-no" name="cold_spots" value="No"><label for="cold-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="cold-unsure" name="cold_spots" value="Unsure"><label for="cold-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="cold-location">Location of Cold Spots</label>
+            <textarea class="nb-textarea" id="cold-location" name="cold_spot_location" placeholder="e.g. bottom of radiator in the front bedroom"></textarea>
+          </div>
+          <hr class="nb-divider">
+          <div class="nb-field">
+            <label class="nb-label">Does Your Stop Tap Work?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="stop-yes" name="stop_tap" value="Yes"><label for="stop-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="stop-no" name="stop_tap" value="No"><label for="stop-no">No</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Please now attach a photo of your stop tap.</label>
+            <input class="nb-file" type="file" name="stop_tap_photo" accept="image/*">
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 4 of 7</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 5: Property & Controls ── -->
+        <div class="form-step" id="step-4">
+          <p class="step-title">Property &amp; Controls</p>
+          <p class="step-subtitle">Tell us about the property and how your heating is currently controlled.</p>
+          <div class="nb-field">
+            <label class="nb-label" for="property-type">Type of property and no. of bedrooms and bathrooms:</label>
+            <textarea class="nb-textarea" id="property-type" name="property_type" placeholder="e.g. 3-bed semi-detached, 1 bathroom, 1 en-suite"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="heating-control">How do you control your heating?</label>
+            <textarea class="nb-textarea" id="heating-control" name="heating_control" placeholder="e.g. Hive thermostat, timer only, manual controls"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Photo / Video for the survey (1 of 4)</label>
+            <input class="nb-file" type="file" name="survey_photo_1" accept="image/*,video/*">
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Photo / Video for the survey (2 of 4)</label>
+            <input class="nb-file" type="file" name="survey_photo_2" accept="image/*,video/*">
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Photo / Video for the survey (3 of 4)</label>
+            <input class="nb-file" type="file" name="survey_photo_3" accept="image/*,video/*">
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Photo / Video for the survey (4 of 4)</label>
+            <input class="nb-file" type="file" name="survey_photo_4" accept="image/*,video/*">
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 5 of 7</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 6: Flue & Pipework ── -->
+        <div class="form-step" id="step-5">
+          <p class="step-title">Flue &amp; Pipework</p>
+          <p class="step-subtitle">Details about the flue and pipework configuration.</p>
+          <div class="nb-field">
+            <label class="nb-label" for="pipe-count">How many pipes are coming from the boiler?</label>
+            <div class="range-wrap">
+              <input class="nb-range" type="range" id="pipe-count" name="pipe_count" min="1" max="6" value="2" oninput="document.getElementById('pipe-val').textContent = this.value">
+              <span class="range-val" id="pipe-val">2</span>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Does the flue go through the wall or through the roof?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="flue-wall" name="flue_direction" value="Wall"><label for="flue-wall">Wall</label></div>
+              <div class="radio-option"><input type="radio" id="flue-roof" name="flue_direction" value="Roof"><label for="flue-roof">Roof</label></div>
+              <div class="radio-option"><input type="radio" id="flue-unsure" name="flue_direction" value="Unsure"><label for="flue-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">If roof, is the roof flat or pitched?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="roof-flat" name="roof_type" value="Flat"><label for="roof-flat">Flat</label></div>
+              <div class="radio-option"><input type="radio" id="roof-pitched" name="roof_type" value="Pitched"><label for="roof-pitched">Pitched</label></div>
+              <div class="radio-option"><input type="radio" id="roof-other" name="roof_type" value="Other"><label for="roof-other">Other</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Does the flue terminate at least 2 metres from ground level?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="flue2m-yes" name="flue_2m" value="Yes"><label for="flue2m-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="flue2m-no" name="flue_2m" value="No"><label for="flue2m-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="flue2m-unsure" name="flue_2m" value="Unsure"><label for="flue2m-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Does the flue terminate above ground floor level? (1st floor or above)</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="fluefl-yes" name="flue_above_ground" value="Yes"><label for="fluefl-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="fluefl-no" name="flue_above_ground" value="No"><label for="fluefl-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="fluefl-unsure" name="flue_above_ground" value="Unsure"><label for="fluefl-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">If yes, is where the flue exits the building accessible?</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="flueacc-yes" name="flue_accessible" value="Yes"><label for="flueacc-yes">Yes</label></div>
+              <div class="radio-option"><input type="radio" id="flueacc-no" name="flue_accessible" value="No"><label for="flueacc-no">No</label></div>
+              <div class="radio-option"><input type="radio" id="flueacc-unsure" name="flue_accessible" value="Unsure"><label for="flueacc-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 6 of 7</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 7: Final Details ── -->
+        <div class="form-step" id="step-6">
+          <p class="step-title">Final Details</p>
+          <p class="step-subtitle">Almost there — just a few final details.</p>
+          <div class="nb-field">
+            <label class="nb-label" for="boiler-room">Existing boiler room location and position within property (if applicable)?</label>
+            <textarea class="nb-textarea" id="boiler-room" name="boiler_room_location" placeholder="e.g. cupboard under stairs, ground floor"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="gas-meter">What is the Gas Meter location?</label>
+            <textarea class="nb-textarea" id="gas-meter" name="gas_meter_location" placeholder="e.g. external meter box, front of property"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="other-info">Please write any other relevant information:</label>
+            <textarea class="nb-textarea" id="other-info" name="other_info" style="min-height:120px;"></textarea>
+          </div>
+          <hr class="nb-divider">
+          <div class="nb-field">
+            <label class="nb-label" for="project-address">Project Address *</label>
+            <textarea class="nb-textarea" id="project-address" name="project_address" placeholder="Full project address including postcode" required></textarea>
+            <span class="nb-help">Please provide the full project address, including postcode. This helps us confirm service availability and give an accurate response.</span>
+          </div>
+          <hr class="nb-divider">
+          <div class="nb-field">
+            <div class="consent-wrap">
+              <input class="nb-checkbox" type="checkbox" id="gdpr" name="gdpr_consent" value="I consent" required>
+              <label class="consent-text" for="gdpr">I consent to having Vital Synergy store my submitted information so they can respond to my enquiry.</label>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 7 of 7</span>
+            <button type="submit" class="btn-submit">Submit Enquiry <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i></button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="stpeters.html" class="footer-link">Case Studies</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Policies and Forms</h4>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+        <div class="footer-col-support">
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847<br>Gas Safe No 593601</p>
+          <div class="socials-row">
+            <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    const steps   = document.querySelectorAll('.form-step');
+    const dots    = document.querySelectorAll('.step-dot');
+    const lines   = document.querySelectorAll('.step-line');
+    let current   = 0;
+
+    function showStep(n) {
+      steps.forEach((s, i) => s.classList.toggle('active', i === n));
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === n);
+        d.classList.toggle('done', i < n);
+      });
+      lines.forEach((l, i) => l.classList.toggle('done', i < n));
+      current = n;
+      document.getElementById('boiler-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.querySelectorAll('.btn-step-next').forEach(btn =>
+      btn.addEventListener('click', () => { if (current < steps.length - 1) showStep(current + 1); })
+    );
+    document.querySelectorAll('.btn-step-prev').forEach(btn =>
+      btn.addEventListener('click', () => { if (current > 0) showStep(current - 1); })
+    );
+
+    showStep(0);
+  </script>
+</body>
+</html>
