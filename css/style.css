@@ -282,7 +282,26 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 .sec-testi    { padding: 72px 24px; }
 .sec-sectors  { padding: 96px 24px 0; background: #fff; overflow: hidden; }
 .sec-wwd      { padding: 56px 24px 72px; }
-.sec-stats    { background: var(--dark); padding: 64px 24px; }
+.sec-stats {
+  padding: 80px 24px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+    url('https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media (max-width: 1023px) {
+  .sec-stats { background-attachment: scroll; }
+}
+.stat-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  padding: 32px 16px;
+}
 .sec-center   { text-align: center; }
 .sec-overflow { overflow: hidden; padding-bottom: 0; }
 
