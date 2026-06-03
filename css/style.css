@@ -64,6 +64,23 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 .logo-img    { height: 38px; width: auto; }
 .logo-img-lg { height: 40px; width: auto; }
 
+/* Header right group */
+.header-right { display: flex; align-items: center; gap: 12px; }
+
+/* Header phone */
+.header-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.header-phone i { font-size: 11px; color: var(--brand); }
+.header-phone:hover { color: #fff; }
+
 /* Hamburger button */
 .hamburger-btn {
   display: flex;
