@@ -9,6 +9,15 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// Burger nav accordion
+document.querySelectorAll('.nav-modal-accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    btn.nextElementSibling.classList.toggle('open', !expanded);
+  });
+});
+
 const modal = document.getElementById('nav-modal');
 const openBtn = document.getElementById('nav-open');
 const closeBtn = document.getElementById('nav-close');
