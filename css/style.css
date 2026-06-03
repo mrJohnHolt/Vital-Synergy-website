@@ -272,7 +272,7 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 /* ─────────────────────────────────────────
    SECTION TYPES
 ───────────────────────────────────────── */
-.sec-white    { padding: 96px 24px; background: #fff; }
+.sec-white    { padding: 56px 24px; background: #fff; }
 .sec-testi-head { padding: 72px 24px 56px; background: #fff; text-align: center; }
 .sec-testi    { padding: 72px 24px; }
 .sec-sectors  { padding: 96px 24px 0; background: #fff; overflow: hidden; }
