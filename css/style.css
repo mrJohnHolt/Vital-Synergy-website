@@ -40,11 +40,9 @@ body.page-fade-out { opacity: 0; transition: opacity 0.2s ease; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 32px;
 }
-.footer-col-logo    { grid-column: 1 / -1; }
-.footer-col-support { grid-column: 1 / -1; }
 
 @media (min-width: 640px) {
   .four-col { grid-template-columns: 1fr 1fr; }
@@ -56,8 +54,8 @@ body.page-fade-out { opacity: 0; transition: opacity 0.2s ease; }
   .two-col { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .four-col { grid-template-columns: repeat(4, 1fr); }
   .stat-grid { grid-template-columns: repeat(4, 1fr); gap: 48px; }
-  .footer-grid { grid-template-columns: 1.4fr 1fr 1.4fr 1.6fr; gap: 48px; }
-  .footer-col-logo, .footer-col-support { grid-column: auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr 1.6fr; gap: 48px; }
+  .footer-col-logo { grid-column: 1 / -1; }
 }
 
 /* Order helpers (used in journey two-col on mobile) */

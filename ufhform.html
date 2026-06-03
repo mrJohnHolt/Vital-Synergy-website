@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Underfloor Heating Quote | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="Assets/Watermark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    .nb-hero {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover; background-position: center;
+    }
+    .nb-form-section { background: #f6f6f6; padding: 64px 24px; }
+    .nb-form-card {
+      max-width: 760px; margin: 0 auto; background: #fff; border-radius: 14px;
+      padding: 40px 40px 36px; box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) { .nb-form-card { padding: 28px 20px 24px; } }
+    .step-progress { display: flex; align-items: center; margin-bottom: 32px; }
+    .step-dot {
+      width: 30px; height: 30px; border-radius: 50%; background: #e8e8e8; color: #aaa;
+      font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.2s, color 0.2s;
+    }
+    .step-dot.active { background: var(--brand); color: #fff; }
+    .step-dot.done { background: var(--blue); color: #fff; }
+    .step-line { flex: 1; height: 2px; background: #e8e8e8; transition: background 0.2s; }
+    .step-line.done { background: var(--blue); }
+    .form-step { display: none; }
+    .form-step.active { display: block; animation: nb-fade 0.2s ease; }
+    @keyframes nb-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .step-title { font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .step-subtitle { font-size: 13px; color: #888; margin-bottom: 24px; }
+    .nb-field { margin-bottom: 20px; }
+    .nb-label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 6px; }
+    .nb-help { font-size: 12px; color: #999; margin-top: 5px; display: block; }
+    .nb-input, .nb-textarea {
+      width: 100%; padding: 11px 14px; font-size: 14px; font-family: inherit; color: #1a1a1a;
+      background: #f8f8f8; border: 1.5px solid #e8e8e8; border-radius: 8px;
+      outline: none; transition: border-color 0.18s, background 0.18s;
+    }
+    .nb-input:focus, .nb-textarea:focus { border-color: var(--brand); background: #fff; }
+    .nb-input::placeholder, .nb-textarea::placeholder { color: #bbb; }
+    .nb-textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+    .nb-file {
+      display: block; width: 100%; padding: 10px 14px; font-size: 13px;
+      background: #f8f8f8; border: 1.5px dashed #ddd; border-radius: 8px;
+      cursor: pointer; color: #666; transition: border-color 0.18s;
+    }
+    .nb-file:hover { border-color: var(--brand); }
+
+    /* Standard pill radio (short labels) */
+    .radio-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .radio-option { position: relative; }
+    .radio-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .radio-option label {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 16px; border-radius: 8px; border: 1.5px solid #e8e8e8;
+      font-size: 13px; font-weight: 500; color: #555;
+      cursor: pointer; user-select: none;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+    }
+    .radio-option input:checked + label {
+      border-color: var(--brand); background: rgba(235,104,35,0.07);
+      color: var(--brand); font-weight: 600;
+    }
+
+    /* Block radio (long labels — stack vertically) */
+    .radio-group-block { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+    .radio-option-block { position: relative; }
+    .radio-option-block input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .radio-option-block label {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 12px 16px; border-radius: 8px; border: 1.5px solid #e8e8e8;
+      font-size: 13px; font-weight: 500; color: #555; line-height: 1.5;
+      cursor: pointer; user-select: none;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+    }
+    .radio-option-block label::before {
+      content: ''; width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid #ddd; flex-shrink: 0; margin-top: 1px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .radio-option-block input:checked + label {
+      border-color: var(--brand); background: rgba(235,104,35,0.06); color: #1a1a1a; font-weight: 600;
+    }
+    .radio-option-block input:checked + label::before {
+      border-color: var(--brand); background: var(--brand);
+    }
+
+    .consent-wrap { display: flex; gap: 12px; align-items: flex-start; }
+    .nb-checkbox { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--brand); margin-top: 2px; }
+    .consent-text { font-size: 13px; color: #555; line-height: 1.6; }
+    .nb-info-box {
+      background: rgba(235,104,35,0.06); border-left: 3px solid var(--brand);
+      border-radius: 0 8px 8px 0; padding: 14px 16px; margin-bottom: 20px;
+      font-size: 13px; color: #555; font-weight: 500;
+    }
+    .step-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; gap: 12px; }
+    .step-counter { font-size: 12px; color: #aaa; font-weight: 500; }
+    .btn-prev {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: transparent; color: #555; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 10px 20px; border-radius: 10px; border: 1.5px solid #ddd;
+      cursor: pointer; font-family: inherit; transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-prev:hover { border-color: #aaa; color: #1a1a1a; }
+    .btn-next {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue); color: #fff; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 10px; border: none;
+      cursor: pointer; font-family: inherit; transition: background 0.18s, transform 0.14s;
+    }
+    .btn-next:hover { background: #174578; transform: translateY(-1px); }
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--brand); color: #fff; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 12px 28px; border-radius: 10px; border: none;
+      cursor: pointer; font-family: inherit; transition: background 0.18s, transform 0.14s;
+    }
+    .btn-submit:hover { background: #c9551a; transform: translateY(-1px); }
+    .nb-divider { border: none; border-top: 1px solid #f0f0f0; margin: 22px 0; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="services.html" class="header-nav-link">Services</a>
+        <div class="header-nav-item">
+          <a href="stpeters.html" class="header-nav-link">Case Studies <i class="fa-solid fa-chevron-down header-nav-chevron"></i></a>
+          <div class="header-nav-dropdown">
+            <a href="stpeters.html" class="header-nav-dropdown-link">St Peter's Health Centre, Burnley</a>
+            <a href="hamptonlvp.html" class="header-nav-dropdown-link">Hampton by Hilton, Liverpool</a>
+            <a href="roseacre.html" class="header-nav-dropdown-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="header-nav-dropdown-link">The Whitaker Museum</a>
+          </div>
+        </div>
+        <a href="careers.html" class="header-nav-link">Careers</a>
+        <a href="social-value.html" class="header-nav-link">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ NAV MODAL ═══ -->
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-modal-panel">
+      <div class="nav-modal-head">
+        <a href="index.html" class="nav-logo">
+          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+        </a>
+        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="nav-modal-nav">
+        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+        <div class="nav-modal-accordion">
+          <button class="nav-modal-accordion-btn" aria-expanded="false">
+            <i class="fa-solid fa-folder-open"></i>Case Studies<i class="fa-solid fa-chevron-down nav-modal-chevron"></i>
+          </button>
+          <div class="nav-modal-accordion-panel">
+            <a href="stpeters.html" class="nav-modal-sub-link">St Peter's Health Centre, Burnley</a>
+            <a href="hamptonlvp.html" class="nav-modal-sub-link">Hampton by Hilton, Liverpool</a>
+            <a href="roseacre.html" class="nav-modal-sub-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="nav-modal-sub-link">The Whitaker Museum</a>
+          </div>
+        </div>
+        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-hand-holding-heart"></i>Social Value</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-section hero-page nb-hero">
+    <div class="hero-body">
+      <div class="wrap">
+        <div class="hero-text-md">
+          <span class="eyebrow">Residential &amp; Commercial Services</span>
+          <h1 class="hero-h1">Underfloor Heating<br>Quote Enquiry</h1>
+          <p class="hero-sub-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod diam vel urna gravida, nec pulvinar magna malesuada. Complete the form below and our team will be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTRO ═══ -->
+  <section class="sec-white">
+    <div class="wrap">
+      <div class="two-col">
+        <div>
+          <span class="eyebrow">Underfloor Heating</span>
+          <h2 class="intro-h2">Comfortable warmth, <em class="em-brand">efficiently delivered</em></h2>
+          <p class="sec-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p class="sec-p-faint">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="img-stack">
+          <img class="img-back" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Underfloor heating installation">
+          <img class="img-front" src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=480&q=80" alt="Heating pipework">
+          <svg class="wm" viewBox="0 0 100 100" fill="none">
+            <path d="M60 5L20 55h35l-15 40 50-55h-35l5-35z" fill="#eb6823"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MULTI-STEP FORM ═══ -->
+  <section class="nb-form-section" id="uhf-form">
+    <div class="nb-form-card">
+
+      <div class="step-progress">
+        <div class="step-dot active">1</div>
+        <div class="step-line"></div>
+        <div class="step-dot">2</div>
+        <div class="step-line"></div>
+        <div class="step-dot">3</div>
+      </div>
+
+      <form method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="UHF Quote Enquiry">
+        <input type="hidden" name="_cc" value="mrjholt@gmail.com">
+
+        <!-- ── STEP 1: Your Details ── -->
+        <div class="form-step active">
+          <p class="step-title">Your Details</p>
+          <p class="step-subtitle">Tell us who you are and how to reach you.</p>
+          <div class="nb-field">
+            <label class="nb-label" for="name">Name *</label>
+            <input class="nb-input" type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="email">Email *</label>
+            <input class="nb-input" type="email" id="email" name="email" placeholder="your@email.co.uk" required>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="phone">Contact Number *</label>
+            <input class="nb-input" type="tel" id="phone" name="contact_number" placeholder="e.g. 01282 000 000" required>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="address">Address</label>
+            <input class="nb-input" type="text" id="address" name="address" placeholder="Your address">
+          </div>
+          <div class="step-nav">
+            <span class="step-counter">Step 1 of 3</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: UFH Requirements ── -->
+        <div class="form-step">
+          <p class="step-title">UFH Requirements</p>
+          <p class="step-subtitle">Tell us about the type of system and areas required.</p>
+          <div class="nb-field">
+            <label class="nb-label">Type of Underfloor Heating Required:</label>
+            <div class="radio-group">
+              <div class="radio-option"><input type="radio" id="ufh-electric" name="ufh_type" value="Electric"><label for="ufh-electric">Electric</label></div>
+              <div class="radio-option"><input type="radio" id="ufh-warmwater" name="ufh_type" value="Warm Water"><label for="ufh-warmwater">Warm Water</label></div>
+              <div class="radio-option"><input type="radio" id="ufh-unsure" name="ufh_type" value="Unsure"><label for="ufh-unsure">Unsure</label></div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Underfloor Heating Options:</label>
+            <div class="radio-group-block">
+              <div class="radio-option-block">
+                <input type="radio" id="ufh-opt1" name="ufh_option" value="17mm pipe laid to insulation with screed">
+                <label for="ufh-opt1">17mm pipe laid to insulation with screed</label>
+              </div>
+              <div class="radio-option-block">
+                <input type="radio" id="ufh-opt2" name="ufh_option" value="18mm board with 12mm pipe laid to existing floors">
+                <label for="ufh-opt2">18mm board with 12mm pipe laid to existing floors</label>
+              </div>
+              <div class="radio-option-block">
+                <input type="radio" id="ufh-opt3" name="ufh_option" value="Spreader plate system to be installed mainly new build within ceiling void">
+                <label for="ufh-opt3">Spreader plate system to be installed — mainly new build within ceiling void</label>
+              </div>
+              <div class="radio-option-block">
+                <input type="radio" id="ufh-opt4" name="ufh_option" value="Unsure">
+                <label for="ufh-opt4">Unsure</label>
+              </div>
+            </div>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="floor-finish">What's the desired floor finish?</label>
+            <textarea class="nb-textarea" id="floor-finish" name="floor_finish" placeholder="e.g. Porcelain tile, engineered wood, LVT, carpet"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="rooms">List the rooms you require UFH in:</label>
+            <textarea class="nb-textarea" id="rooms" name="rooms_required" placeholder="e.g. Kitchen, living room, master bedroom, hallway"></textarea>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label" for="other-info">Any other relevant information:</label>
+            <textarea class="nb-textarea" id="other-info" name="other_info"></textarea>
+          </div>
+          <div class="nb-info-box">
+            <i class="fa-solid fa-circle-info" style="color:var(--brand); margin-right:8px;"></i>
+            Options to upload diagrams, plans and images will be available on the next page.
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 2 of 3</span>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+          </div>
+        </div>
+
+        <!-- ── STEP 3: Uploads & Consent ── -->
+        <div class="form-step">
+          <p class="step-title">Uploads &amp; Consent</p>
+          <p class="step-subtitle">Submit any plans or diagrams you have, then confirm your consent below.</p>
+          <div class="nb-field">
+            <label class="nb-label">Submit any plans you have</label>
+            <input class="nb-file" type="file" name="plans" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf" multiple>
+          </div>
+          <div class="nb-field">
+            <label class="nb-label">Submit any diagrams you have</label>
+            <input class="nb-file" type="file" name="diagrams" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf" multiple>
+          </div>
+          <hr class="nb-divider">
+          <div class="nb-field">
+            <label class="nb-label" for="project-address">Project Address *</label>
+            <textarea class="nb-textarea" id="project-address" name="project_address" placeholder="Full project address including postcode" required></textarea>
+            <span class="nb-help">Please provide the full project address, including postcode. This helps us confirm service availability and give an accurate response.</span>
+          </div>
+          <hr class="nb-divider">
+          <div class="nb-field">
+            <div class="consent-wrap">
+              <input class="nb-checkbox" type="checkbox" id="gdpr" name="gdpr_consent" value="I consent" required>
+              <label class="consent-text" for="gdpr">I consent to having Vital Synergy store my submitted information so they can respond to my enquiry.</label>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <span class="step-counter">Step 3 of 3</span>
+            <button type="submit" class="btn-submit">Submit Enquiry <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i></button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="stpeters.html" class="footer-link">Case Studies</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Policies and Forms</h4>
+          <a href="commashpform.html" class="footer-link">Commercial ASHP Enquiry</a>
+          <a href="commgshpform.html" class="footer-link">Commercial GSHP Enquiry</a>
+          <a href="new-boilerform.html" class="footer-link">New Boiler Enquiry</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="ufhform.html" class="footer-link">UFH Quote Enquiry</a>
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847<br>Gas Safe No 593601</p>
+          <div class="socials-row">
+            <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    const steps  = document.querySelectorAll('.form-step');
+    const dots   = document.querySelectorAll('.step-dot');
+    const lines  = document.querySelectorAll('.step-line');
+    let current  = 0;
+
+    function showStep(n) {
+      steps.forEach((s, i) => s.classList.toggle('active', i === n));
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === n);
+        d.classList.toggle('done', i < n);
+      });
+      lines.forEach((l, i) => l.classList.toggle('done', i < n));
+      current = n;
+      document.getElementById('uhf-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.querySelectorAll('.btn-step-next').forEach(btn =>
+      btn.addEventListener('click', () => { if (current < steps.length - 1) showStep(current + 1); })
+    );
+    document.querySelectorAll('.btn-step-prev').forEach(btn =>
+      btn.addEventListener('click', () => { if (current > 0) showStep(current - 1); })
+    );
+
+    showStep(0);
+  </script>
+</body>
+</html>
