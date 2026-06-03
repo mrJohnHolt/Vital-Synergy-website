@@ -229,10 +229,28 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 ───────────────────────────────────────── */
 .accred-strip       { border-top: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.38); backdrop-filter: blur(4px); }
 .accred-strip-inner { padding-top: 14px; padding-bottom: 14px; }
-.accred-bar   { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.accred-items { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-.trust-label  { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.38); white-space: nowrap; }
-.trust-item   { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.accred-bar  { display: flex; align-items: center; gap: 20px; overflow: hidden; }
+.trust-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.38); white-space: nowrap; flex-shrink: 0; }
+.trust-item  { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); white-space: nowrap; padding: 0 24px; }
+
+/* Ticker */
+.ticker-wrap {
+  flex: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 20s linear infinite;
+}
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 /* ─────────────────────────────────────────
    SECTION TYPES
