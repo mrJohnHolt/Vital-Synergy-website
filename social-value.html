@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Value | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="Assets/Watermark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* Hero */
+    .sv-hero {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.75) 100%),
+        url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Model section (dark bg) */
+    .sv-model-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.62) 100%),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Impact section (parallax) */
+    .sv-impact-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.58) 100%),
+        url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @media (max-width: 1023px) { .sv-impact-bg { background-attachment: scroll; } }
+
+    /* Six-column grid (2 col tablet, 3 col desktop) */
+    .sv-six-col {
+      display: grid; grid-template-columns: 1fr; gap: 20px;
+    }
+    @media (min-width: 640px) { .sv-six-col { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .sv-six-col { grid-template-columns: 1fr 1fr 1fr; } }
+
+    /* Model cards */
+    .sv-model-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 10px; padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .sv-model-num {
+      font-size: 2.4rem; font-weight: 800; color: var(--brand);
+      line-height: 1; margin-bottom: 12px; letter-spacing: -0.04em;
+    }
+    .sv-model-heading {
+      font-size: 14px; font-weight: 700; color: #fff;
+      margin-bottom: 12px; line-height: 1.35;
+    }
+    .sv-model-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .sv-model-list li {
+      padding-left: 16px; position: relative;
+      font-size: 12.5px; color: rgba(255,255,255,0.68); line-height: 1.55;
+    }
+    .sv-model-list li::before {
+      content: ''; position: absolute; left: 0; top: 7px;
+      width: 5px; height: 5px; border-radius: 50%;
+      border: 1.5px solid var(--brand);
+    }
+
+    /* Values */
+    .sv-values-grid {
+      display: grid; grid-template-columns: 1fr; gap: 20px;
+    }
+    @media (min-width: 640px) { .sv-values-grid { grid-template-columns: 1fr 1fr; } }
+    .sv-value-card {
+      border-left: 3px solid var(--brand);
+      padding: 20px 24px;
+      background: #f9f9f9;
+      border-radius: 0 8px 8px 0;
+    }
+    .sv-value-text {
+      font-size: 14.5px; font-weight: 600; color: #1a1a1a;
+      line-height: 1.55; font-style: italic;
+    }
+
+    /* Impact cards (glass on parallax) */
+    .sv-impact-card {
+      background: rgba(255,255,255,0.09);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 10px; padding: 28px 24px;
+    }
+    .sv-impact-icon {
+      font-size: 26px; color: var(--brand); margin-bottom: 14px; display: block;
+    }
+    .sv-impact-heading {
+      font-size: 14px; font-weight: 700; color: #fff;
+      margin-bottom: 8px; line-height: 1.35;
+    }
+    .sv-impact-p {
+      font-size: 12.5px; color: rgba(255,255,255,0.68); line-height: 1.65;
+    }
+
+    /* Partners chips */
+    .sv-partners-row {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin-top: 28px;
+    }
+    .sv-partner-chip {
+      background: #f2f2f2; color: #444;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.03em;
+      padding: 8px 18px; border-radius: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="index.html#services" class="header-nav-link">Services</a>
+        <a href="index.html#sectors" class="header-nav-link">Sectors</a>
+        <a href="stpeters.html" class="header-nav-link">Case Studies</a>
+        <a href="careers.html" class="header-nav-link">Careers</a>
+        <a href="social-value.html" class="header-nav-link header-nav-link-active">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ NAV MODAL ═══ -->
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-modal-panel">
+      <div class="nav-modal-head">
+        <a href="index.html" class="nav-logo">
+          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+        </a>
+        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="nav-modal-nav">
+        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+        <a href="index.html#services" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+        <a href="index.html#sectors" class="nav-modal-link"><i class="fa-solid fa-industry"></i>Sectors</a>
+        <a href="stpeters.html" class="nav-modal-link"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        <a href="social-value.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-hands-holding-heart"></i>Social Value</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-section hero-page hero-tall sv-hero">
+    <div class="hero-body">
+      <div class="wrap">
+        <div class="hero-text-md">
+          <span class="eyebrow">Social Value</span>
+          <h1 class="hero-h1">Empowering Communities.<br>Elevating People.<br>Creating Lasting Impact.</h1>
+          <p class="hero-sub-sm">At Vital Synergy, social value is not a checkbox. It is our purpose. We exist to strengthen communities, create opportunities, and leave every organisation, individual, and neighbourhood better than we found it.</p>
+          <div class="btn-row">
+            <a href="#approach" class="btn-green">Our Approach</a>
+            <a href="#impact" class="btn-outline">Areas of Impact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accred-strip">
+      <div class="wrap accred-strip-inner">
+        <div class="accred-bar">
+          <span class="trust-label">Our commitments</span>
+          <div class="ticker-wrap">
+            <div class="ticker-track">
+              <span class="trust-item">Skills &amp; Employability</span>
+              <span class="trust-item">Youth Development</span>
+              <span class="trust-item">Mental Health &amp; Wellbeing</span>
+              <span class="trust-item">Community Cohesion</span>
+              <span class="trust-item">Economic Uplift</span>
+              <span class="trust-item">Sustainability</span>
+              <span class="trust-item">Skills &amp; Employability</span>
+              <span class="trust-item">Youth Development</span>
+              <span class="trust-item">Mental Health &amp; Wellbeing</span>
+              <span class="trust-item">Community Cohesion</span>
+              <span class="trust-item">Economic Uplift</span>
+              <span class="trust-item">Sustainability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OVERVIEW + PROMISE ═══ -->
+  <section class="sec-white">
+    <div class="wrap">
+      <div class="two-col">
+        <div>
+          <span class="eyebrow">Who We Are</span>
+          <h2 class="intro-h2">Social value is at the <em class="em-brand">heart of everything</em> we do</h2>
+          <p class="sec-p">With a deep commitment to human development, wellbeing, and community uplift, we ensure every programme, partnership, and project generates measurable, meaningful, people-first outcomes.</p>
+          <h3 class="card-h3" style="font-size:13px; margin-bottom:12px; margin-top:24px; color:#1a1a1a;">Our Social Value Promise</h3>
+          <p class="sec-p-faint">We ensure that everything we deliver, from training and employability support to wellbeing programmes and community engagement, contributes directly to stronger people, thriving communities, and sustainable futures. Our approach aligns with industry-recognised frameworks, but more importantly, we align with what matters most: human growth, opportunity, and impact.</p>
+          <a href="#approach" class="btn-green">See Our Approach</a>
+        </div>
+        <div class="img-stack">
+          <img class="img-back" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Community collaboration">
+          <img class="img-front" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=480&q=80" alt="People first approach">
+          <svg class="wm" viewBox="0 0 100 100" fill="none">
+            <path d="M60 5L20 55h35l-15 40 50-55h-35l5-35z" fill="#eb6823"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PEOPLE-CENTRIC MODEL ═══ -->
+  <section id="approach" class="sv-model-bg sec-wwd">
+    <div class="pill-wrap">
+      <div class="dark-pill">
+        <span class="eyebrow eyebrow-tight">Structured, Measurable &amp; Meaningful</span>
+        <p class="dark-pill-p">Our People-Centric Model ensures every initiative we deliver creates genuine, lasting change, built on evidence, guided by community need, and measured against real outcomes.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="sv-six-col">
+
+        <div class="sv-model-card">
+          <p class="sv-model-num">01</p>
+          <h3 class="sv-model-heading">Stakeholder Engagement</h3>
+          <ul class="sv-model-list">
+            <li>Local authorities</li>
+            <li>Schools and vocational centres</li>
+            <li>Community groups</li>
+            <li>Employers</li>
+            <li>Health and wellbeing organisations</li>
+          </ul>
+        </div>
+
+        <div class="sv-model-card">
+          <p class="sv-model-num">02</p>
+          <h3 class="sv-model-heading">Community Needs Assessment</h3>
+          <ul class="sv-model-list">
+            <li>Low skills and employability</li>
+            <li>Mental health inequalities</li>
+            <li>Social isolation</li>
+            <li>Youth disengagement</li>
+            <li>Barriers to employment and progression</li>
+          </ul>
+        </div>
+
+        <div class="sv-model-card">
+          <p class="sv-model-num">03</p>
+          <h3 class="sv-model-heading">Theory of Change Planning</h3>
+          <ul class="sv-model-list">
+            <li>Inputs: what we invest</li>
+            <li>Activities: what we deliver</li>
+            <li>Outputs: what is created</li>
+            <li>Outcomes: what changes for people</li>
+            <li>Impact: what lasts</li>
+          </ul>
+        </div>
+
+        <div class="sv-model-card">
+          <p class="sv-model-num">04</p>
+          <h3 class="sv-model-heading">Tracking, Measurement &amp; Evaluation</h3>
+          <ul class="sv-model-list">
+            <li>Clear KPIs</li>
+            <li>Attendance and feedback records</li>
+            <li>Skills and confidence assessments</li>
+            <li>Progression tracking</li>
+            <li>Evidence-based reporting</li>
+          </ul>
+        </div>
+
+        <div class="sv-model-card">
+          <p class="sv-model-num">05</p>
+          <h3 class="sv-model-heading">Delivery &amp; Monthly Monitoring</h3>
+          <ul class="sv-model-list">
+            <li>Skills development</li>
+            <li>Employability pathways</li>
+            <li>Mental health support</li>
+            <li>Training and mentoring</li>
+            <li>Community inclusion activities</li>
+          </ul>
+        </div>
+
+        <div class="sv-model-card">
+          <p class="sv-model-num">06</p>
+          <h3 class="sv-model-heading">Transparent Reporting</h3>
+          <ul class="sv-model-list">
+            <li>Progress dashboards</li>
+            <li>Photos and case studies</li>
+            <li>Impact stories</li>
+            <li>Verified data</li>
+            <li>Outcomes vs. targets</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OUR VALUES ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div style="max-width:560px; margin-bottom:40px;">
+        <span class="eyebrow">What We Believe</span>
+        <h2 class="section-heading">Our <em class="em-brand">Values</em></h2>
+      </div>
+      <div class="sv-values-grid">
+        <div class="sv-value-card">
+          <p class="sv-value-text">"If it doesn't change someone's life, it isn't meaningful social value."</p>
+        </div>
+        <div class="sv-value-card">
+          <p class="sv-value-text">"Numbers matter, but people matter more."</p>
+        </div>
+        <div class="sv-value-card">
+          <p class="sv-value-text">"Impact must be long-term, not short-term."</p>
+        </div>
+        <div class="sv-value-card">
+          <p class="sv-value-text">"Every person deserves the chance to progress, grow and thrive."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ AREAS OF SOCIAL IMPACT ═══ -->
+  <section id="impact" class="sv-impact-bg sec-wwd">
+    <div class="pill-wrap">
+      <div class="dark-pill">
+        <span class="eyebrow eyebrow-tight">Where We Make a Difference</span>
+        <p class="dark-pill-p">Six interconnected areas of social impact, each designed to create real, lasting change for communities and individuals across Lancashire and beyond.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="sv-six-col">
+
+        <div class="sv-impact-card">
+          <i class="fa-solid fa-graduation-cap sv-impact-icon"></i>
+          <h3 class="sv-impact-heading">Skills, Training &amp; Employability</h3>
+          <p class="sv-impact-p">Upskilling communities through tailored programmes, certifications, mentoring and clear career pathways.</p>
+        </div>
+
+        <div class="sv-impact-card">
+          <i class="fa-solid fa-book-open sv-impact-icon"></i>
+          <h3 class="sv-impact-heading">Education &amp; Youth Development</h3>
+          <p class="sv-impact-p">Helping young people build confidence, aspiration, resilience, and employability for a purposeful future.</p>
+        </div>
+
+        <div class="sv-impact-card">
+          <i class="fa-solid fa-heart-pulse sv-impact-icon"></i>
+          <h3 class="sv-impact-heading">Mental Health &amp; Wellbeing</h3>
+          <p class="sv-impact-p">Providing support that strengthens emotional resilience and overall wellbeing across all communities.</p>
+        </div>
+
+        <div class="sv-impact-card">
+          <i class="fa-solid fa-people-group sv-impact-icon"></i>
+          <h3 class="sv-impact-heading">Community Cohesion</h3>
+          <p class="sv-impact-p">Delivering initiatives that bring people together, reduce inequality and strengthen local networks.</p>
+        </div>
+
+        <div class="sv-impact-card">
+          <i class="fa-solid fa-chart-line sv-impact-icon"></i>
+          <h3 class="sv-impact-heading">Economic Uplift</h3>
+          <p class="sv-impact-p">Creating local opportunities and supporting individuals into meaningful, sustainable employment.</p>
+        </div>
+
+        <div class="sv-impact-card">
+          <i class="fa-solid fa-leaf sv-impact-icon"></i>
+          <h3 class="sv-impact-heading">Sustainability &amp; Future Skills</h3>
+          <p class="sv-impact-p">Preparing communities for the future of work through green skills, digital skills and lifelong learning.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHO WE WORK WITH ═══ -->
+  <section class="section sec-center">
+    <div class="wrap">
+      <span class="eyebrow">Our Partners</span>
+      <h2 class="section-heading">Who We Work With</h2>
+      <p class="sec-p" style="max-width:620px; margin:0 auto 8px;">We partner with organisations that share our commitment to people and place, working together to create communities where everyone can succeed.</p>
+      <div class="sv-partners-row">
+        <span class="sv-partner-chip">Local Authorities</span>
+        <span class="sv-partner-chip">Businesses &amp; Employers</span>
+        <span class="sv-partner-chip">Schools &amp; Colleges</span>
+        <span class="sv-partner-chip">Community Organisations</span>
+        <span class="sv-partner-chip">Project &amp; Programme Leads</span>
+        <span class="sv-partner-chip">Property Developers</span>
+        <span class="sv-partner-chip">Construction Companies</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section sec-center" style="background:#f9f9f9;">
+    <div class="cta-inner">
+      <span class="eyebrow">Work With Us</span>
+      <h2 class="cta-h2">Ready to create <em class="em-brand">lasting impact?</em></h2>
+      <p class="cta-p">Speak to our team about how Vital Synergy can support your social value commitments, community programmes, or partnership opportunities. We would love to hear from you.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="tel:01282773338" class="btn-green">Call 01282 773 338</a>
+        <a href="mailto:sales@vitalsynergy.co.uk" class="btn-outline" style="color:#1a1a1a; border-color:rgba(0,0,0,0.25);">sales@vitalsynergy.co.uk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="stpeters.html" class="footer-link">Case Studies</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">What We Do</h4>
+          <a href="index.html#services" class="footer-link">Services</a>
+          <a href="index.html#sectors" class="footer-link">Sectors</a>
+        </div>
+        <div class="footer-col-support">
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847<br>Gas Safe No 593601</p>
+          <div class="socials-row">
+            <a href="#" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -504,3 +504,21 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 .soc-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.08); }
+
+/* ─────────────────────────────────────────
+   BACK TO TOP
+───────────────────────────────────────── */
+.back-to-top {
+  position: fixed; bottom: 28px; right: 28px; z-index: 100;
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--brand); color: #fff;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.22s, transform 0.22s, background 0.15s;
+  pointer-events: none;
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.back-to-top:hover { background: #c9551a; }
+.back-to-top:active { transform: translateY(2px); }
