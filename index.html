@@ -198,6 +198,75 @@
     </div>
   </section>
 
+  <!-- ═══ CONTACT FORM ═══ -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+
+      <!-- Left: info -->
+      <div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="contact-info-heading">Let's talk about your <em class="em-brand">next project</em></h2>
+        <p class="contact-info-p">Whether you have a project in mind, need a quote, or simply want to find out more about what we do, our team is ready to help.</p>
+        <div class="contact-detail-row">
+          <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-detail-text"><a href="tel:01282773338">01282 773 338</a></div>
+        </div>
+        <div class="contact-detail-row">
+          <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-detail-text"><a href="mailto:sales@vitalsynergy.co.uk">sales@vitalsynergy.co.uk</a></div>
+        </div>
+        <div class="contact-detail-row">
+          <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-detail-text">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN</div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form-card">
+        <form method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID">
+          <input type="hidden" name="_subject" value="New enquiry from Vital Synergy website">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Full Name *</label>
+              <input class="form-input" type="text" id="cf-name" name="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email Address *</label>
+              <input class="form-input" type="email" id="cf-email" name="email" placeholder="john@company.co.uk" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-phone">Phone Number</label>
+              <input class="form-input" type="tel" id="cf-phone" name="phone" placeholder="01282 000 000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-company">Company</label>
+              <input class="form-input" type="text" id="cf-company" name="company" placeholder="Your organisation">
+            </div>
+          </div>
+          <div class="form-group form-group-full">
+            <label class="form-label" for="cf-subject">How Can We Help? *</label>
+            <select class="form-select" id="cf-subject" name="subject" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Get a Quote">Get a Quote</option>
+              <option value="General Enquiry">General Enquiry</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Partnership">Partnership Opportunity</option>
+              <option value="Careers">Careers</option>
+            </select>
+          </div>
+          <div class="form-group form-group-full">
+            <label class="form-label" for="cf-message">Message *</label>
+            <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell us about your project or enquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn-green form-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
     <div class="wrap footer-inner">
