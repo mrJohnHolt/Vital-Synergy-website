@@ -49,6 +49,10 @@ body.page-fade-out { opacity: 0; transition: opacity 0.2s ease; }
   .accred-bar { gap: 32px; }
   .accred-items { gap: 36px; }
 }
+@media (min-width: 800px) {
+  .footer-grid { grid-template-columns: 1fr 1fr 1.6fr; gap: 40px; }
+  .footer-col-logo { grid-column: 1 / -1; }
+}
 @media (min-width: 1024px) {
   .section { padding: 96px 24px; }
   .two-col { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
