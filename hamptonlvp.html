@@ -17,11 +17,13 @@
   <style>
     /* ── Case Study: Hero ── */
     .cs-hero {
+      min-height: 50vh;
       background-image:
         linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
         url('Assets/hamptonhotel.jpg');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
     }
@@ -32,6 +34,17 @@
       color: var(--brand);
       font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
       padding: 6px 14px; border-radius: 6px; margin-top: 16px;
+    }
+
+    @media (max-width: 767px) {
+      .cs-hero {
+        background-size: 250%;
+        background-position: 40% center;
+      }
+      .cs-scope-section {
+        background-size: 250%;
+        background-position: 40% center;
+      }
     }
 
     /* ── Case Study: Breadcrumb ── */
@@ -259,7 +272,7 @@
   </nav>
 
   <!-- ═══ 2. HERO ═══ -->
-  <section class="hero-section hero-tall cs-hero">
+  <section class="hero-section cs-hero">
     <div class="hero-body">
       <div class="wrap">
         <div class="hero-text-md">
