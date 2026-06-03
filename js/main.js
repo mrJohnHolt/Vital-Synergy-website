@@ -1,3 +1,14 @@
+// Back to top
+const btt = document.createElement('button');
+btt.className = 'back-to-top';
+btt.setAttribute('aria-label', 'Back to top');
+btt.innerHTML = '<i class="fa-solid fa-angles-up"></i>';
+document.body.appendChild(btt);
+window.addEventListener('scroll', () => {
+  btt.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 const modal = document.getElementById('nav-modal');
 const openBtn = document.getElementById('nav-open');
 const closeBtn = document.getElementById('nav-close');
