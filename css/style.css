@@ -36,8 +36,10 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 32px;
 }
+.footer-col-logo    { grid-column: 1 / -1; }
+.footer-col-support { grid-column: 1 / -1; }
 
 @media (min-width: 640px) {
   .four-col { grid-template-columns: 1fr 1fr; }
@@ -50,6 +52,7 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
   .four-col { grid-template-columns: repeat(4, 1fr); }
   .stat-grid { grid-template-columns: repeat(4, 1fr); gap: 48px; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1.4fr 1.6fr; gap: 48px; }
+  .footer-col-logo, .footer-col-support { grid-column: auto; }
 }
 
 /* Order helpers (used in journey two-col on mobile) */
@@ -436,7 +439,7 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
    FOOTER
 ───────────────────────────────────────── */
 .site-footer   { background: var(--dark); }
-.footer-inner  { padding: 64px 24px 48px; }
+.footer-inner  { padding: 40px 24px 32px; }
 .footer-logo   { display: flex; align-items: center; text-decoration: none; margin-bottom: 20px; }
 .badges-row    { display: flex; gap: 8px; margin-top: 16px; }
 .badge         { background: rgba(255,255,255,0.1); border-radius: 3px; padding: 4px 10px; font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 600; }
