@@ -1,7 +1,12 @@
 /* === Reset === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: #fff; }
+body {
+  font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: #fff;
+  animation: page-fade-in 0.25s ease both;
+}
+@keyframes page-fade-in { from { opacity: 0; } to { opacity: 1; } }
+body.page-fade-out { opacity: 0; transition: opacity 0.2s ease; }
 
 /* === Tokens === */
 :root {
@@ -87,6 +92,12 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: 
 
 /* Dropdown */
 .header-nav-item { position: relative; display: flex; align-items: center; }
+.header-nav-item::after {
+  content: ''; position: absolute;
+  top: 100%; left: 0; right: 0; height: 12px;
+  display: none;
+}
+.header-nav-item:hover::after { display: block; }
 .header-nav-dropdown {
   display: none;
   position: absolute;

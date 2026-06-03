@@ -84,8 +84,36 @@
     .jv-detail-p { color: #555; font-size: 14px; line-height: 1.78; margin-bottom: 14px; }
 
     /* ── Vacancy: Apply CTA ── */
+    .jv-list {
+      list-style: none; padding: 0; margin: 0 0 8px;
+      display: flex; flex-direction: column; gap: 9px;
+    }
+    .jv-list li {
+      padding-left: 22px; position: relative;
+      color: #555; font-size: 14px; line-height: 1.65;
+    }
+    .jv-list li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--brand);
+    }
+    .jv-list-two-col {
+      display: grid; grid-template-columns: 1fr; gap: 9px; margin-bottom: 8px;
+    }
+    @media (min-width: 640px) { .jv-list-two-col { grid-template-columns: 1fr 1fr; } }
+    .jv-list-two-col li {
+      padding-left: 22px; position: relative;
+      color: #555; font-size: 14px; line-height: 1.65; list-style: none;
+    }
+    .jv-list-two-col li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--brand);
+    }
     .jv-apply-section { background: #f9f9f9; }
-    .jv-apply-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+    .jv-apply-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .jv-apply-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .jv-apply-contact a { color: var(--brand); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.15s; }
+    .jv-apply-contact a:hover { opacity: 0.75; }
+    .jv-apply-contact span { color: #888; font-size: 13px; }
   </style>
 </head>
 
@@ -223,19 +251,86 @@
       <div class="jv-detail">
         <span class="eyebrow">What You Will Do</span>
         <h3 class="section-heading">Role Overview</h3>
-        <p class="jv-detail-p">This is a full-time, permanent field-based leadership role. The Commercial Site Manager is responsible for overseeing all on-site activities, ensuring projects are delivered safely, efficiently, and in line with programme, specification, and commercial targets. You will manage the full lifecycle of works on site, from mobilisation through to completion, working</p>
+        <p class="jv-detail-p">This is a full-time, permanent field-based leadership role. The Commercial Site Manager is responsible for overseeing all on-site activities, ensuring projects are delivered safely, efficiently, and in line with programme, specification, and commercial targets. You will manage the full lifecycle of works on site, from mobilisation through to completion, working closely with Project Managers, subcontractors, and clients. You'll represent Vital Synergy on site driving performance, ensuring compliance, and leading teams to deliver outstanding project outcomes.</p>
+
+        <h4 class="jv-detail-h4">Key Responsibilities</h4>
+        <ul class="jv-list">
+          <li>Take full responsibility for site management, from initial setup through to final handover.</li>
+          <li>Lead and coordinate site teams, subcontractors, and suppliers to ensure smooth delivery of works.</li>
+          <li>Monitor programme performance and ensure projects are delivered on time and within budget.</li>
+          <li>Produce and manage daily and weekly progress reports and site documentation.</li>
+          <li>Ensure strict compliance with Health &amp; Safety regulations, RAMS, and site procedures.</li>
+          <li>Conduct site inspections, audits, and toolbox talks to maintain safety standards.</li>
+          <li>Oversee quality control and ensure all works meet specifications and regulatory requirements.</li>
+          <li>Manage site logistics, materials, and coordination of deliveries.</li>
+          <li>Liaise with clients, project managers, and internal teams to ensure clear communication.</li>
+          <li>Identify and resolve site issues, risks, and delays proactively.</li>
+          <li>Take accountability for commercial performance, including labour control and overall project success.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 7. APPLY CTA ═══ -->
+  <!-- ═══ 7. EXPERIENCE & QUALIFICATIONS ═══ -->
+  <section class="section" style="background:#f9f9f9; padding-top:0">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">What We Are Looking For</span>
+        <h3 class="section-heading">Experience &amp; Qualifications</h3>
+        <ul class="jv-list">
+          <li>Proven experience managing commercial construction or M&amp;E projects.</li>
+          <li>Strong leadership experience managing site teams and subcontractors.</li>
+          <li>SMSTS qualification (essential).</li>
+          <li>Valid CSCS card.</li>
+          <li>First Aid at Work certification (desirable).</li>
+          <li>Strong understanding of CDM regulations and Health &amp; Safety compliance.</li>
+          <li>Experience delivering projects across sectors such as education, commercial, and public sector environments.</li>
+          <li>Excellent reporting, planning, and organisational skills.</li>
+          <li>Strong communication and problem-solving ability.</li>
+          <li>Full UK driving licence.</li>
+          <li>Enhanced DBS clearance (or willingness to obtain).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 8. WHAT WE OFFER ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">The Package</span>
+        <h3 class="section-heading">What We Offer</h3>
+        <ul class="jv-list-two-col">
+          <li>Competitive salary (dependent on experience)</li>
+          <li>Company van and fuel card</li>
+          <li>Company pension scheme</li>
+          <li>On-site parking</li>
+          <li>Uniform and PPE</li>
+          <li>Mobile device / laptop</li>
+          <li>Employee discounts</li>
+          <li>Additional holiday days with length of service</li>
+          <li>Ongoing training and professional development</li>
+          <li>Clear career progression pathways</li>
+          <li>Opportunity to work on large-scale commercial and low-carbon projects</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 9. APPLY CTA ═══ -->
   <section class="section jv-apply-section">
     <div class="wrap">
       <div class="jv-apply-inner">
-        <span class="eyebrow">Ready to Apply?</span>
+        <span class="eyebrow">Ready to Take the Next Step?</span>
         <h2 class="cta-h2">Apply for this <em class="em-brand">position</em></h2>
-        <p class="cta-p">Send your CV and a covering letter to our team. We look forward to hearing from you.</p>
-        <a href="mailto:sales@vitalsynergy.co.uk?subject=Application%3A+Commercial+Site+Manager" class="btn-green">Apply Now</a>
+        <p class="cta-p">If you're passionate about delivering high-quality projects, leading teams, and making a real impact across commercial environments, we want to hear from you.</p>
+        <a href="mailto:beth.mcblain@vitalsynergy.co.uk?subject=Application%3A+Commercial+Site+Manager" class="btn-green">Apply Now</a>
+        <div class="jv-apply-contact">
+          <span>Email your CV and cover letter to</span>
+          <a href="mailto:beth.mcblain@vitalsynergy.co.uk">beth.mcblain@vitalsynergy.co.uk</a>
+          <span>For any initial questions, feel free to call us on</span>
+          <a href="tel:01282773338">01282 773338</a>
+        </div>
       </div>
     </div>
   </section>

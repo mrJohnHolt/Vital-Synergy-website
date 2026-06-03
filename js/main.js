@@ -1,3 +1,14 @@
+// Page fade transitions
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[href]');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+  e.preventDefault();
+  document.body.classList.add('page-fade-out');
+  setTimeout(() => { window.location.href = href; }, 200);
+});
+
 // Back to top
 const btt = document.createElement('button');
 btt.className = 'back-to-top';
