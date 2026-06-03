@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vital Synergy | Renewable Energy Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#5CE000',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a1a; background: #fff; }
+
+    /* ── Hero ── */
+    .hero-section {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center 55%;
+    }
+
+    /* ── What We Do ── */
+    .wwd-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.6) 100%),
+        url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* ── Testimonial ── */
+    .testi-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(6,16,6,0.88) 0%, rgba(6,16,6,0.92) 100%),
+        url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* ── Buttons ── */
+    .btn-green {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #5CE000; color: #0d0d0d;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 11px 22px; border-radius: 3px; text-decoration: none;
+      transition: background 0.18s, transform 0.14s;
+    }
+    .btn-green:hover { background: #50ca00; transform: translateY(-1px); }
+    .btn-green:active { transform: translateY(0); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: transparent; color: #fff;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 3px; border: 1.5px solid rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: border-color 0.18s, background 0.18s;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+
+    /* ── Stacked images ── */
+    .img-stack {
+      position: relative;
+      height: 460px;
+    }
+    .img-stack .img-back {
+      position: absolute; right: 0; top: 0;
+      width: 80%; height: 360px;
+      object-fit: cover; border-radius: 4px;
+    }
+    .img-stack .img-front {
+      position: absolute; left: 0; bottom: 0;
+      width: 54%; height: 230px;
+      object-fit: cover; border-radius: 4px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+    }
+    .img-stack .wm {
+      position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+      width: 180px; height: 180px; opacity: 0.07; pointer-events: none;
+    }
+
+    /* ── Trusted logos ── */
+    .trust-item {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── WW D cards ── */
+    .wwd-card {
+      background: #fff; border-radius: 8px; padding: 24px;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+    }
+    .wwd-icon {
+      width: 34px; height: 34px; border-radius: 5px; background: #5CE000;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+
+    /* ── Footer ── */
+    .footer-link {
+      color: rgba(255,255,255,0.45); font-size: 13px; text-decoration: none;
+      display: block; margin-bottom: 8px;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: #5CE000; }
+
+    /* ── Decorative text ── */
+    .deco-text {
+      font-size: clamp(1.6rem, 4vw, 3.2rem);
+      font-weight: 800; letter-spacing: -0.02em;
+      color: #efefef; white-space: nowrap; overflow: hidden;
+      text-overflow: ellipsis; pointer-events: none; user-select: none;
+    }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #5CE000;
+    }
+
+    /* ── Social icon ── */
+    .soc-btn {
+      width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.45); text-decoration: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .soc-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.08); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;background:#0d0d0d;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;">
+      <!-- Logo -->
+      <a href="index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 13h8l-3 7 10-11h-8l2-7z" fill="#5CE000"/></svg>
+        <span style="color:#5CE000;font-weight:700;font-size:16px;letter-spacing:-0.02em;">vitalsynergy</span>
+      </a>
+      <!-- Nav -->
+      <nav style="display:flex;align-items:center;gap:32px;">
+        <a href="index.html" style="color:#fff;font-size:13px;font-weight:500;text-decoration:none;transition:color .15s;" onmouseover="this.style.color='#5CE000'" onmouseout="this.style.color='#fff'">Home</a>
+        <a href="about.html" style="color:#fff;font-size:13px;font-weight:500;text-decoration:none;" onmouseover="this.style.color='#5CE000'" onmouseout="this.style.color='#fff'">About</a>
+        <a href="#services" style="color:#fff;font-size:13px;font-weight:500;text-decoration:none;" onmouseover="this.style.color='#5CE000'" onmouseout="this.style.color='#fff'">Services</a>
+        <a href="#sectors" style="color:#fff;font-size:13px;font-weight:500;text-decoration:none;" onmouseover="this.style.color='#5CE000'" onmouseout="this.style.color='#fff'">Sectors</a>
+        <a href="contact.html" class="btn-green" style="padding:9px 18px;font-size:11px;">Get In Touch →</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section class="hero-section" style="min-height:100vh;padding-top:60px;display:flex;flex-direction:column;">
+    <!-- Main content -->
+    <div style="flex:1;display:flex;align-items:center;padding:60px 24px 40px;">
+      <div style="max-width:1200px;margin:0 auto;width:100%;">
+        <div style="max-width:640px;">
+          <h1 style="color:#fff;font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:800;line-height:1.09;letter-spacing:-0.03em;margin-bottom:18px;">
+            Build a brighter<br>energy future
+          </h1>
+          <p style="color:rgba(255,255,255,0.78);font-size:17px;line-height:1.6;margin-bottom:32px;max-width:460px;">
+            With intelligence, insights &amp; strategic energy partnership.
+          </p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+            <a href="contact.html" class="btn-green">Get In Touch →</a>
+            <a href="#services" class="btn-outline">Explore Our Services →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Trusted by bar -->
+    <div style="border-top:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.38);backdrop-filter:blur(4px);">
+      <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);white-space:nowrap;">Trusted by</span>
+        <div style="display:flex;align-items:center;gap:36px;flex-wrap:wrap;">
+          <span class="trust-item">Siemens</span>
+          <span class="trust-item">EDF Energy</span>
+          <span class="trust-item">Toyota</span>
+          <span class="trust-item">Network Rail</span>
+          <span class="trust-item">NHS</span>
+          <span class="trust-item">Chard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+  <section style="padding:96px 24px;background:#fff;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+      <!-- Text -->
+      <div>
+        <h2 style="font-size:2.4rem;font-weight:800;line-height:1.12;letter-spacing:-0.03em;margin-bottom:24px;">
+          UK <em style="color:#5CE000;font-style:italic;font-weight:700;">Building Systems &amp; Energy</em> Consultants
+        </h2>
+        <p style="color:#4a4a4a;font-size:14.5px;line-height:1.78;margin-bottom:16px;">
+          As leading Building Systems Consultants, we offer independent, expert advice to organisations across the UK to manage their M&amp;E and energy infrastructure cost-effectively and efficiently.
+        </p>
+        <p style="color:#666;font-size:14.5px;line-height:1.78;margin-bottom:32px;">
+          As energy prices increase, we're committed to achieving the very best carbon and financial savings for our clients. All our analysis, monitoring and procurement services enable clients to minimise energy consumption and use energy intelligently.
+        </p>
+        <a href="#services" class="btn-green">Learn More →</a>
+      </div>
+      <!-- Stacked images -->
+      <div class="img-stack">
+        <img class="img-back"
+             src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=700&q=80"
+             alt="Engineers on solar panels">
+        <img class="img-front"
+             src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=480&q=80"
+             alt="Wind turbines at sunset">
+        <!-- Watermark -->
+        <svg class="wm" viewBox="0 0 100 100" fill="none">
+          <path d="M60 5L20 55h35l-15 40 50-55h-35l5-35z" fill="#5CE000"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ WHAT WE DO ═══════════════════════════ -->
+  <section id="services" class="wwd-bg" style="padding:56px 24px 72px;">
+    <!-- Dark pill banner -->
+    <div style="display:flex;justify-content:center;margin-bottom:48px;">
+      <div style="background:#0d0d0d;border-radius:999px;padding:20px 48px;max-width:680px;width:100%;text-align:center;">
+        <p class="eyebrow" style="margin-bottom:8px;">What We Do</p>
+        <p style="color:rgba(255,255,255,0.6);font-size:13.5px;line-height:1.65;">
+          At Vital Synergy, we support organisations at every stage of their energy journey.
+        </p>
+      </div>
+    </div>
+    <!-- 4 cards -->
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <!-- Card 1 -->
+      <div class="wwd-card">
+        <div class="wwd-icon">
+          <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 13h8l-3 7 10-11h-8l2-7z" fill="#0d0d0d"/></svg>
+        </div>
+        <h3 style="font-size:13.5px;font-weight:700;margin-bottom:10px;line-height:1.3;">Strategy &amp; Feasibility</h3>
+        <p style="color:#555;font-size:12.5px;line-height:1.7;">
+          We assess project viability, conduct audits and secure funding,identifying carbon-saving opportunities, renewable potential and financial pathways to support decarbonisation, renewable generation and long-term energy goals.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="wwd-card">
+        <div class="wwd-icon">
+          <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 13h8l-3 7 10-11h-8l2-7z" fill="#0d0d0d"/></svg>
+        </div>
+        <h3 style="font-size:13.5px;font-weight:700;margin-bottom:10px;line-height:1.3;">Design, Planning &amp; Delivery</h3>
+        <p style="color:#555;font-size:12.5px;line-height:1.7;">
+          We design and deliver compliant, buildable energy systems,from concept to planning, CDM compliance, and project management,ensuring safe, efficient and timely implementation aligned with your strategy.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="wwd-card">
+        <div class="wwd-icon">
+          <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 13h8l-3 7 10-11h-8l2-7z" fill="#0d0d0d"/></svg>
+        </div>
+        <h3 style="font-size:13.5px;font-weight:700;margin-bottom:10px;line-height:1.3;">Utilities, Connections &amp; Procurement</h3>
+        <p style="color:#555;font-size:12.5px;line-height:1.7;">
+          We manage grid and utility connections, de-risk critical interfaces, and support energy procurement,securing contracts that balance cost, flexibility, sustainability and long-term energy resilience.
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="wwd-card">
+        <div class="wwd-icon">
+          <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 13h8l-3 7 10-11h-8l2-7z" fill="#0d0d0d"/></svg>
+        </div>
+        <h3 style="font-size:13.5px;font-weight:700;margin-bottom:10px;line-height:1.3;">Advisory &amp; Ongoing Support</h3>
+        <p style="color:#555;font-size:12.5px;line-height:1.7;">
+          We provide ESG and energy management advisory, helping track emissions, meet compliance, optimise consumption and align projects with investor, regulatory and sustainability goals for ongoing performance and carbon reduction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ TESTIMONIAL HEADING ═══════════════════════════ -->
+  <section style="padding:72px 24px 56px;background:#fff;text-align:center;">
+    <h2 style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;">
+      Hear from <em style="color:#5CE000;font-style:italic;">our customers</em>
+    </h2>
+  </section>
+
+  <!-- ═══════════════════════════ TESTIMONIAL QUOTE ═══════════════════════════ -->
+  <section class="testi-bg" style="padding:72px 24px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="max-width:760px;margin:0 auto;background:#fff;border-radius:12px;padding:48px 52px;box-shadow:0 24px 64px rgba(0,0,0,0.35);">
+        <div style="color:#5CE000;font-size:56px;line-height:1;font-family:Georgia,serif;font-weight:700;margin-bottom:8px;">"</div>
+        <p style="color:#1a1a1a;font-size:17px;line-height:1.75;font-style:italic;margin-bottom:24px;">
+          "To all those working toward Net Zero in education and beyond,it can be done. We've just shown how. Special mention to the team at Vital Synergy for helping us."
+        </p>
+        <cite style="color:#5CE000;font-size:13px;font-weight:600;font-style:normal;">A. Smith, Governor</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SECTORS ═══════════════════════════ -->
+  <section id="sectors" style="padding:96px 24px 0;background:#fff;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <!-- Stacked images left -->
+      <div class="img-stack">
+        <img class="img-back"
+             src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=700&q=80"
+             alt="Solar panels in a field">
+        <img class="img-front"
+             src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=480&q=80"
+             alt="Aerial view of solar farm">
+      </div>
+      <!-- Text right -->
+      <div>
+        <h2 style="font-size:2.4rem;font-weight:800;line-height:1.12;letter-spacing:-0.03em;margin-bottom:24px;">
+          <em style="color:#5CE000;font-style:italic;">Sectors</em> we serve
+        </h2>
+        <p style="color:#4a4a4a;font-size:14.5px;line-height:1.78;margin-bottom:16px;">
+          At Vital Synergy, we work across sectors where energy matters most,delivering clarity, control and confidence to projects that power progress.
+        </p>
+        <p style="color:#666;font-size:14.5px;line-height:1.78;margin-bottom:32px;">
+          From new-build developments to operational estates, we support organisations in navigating the evolving energy landscape with expert consultancy and strategic advisory.
+        </p>
+        <a href="#" class="btn-green">Learn More →</a>
+      </div>
+    </div>
+    <!-- Decorative text -->
+    <div style="margin-top:48px;padding-bottom:0;overflow:hidden;">
+      <p class="deco-text" style="text-align:right;padding-right:24px;">
+        Specialists in building systems &amp; energy management consultants
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer style="background:#0d0d0d;margin-top:0;">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.4fr 1fr 1.4fr 1.6fr;gap:48px;">
+      <!-- Brand col -->
+      <div>
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;margin-bottom:20px;">
+          <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M13 2L4 13h8l-3 7 10-11h-8l2-7z" fill="#5CE000"/></svg>
+          <span style="color:#5CE000;font-weight:700;font-size:15px;letter-spacing:-0.02em;">vitalsynergy</span>
+        </a>
+        <div style="display:flex;gap:8px;margin-top:16px;">
+          <div style="background:rgba(255,255,255,0.1);border-radius:3px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.45);font-weight:600;">CIBSE</div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:3px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.45);font-weight:600;">ESOS</div>
+          <div style="background:rgba(255,255,255,0.1);border-radius:3px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.45);font-weight:600;">ISO</div>
+        </div>
+      </div>
+      <!-- What We Do -->
+      <div>
+        <h4 style="color:#fff;font-size:13px;font-weight:600;margin-bottom:16px;">What We Do</h4>
+        <a href="#services" class="footer-link">Services</a>
+        <a href="#sectors" class="footer-link">Sectors</a>
+      </div>
+      <!-- Information -->
+      <div>
+        <h4 style="color:#fff;font-size:13px;font-weight:600;margin-bottom:16px;">Information</h4>
+        <a href="about.html" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Case Studies</a>
+        <a href="#" class="footer-link">Blog</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <!-- Support -->
+      <div>
+        <h4 style="color:#fff;font-size:13px;font-weight:600;margin-bottom:16px;">Support</h4>
+        <p style="color:rgba(255,255,255,0.42);font-size:13px;line-height:1.7;margin-bottom:10px;">
+          Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire
+        </p>
+        <p style="color:rgba(255,255,255,0.42);font-size:13px;margin-bottom:6px;">01253 206 570</p>
+        <p style="color:rgba(255,255,255,0.42);font-size:13px;">hello@vitalsynergy.energy</p>
+        <!-- Socials -->
+        <div style="display:flex;gap:8px;margin-top:20px;">
+          <a href="#" class="soc-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="soc-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="soc-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div style="border-top:1px solid rgba(255,255,255,0.08);">
+      <div style="max-width:1200px;margin:0 auto;padding:16px 24px;">
+        <p style="color:rgba(255,255,255,0.25);font-size:12px;">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
