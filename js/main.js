@@ -1,14 +1,3 @@
-// Page fade transitions
-document.addEventListener('click', e => {
-  const link = e.target.closest('a[href]');
-  if (!link) return;
-  const href = link.getAttribute('href');
-  if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-  e.preventDefault();
-  document.body.classList.add('page-fade-out');
-  setTimeout(() => { window.location.href = href; }, 200);
-});
-
 // Back to top
 const btt = document.createElement('button');
 btt.className = 'back-to-top';
@@ -33,14 +22,43 @@ const modal = document.getElementById('nav-modal');
 const openBtn = document.getElementById('nav-open');
 const closeBtn = document.getElementById('nav-close');
 
+let trapHandler = null;
+
+function getModalFocusable() {
+  return Array.from(modal.querySelectorAll(
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  ));
+}
+
 function openNav() {
   modal.classList.add('open');
   openBtn.setAttribute('aria-expanded', 'true');
+
+  const focusable = getModalFocusable();
+  if (focusable.length) focusable[0].focus();
+
+  trapHandler = function (e) {
+    if (e.key !== 'Tab') return;
+    const focusable = getModalFocusable();
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  };
+  modal.addEventListener('keydown', trapHandler);
 }
 
 function closeNav() {
   modal.classList.remove('open');
   openBtn.setAttribute('aria-expanded', 'false');
+  if (trapHandler) {
+    modal.removeEventListener('keydown', trapHandler);
+    trapHandler = null;
+  }
+  openBtn.focus();
 }
 
 openBtn.addEventListener('click', openNav);
