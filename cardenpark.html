@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carden Park Hotel | Case Study | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ── Case Study: Hero ── */
+    .cs-hero {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.28) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/cardenpark.png');
+      background-size: cover;
+      background-position: center 40%;
+      display: flex;
+      flex-direction: column;
+    }
+    .cs-hero-sub {
+      display: inline-block;
+      background: rgba(235,104,35,0.12);
+      border: 1px solid rgba(235,104,35,0.28);
+      color: var(--brand);
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 14px; border-radius: 6px; margin-top: 16px;
+    }
+
+    /* ── Case Study: Breadcrumb ── */
+    .cs-breadcrumb {
+      margin-top: 60px;
+      background: #f6f6f6;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 11px 0;
+    }
+    .cs-breadcrumb-inner { display: flex; align-items: center; flex-wrap: wrap; }
+    .cs-bc-link {
+      color: #666; font-size: 12px; font-weight: 500;
+      text-decoration: none; transition: color 0.15s;
+    }
+    .cs-bc-link:hover { color: var(--brand); }
+    .cs-bc-sep { color: #bbb; font-size: 12px; margin: 0 8px; }
+    .cs-bc-current { color: #aaa; font-size: 12px; }
+
+    /* ── Case Study: Meta Bar ── */
+    .cs-meta-bar {
+      background: #fff;
+      border-bottom: 2px solid #f0f0f0;
+      padding: 16px 0;
+    }
+    .cs-meta-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .cs-meta-left { display: flex; align-items: center; gap: 14px; }
+    .cs-meta-btn {
+      background: var(--brand); color: #fff;
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 7px; white-space: nowrap;
+    }
+    .cs-meta-value { color: #1a1a1a; font-size: 15px; font-weight: 600; }
+    .cs-meta-date { color: #666; font-size: 13px; font-weight: 500; }
+
+    /* ── Case Study: Executive Summary ── */
+    .cs-exec-summary {
+      max-width: 820px;
+      font-size: 16px; line-height: 1.78; color: #333;
+      border-left: 3px solid var(--brand);
+      padding-left: 20px; margin-top: 14px;
+    }
+
+    /* ── Case Study: Scope Grid (2×2) ── */
+    .cs-scope-section {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/cardenpark.png');
+      background-size: cover;
+      background-position: center 40%;
+      background-attachment: fixed;
+    }
+    @media (max-width: 1023px) {
+      .cs-scope-section { background-attachment: scroll; }
+    }
+    .cs-scope-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+    }
+    @media (min-width: 600px) {
+      .cs-scope-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .cs-scope-block {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
+      padding: 28px 26px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    .cs-scope-heading {
+      display: block; font-size: 13.5px; font-weight: 700; color: #fff;
+      border-bottom: 2px solid var(--brand);
+      padding-bottom: 9px; margin-bottom: 14px;
+    }
+    .cs-scope-p { color: rgba(255,255,255,0.72); font-size: 13.5px; line-height: 1.75; }
+
+    /* ── Case Study: Project Detail ── */
+    .cs-detail { max-width: 760px; }
+    .cs-detail-h4 {
+      font-size: 14.5px; font-weight: 700; color: #1a1a1a;
+      margin: 32px 0 10px;
+    }
+    .cs-detail-p { color: #555; font-size: 14px; line-height: 1.78; margin-bottom: 14px; }
+
+    /* ── Key Benefits List ── */
+    .cs-benefits-list {
+      list-style: none; padding: 0; margin: 0 0 14px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .cs-benefits-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; line-height: 1.65; color: #555;
+    }
+    .cs-benefits-list li::before {
+      content: '';
+      display: block; flex-shrink: 0;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--brand);
+      margin-top: 7px;
+    }
+    .cs-benefits-list strong { color: #1a1a1a; font-weight: 600; }
+
+    /* ── Client Testimonial ── */
+    .cs-testi-section {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+      padding: 72px 0;
+    }
+    .cs-testi-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+    .cs-testi-mark {
+      display: block;
+      font-size: 80px; line-height: 0.8;
+      color: var(--brand); opacity: 0.35;
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-bottom: 20px;
+    }
+    .cs-testi-text {
+      font-size: 17px; line-height: 1.82; color: rgba(255,255,255,0.82);
+      font-style: italic; font-weight: 400;
+    }
+    .cs-testi-divider {
+      width: 48px; height: 2px; background: var(--brand);
+      margin: 28px auto 20px;
+    }
+    .cs-testi-attr {
+      font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+    .cs-testi-attr span { color: var(--brand); }
+
+    /* ── Case Study: Document Download ── */
+    .cs-doc-box {
+      display: inline-flex; align-items: center; gap: 18px;
+      border: 1px solid #e0e0e0; border-radius: 10px;
+      padding: 20px 26px; text-decoration: none; background: #fff;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .cs-doc-box:hover {
+      border-color: var(--brand);
+      box-shadow: 0 4px 18px rgba(235,104,35,0.1);
+    }
+    .cs-doc-icon { font-size: 30px; color: var(--brand); flex-shrink: 0; }
+    .cs-doc-name { font-size: 14px; font-weight: 600; color: #1a1a1a; display: block; }
+    .cs-doc-meta { font-size: 11.5px; color: #888; display: block; margin-top: 3px; }
+    .cs-doc-cta {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--brand); display: block; margin-top: 6px;
+    }
+
+    /* ── Case Study: Related Projects ── */
+    .cs-related-section { background: #f9f9f9; }
+    .cs-related-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 20px; margin-top: 32px;
+    }
+    @media (min-width: 600px) { .cs-related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .cs-related-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .cs-related-card {
+      display: block; text-decoration: none;
+      border: 1px solid #e8e8e8; border-radius: 10px;
+      overflow: hidden; background: #fff;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .cs-related-card:hover {
+      border-color: var(--brand);
+      box-shadow: 0 6px 24px rgba(235,104,35,0.12);
+    }
+    .cs-related-thumb { width: 100%; height: 170px; object-fit: cover; display: block; background: #1a1a1a; }
+    .cs-related-body { padding: 18px 20px; }
+    .cs-related-label {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--brand); margin-bottom: 6px; display: block;
+    }
+    .cs-related-h4 {
+      font-size: 14px; font-weight: 700; color: #1a1a1a;
+      margin-bottom: 5px; line-height: 1.35;
+    }
+    .cs-related-sub { font-size: 12.5px; color: #777; }
+
+    /* ── Case Study: Tags ── */
+    .cs-tags-wrap { border-top: 1px solid #ebebeb; padding: 24px 0; }
+    .cs-tags-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cs-tag {
+      display: inline-block; background: #f2f2f2; color: #555;
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 14px; border-radius: 20px; text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .cs-tag:hover { background: var(--brand); color: #fff; }
+
+    /* ── Case Study: Share Row ── */
+    .cs-share-wrap { padding: 18px 0 56px; }
+    .cs-share-row { display: flex; align-items: center; gap: 10px; }
+    .cs-share-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #aaa; margin-right: 4px;
+    }
+    .cs-share-link {
+      display: flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid #ddd; color: #666; text-decoration: none; font-size: 13px;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .cs-share-link:hover {
+      border-color: var(--brand); color: var(--brand);
+      background: rgba(235,104,35,0.06);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="services.html" class="header-nav-link">Services</a>
+        <div class="header-nav-item">
+          <a href="stpeters.html" class="header-nav-link header-nav-link-active">Case Studies <i class="fa-solid fa-chevron-down header-nav-chevron"></i></a>
+          <div class="header-nav-dropdown">
+            <a href="stpeters.html" class="header-nav-dropdown-link">St Peter's Health Centre, Burnley</a>
+            <a href="hamptonlvp.html" class="header-nav-dropdown-link">Hampton by Hilton, Liverpool</a>
+            <a href="roseacre.html" class="header-nav-dropdown-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="header-nav-dropdown-link">The Whitaker Museum</a>
+            <a href="parkdrive.html" class="header-nav-dropdown-link">Park Drive Commercial Facility</a>
+            <a href="cardenpark.html" class="header-nav-dropdown-link header-nav-dropdown-link-active">Carden Park Hotel</a>
+          </div>
+        </div>
+        <a href="careers.html" class="header-nav-link">Careers</a>
+        <a href="social-value.html" class="header-nav-link">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ NAV MODAL ═══ -->
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-modal-panel">
+      <div class="nav-modal-head">
+        <a href="index.html" class="nav-logo">
+          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+        </a>
+        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="nav-modal-nav">
+        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+        <div class="nav-modal-accordion">
+          <button class="nav-modal-accordion-btn nav-modal-link-active" aria-expanded="true">
+            <i class="fa-solid fa-folder-open"></i>Case Studies<i class="fa-solid fa-chevron-down nav-modal-chevron"></i>
+          </button>
+          <div class="nav-modal-accordion-panel open">
+            <a href="stpeters.html" class="nav-modal-sub-link">St Peter&#39;s Health Centre, Burnley</a>
+            <a href="hamptonlvp.html" class="nav-modal-sub-link">Hampton by Hilton, Liverpool</a>
+            <a href="roseacre.html" class="nav-modal-sub-link">Roseacre Primary Academy &amp; Nursery</a>
+            <a href="whitaker.html" class="nav-modal-sub-link">The Whitaker Museum</a>
+            <a href="parkdrive.html" class="nav-modal-sub-link">Park Drive Commercial Facility</a>
+            <a href="cardenpark.html" class="nav-modal-sub-link nav-modal-sub-link-active">Carden Park Hotel</a>
+          </div>
+        </div>
+        <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
+        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-heart"></i>Social Value</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ 1. BREADCRUMB BAR ═══ -->
+  <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <div class="cs-breadcrumb-inner">
+        <a href="index.html" class="cs-bc-link">Home</a>
+        <span class="cs-bc-sep">/</span>
+        <a href="stpeters.html" class="cs-bc-link">Case Studies</a>
+        <span class="cs-bc-sep">/</span>
+        <span class="cs-bc-current">Carden Park Hotel</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ 2. HERO ═══ -->
+  <section class="hero-section hero-tall cs-hero">
+    <div class="hero-body">
+      <div class="wrap">
+        <div class="hero-text-md">
+          <span class="eyebrow">Case Study / Hospitality</span>
+          <h1 class="hero-h1">Carden Park Hotel</h1>
+          <span class="cs-hero-sub">Commercial M&amp;E Package</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. PROJECT META BAR ═══ -->
+  <div class="cs-meta-bar">
+    <div class="wrap cs-meta-inner">
+      <div class="cs-meta-left">
+        <span class="cs-meta-btn">Project Value</span>
+        <span class="cs-meta-value">£TBC</span>
+      </div>
+      <span class="cs-meta-date">Hospitality &nbsp;·&nbsp; Cheshire</span>
+    </div>
+  </div>
+
+  <!-- ═══ 4. EXECUTIVE SUMMARY ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Executive Summary</span>
+      <p class="cs-exec-summary">Carden Park Hotel &amp; Spa, a luxury retreat in Cheshire, offers premium spa facilities, fine dining and top-tier accommodation. To reduce energy costs and improve efficiency, the hotel chose Vital Synergy to upgrade its outdated heating and ventilation systems. The new solution modernises infrastructure, supports sustainability goals and ensures consistent comfort for guests and staff.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 5. SCOPE SECTION (2×2 grid) ═══ -->
+  <section class="section cs-scope-section">
+    <div class="wrap">
+      <span class="eyebrow">Scope of Works</span>
+      <div class="cs-scope-grid">
+
+        <div class="cs-scope-block">
+          <span class="cs-scope-heading">Ducting &amp; Supply Infrastructure</span>
+          <p class="cs-scope-p">New 400mm spiral ducting and 200mm banner supply ducts installed throughout the facility. Custom bracketry designed and fabricated to suit the specific structural constraints of the hotel, ensuring a precise and secure installation across all areas.</p>
+        </div>
+
+        <div class="cs-scope-block">
+          <span class="cs-scope-heading">VRF Systems &amp; Energy Controls</span>
+          <p class="cs-scope-p">Modern Variable Refrigerant Flow (VRF) systems installed alongside advanced energy controls and enhanced insulation. Exposed air-handling units fitted throughout, delivering improved climate management and a significant reduction in operational energy consumption.</p>
+        </div>
+
+        <div class="cs-scope-block">
+          <span class="cs-scope-heading">Commissioning &amp; Documentation</span>
+          <p class="cs-scope-p">Comprehensive commissioning activities completed including airflow checks, system balancing and verification procedures. Detailed documentation of all installation work prepared to ensure long-term performance, traceability and full compliance with current regulations.</p>
+        </div>
+
+        <div class="cs-scope-block">
+          <span class="cs-scope-heading">Compliance &amp; Test Points</span>
+          <p class="cs-scope-p">Dedicated test points installed at all key locations across the system to facilitate regulatory inspections and ongoing compliance monitoring. All works carried out in line with current industry standards, with inspection access designed in from the outset.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. PROJECT DETAIL ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cs-detail">
+        <span class="eyebrow">Project Overview</span>
+        <h3 class="section-heading">Project Detail</h3>
+        <p class="body-text">Carden Park Hotel &amp; Spa appointed Vital Synergy to deliver a full commercial M&amp;E upgrade of its heating and ventilation systems. The existing infrastructure had reached the end of its serviceable life and was contributing to elevated energy costs and inconsistent climate control across the hotel and spa. The scope of works covered new ductwork, VRF systems, energy controls, commissioning and supporting documentation.</p>
+        <p class="body-text-faint">The project was carried out with minimal disruption to hotel operations, with phased working arrangements agreed with the client to protect the guest experience throughout the installation programme.</p>
+
+        <h4 class="cs-detail-h4">Ducting &amp; Supply Infrastructure</h4>
+        <p class="cs-detail-p">New 400mm spiral ducting was installed to form the primary distribution network, with 200mm banner supply ducts providing coverage to individual zones across the building. All ductwork supports were fabricated using custom bracketry designed specifically for the facility, accounting for the structural character of the existing building fabric and ensuring clean, secure routing with minimal visual impact.</p>
+        <p class="cs-detail-p">Duct runs were coordinated with other building services and the principal contractor to avoid clashes and allow concurrent works to proceed without delay. All new ductwork was installed in accordance with current HVCA standards and pressure tested on completion.</p>
+
+        <h4 class="cs-detail-h4">VRF Systems &amp; Energy Controls</h4>
+        <p class="cs-detail-p">Modern Variable Refrigerant Flow systems were selected and installed to replace the legacy heating and cooling equipment. VRF technology allows individual zones to be controlled independently, delivering precise temperatures across guest rooms, spa areas and dining spaces without the energy waste associated with fixed-output systems. Advanced energy controls were integrated to provide centralised monitoring and allow the hotel team to manage consumption across the building from a single interface.</p>
+        <p class="cs-detail-p">Enhanced insulation was applied to all new pipe and duct runs, and exposed air-handling units were installed in service areas. The combination of VRF technology and improved insulation performance has delivered a marked reduction in the hotel's heating and cooling energy demand.</p>
+
+        <h4 class="cs-detail-h4">Commissioning &amp; Handover</h4>
+        <p class="cs-detail-p">All systems were subject to a full commissioning programme on completion of the installation phase. Airflow checks and system balancing were carried out across all zones, with results verified against the design specification. Verification procedures confirmed that all installed equipment was operating within the intended parameters prior to handover.</p>
+        <p class="cs-detail-p">Detailed documentation was compiled throughout the project and issued to the client at practical completion. The handover package included as-installed drawings, commissioning records, equipment data sheets and maintenance schedules, providing the hotel with a complete reference for the ongoing management of the new systems.</p>
+
+        <h4 class="cs-detail-h4">Key Benefits Delivered</h4>
+        <ul class="cs-benefits-list">
+          <li><strong>Reduced energy consumption.</strong> Lower carbon footprint across heating and ventilation, aligned with the hotel's sustainability targets and industry-wide decarbonisation goals.</li>
+          <li><strong>Lower operational costs.</strong> A notable reduction in heating and cooling expenditure has been achieved through the combination of VRF technology, advanced controls and improved insulation.</li>
+          <li><strong>Enhanced guest comfort.</strong> Precise climate control, improved air circulation and consistent conditions across the hotel and spa deliver a noticeably better environment for guests and staff alike.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 7. CLIENT TESTIMONIAL ═══ -->
+  <section class="cs-testi-section">
+    <div class="wrap">
+      <div class="cs-testi-inner">
+        <span class="cs-testi-mark">"</span>
+        <p class="cs-testi-text">The heating and ventilation upgrades by Vital Synergy have made a huge difference to the comfort of our guests. Not only have we seen a reduction in our energy bills, but the hotel atmosphere is much more pleasant as well. The team delivered a seamless installation with minimal disruption, and we couldn't be happier with the results.</p>
+        <div class="cs-testi-divider"></div>
+        <p class="cs-testi-attr"><span>Client</span> &nbsp;·&nbsp; Carden Park Hotel &amp; Spa, Cheshire</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 8. DOCUMENT DOWNLOAD ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <a href="#" class="cs-doc-box">
+        <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+        <div>
+          <span class="cs-doc-name">Carden Park Hotel — Commercial M&amp;E Package Case Study</span>
+          <span class="cs-doc-meta">Carden-Park-Hotel-ME-Case-Study.pdf · 1.3 MB</span>
+          <span class="cs-doc-cta">Click Here to Download</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ 9. RELATED PROJECTS ═══ -->
+  <section class="section cs-related-section">
+    <div class="wrap">
+      <span class="eyebrow">Hospitality &amp; Commercial</span>
+      <h2 class="section-heading">Other related projects</h2>
+      <div class="cs-related-grid">
+
+        <a href="hamptonlvp.html" class="cs-related-card">
+          <img src="Assets/hamptonhotel.jpg" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
+          <div class="cs-related-body">
+            <span class="cs-related-label">Hospitality</span>
+            <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
+            <p class="cs-related-sub">Plantroom Remediation</p>
+          </div>
+        </a>
+
+        <a href="parkdrive.html" class="cs-related-card">
+          <img src="Assets/freemanHospital.jpg" alt="Park Drive Commercial Facility" class="cs-related-thumb">
+          <div class="cs-related-body">
+            <span class="cs-related-label">Commercial</span>
+            <h4 class="cs-related-h4">Park Drive Commercial Facility</h4>
+            <p class="cs-related-sub">M&amp;E Package</p>
+          </div>
+        </a>
+
+        <a href="stpeters.html" class="cs-related-card">
+          <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
+          <div class="cs-related-body">
+            <span class="cs-related-label">Healthcare</span>
+            <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
+            <p class="cs-related-sub">MEP Refurbishment</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 10. TAG ROW ═══ -->
+  <div class="wrap">
+    <div class="cs-tags-wrap">
+      <div class="cs-tags-row">
+        <a href="#" class="cs-tag">Hospitality</a>
+        <a href="#" class="cs-tag">M&amp;E Package</a>
+        <a href="#" class="cs-tag">VRF Systems</a>
+        <a href="#" class="cs-tag">Ventilation</a>
+        <a href="#" class="cs-tag">Energy Efficiency</a>
+        <a href="#" class="cs-tag">Cheshire</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 11. SOCIAL SHARE ROW ═══ -->
+  <div class="wrap">
+    <div class="cs-share-wrap">
+      <div class="cs-share-row">
+        <span class="cs-share-label">Share:</span>
+        <a href="https://twitter.com/intent/tweet?text=Carden+Park+Hotel+Case+Study+%7C+Vital+Synergy" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fcarden-park-hotel" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:?subject=Case+Study%3A+Carden+Park+Hotel+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+          <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="stpeters.html" class="footer-link">Case Studies</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Policies and Forms</h4>
+          <a href="commashpform.html" class="footer-link">Commercial ASHP Enquiry</a>
+          <a href="commgshpform.html" class="footer-link">Commercial GSHP Enquiry</a>
+          <a href="new-boilerform.html" class="footer-link">New Boiler Enquiry</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="ufhform.html" class="footer-link">UFH Quote Enquiry</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847<br>Gas Safe No 593601</p>
+          <div class="socials-row">
+            <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
