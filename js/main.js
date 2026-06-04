@@ -47,3 +47,33 @@ openBtn.addEventListener('click', openNav);
 closeBtn.addEventListener('click', closeNav);
 modal.addEventListener('click', e => { if (e.target === modal) closeNav(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+// Multi-step form navigation
+(function () {
+  const steps = document.querySelectorAll('.form-step');
+  if (!steps.length) return;
+  const dots = document.querySelectorAll('.step-dot');
+  const lines = document.querySelectorAll('.step-line');
+  const form = steps[0].closest('form');
+  let current = 0;
+
+  function showStep(n) {
+    steps.forEach((s, i) => s.classList.toggle('active', i === n));
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === n);
+      d.classList.toggle('done', i < n);
+    });
+    lines.forEach((l, i) => l.classList.toggle('done', i < n));
+    current = n;
+    if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.querySelectorAll('.btn-step-next').forEach(btn =>
+    btn.addEventListener('click', () => { if (current < steps.length - 1) showStep(current + 1); })
+  );
+  document.querySelectorAll('.btn-step-prev').forEach(btn =>
+    btn.addEventListener('click', () => { if (current > 0) showStep(current - 1); })
+  );
+
+  showStep(0);
+}());
