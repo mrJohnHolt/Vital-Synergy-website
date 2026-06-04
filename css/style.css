@@ -575,6 +575,10 @@ body.page-fade-out { opacity: 0; transition: opacity 0.2s ease; }
 .socials-row   { display: flex; gap: 8px; margin-top: 20px; }
 .footer-link   { color: rgba(255,255,255,0.45); font-size: 13px; text-decoration: none; display: block; margin-bottom: 8px; transition: color 0.15s; }
 .footer-link:hover { color: var(--brand); }
+@media (max-width: 767px) {
+  .footer-grid > * { text-align: center; }
+  .footer-logo, .socials-row { justify-content: center; }
+}
 .copyright-bar   { border-top: 1px solid rgba(255,255,255,0.08); }
 .copyright-inner { padding: 16px 24px; }
 .copyright-text  { color: rgba(255,255,255,0.25); font-size: 12px; }
