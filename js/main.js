@@ -75,7 +75,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); 
   const form = steps[0].closest('form');
   let current = 0;
 
-  function showStep(n) {
+  function showStep(n, scroll = false) {
     steps.forEach((s, i) => s.classList.toggle('active', i === n));
     dots.forEach((d, i) => {
       d.classList.toggle('active', i === n);
@@ -83,14 +83,14 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); 
     });
     lines.forEach((l, i) => l.classList.toggle('done', i < n));
     current = n;
-    if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll && form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   document.querySelectorAll('.btn-step-next').forEach(btn =>
-    btn.addEventListener('click', () => { if (current < steps.length - 1) showStep(current + 1); })
+    btn.addEventListener('click', () => { if (current < steps.length - 1) showStep(current + 1, true); })
   );
   document.querySelectorAll('.btn-step-prev').forEach(btn =>
-    btn.addEventListener('click', () => { if (current > 0) showStep(current - 1); })
+    btn.addEventListener('click', () => { if (current > 0) showStep(current - 1, true); })
   );
 
   showStep(0);
