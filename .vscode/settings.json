@@ -1,4 +1,8 @@
 {
     "sarif-viewer.connectToGithubCodeScanning": "off",
-    "codeQL.githubDatabase.download": "never"
+    "codeQL.githubDatabase.download": "never",
+    "liveServer.settings.port": 5000,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true
 }
