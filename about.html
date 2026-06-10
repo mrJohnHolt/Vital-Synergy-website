@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us | Vital Synergy</title>
+  <title>About | Vital Synergy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
@@ -14,6 +14,115 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ── Hero override ── */
+    .es-hero {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.75) 100%),
+        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* ── Opening statement ── */
+    .es-statement {
+      max-width: 860px;
+      font-size: 18px; line-height: 1.78; color: #1a1a1a;
+      font-weight: 500;
+      border-left: 4px solid var(--brand);
+      padding-left: 24px;
+      margin-top: 16px;
+    }
+
+    /* ── Expertise pillars carousel ── */
+    @keyframes es-carousel-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(calc(-177px * 6 - 20px * 6)); }
+    }
+    .es-pillars-grid {
+      overflow: hidden;
+      padding: 8px 0 16px;
+    }
+    .es-pillars-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: es-carousel-scroll 48s linear infinite;
+    }
+    .es-carousel-wrap:hover .es-pillars-track {
+      animation-play-state: paused;
+    }
+    .es-pillar-item {
+      flex: 0 0 177px;
+      height: 250px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+      overflow: hidden;
+      transition: box-shadow 0.25s;
+    }
+    .es-pillar-item:hover {
+      box-shadow: 0 14px 40px rgba(0,0,0,0.32);
+    }
+    .es-pillar-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .es-pillar-item:hover img { transform: scale(1.04); }
+
+    /* ── Approach section ── */
+    .es-approach-section { background: #f9f9f9; }
+
+    /* ── Delivery strip (3 pillars) ── */
+    .es-delivery-section {
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+      padding: 72px 0;
+    }
+    .es-delivery-grid {
+      display: grid; grid-template-columns: 1fr; gap: 32px;
+      margin-top: 40px;
+    }
+    @media (min-width: 700px) { .es-delivery-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .es-delivery-card {
+      border-top: 3px solid var(--brand);
+      padding-top: 22px;
+    }
+    .es-delivery-icon {
+      font-size: 26px; color: var(--brand); margin-bottom: 14px; display: block;
+    }
+    .es-delivery-h3 {
+      font-size: 16px; font-weight: 700; color: #fff;
+      margin-bottom: 10px; letter-spacing: -0.02em;
+    }
+    .es-delivery-p {
+      font-size: 13.5px; color: rgba(255,255,255,0.58); line-height: 1.7;
+    }
+
+    /* ── Partner statement ── */
+    .es-partner-section {
+      background-image:
+        linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 100%),
+        url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 88px 0;
+    }
+    @media (max-width: 1023px) { .es-partner-section { background-attachment: scroll; } }
+    .es-partner-inner { max-width: 680px; }
+    .es-partner-quote {
+      font-size: 26px; font-weight: 800; color: #fff;
+      line-height: 1.3; letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .es-partner-quote em { color: var(--brand); font-style: normal; }
+    .es-partner-p {
+      font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.75;
+    }
+  </style>
 </head>
 
 <body>
@@ -57,22 +166,23 @@
         <a href="about.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-circle-info"></i>About</a>
         <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
         <a href="casestudies.html" class="nav-modal-link"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
-        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-hand-holding-heart"></i>Social Value</a>
+        <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
+        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-heart"></i>Social Value</a>
       </nav>
     </div>
   </div>
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero-section hero-page hero-tall">
+  <section class="hero-section hero-page hero-tall es-hero">
     <div class="hero-body">
       <div class="wrap">
         <div class="hero-text-md">
-          <span class="eyebrow">About Vital Synergy</span>
-          <h1 class="hero-h1-sm">Commercial heating &amp; cooling,<br>engineered for the long term</h1>
-          <p class="hero-sub-sm">Vital Synergy supports industry and large buildings with clean, efficient mechanical and energy systems, designed, installed and maintained to perform.</p>
+          <span class="eyebrow">Company Overview</span>
+          <h1 class="hero-h1-sm">Engineering excellence<br>with purpose</h1>
+          <p class="hero-sub-sm">Vital Synergy is a trusted provider of end-to-end building services engineering, delivering mechanical and electrical systems that enhance performance, reduce energy costs and futureproof estates.</p>
           <div class="btn-row">
             <a href="index.html#contact" class="btn-green">Get in touch →</a>
-            <a href="services.html" class="btn-outline">Explore our services →</a>
+            <a href="services.html" class="btn-outline">Our services →</a>
           </div>
         </div>
       </div>
@@ -102,25 +212,12 @@
     </div>
   </section>
 
-  <!-- ═══ ABOUT VITAL SYNERGY ═══ -->
+  <!-- ═══ EXECUTIVE SUMMARY STATEMENT ═══ -->
   <section class="section">
     <div class="wrap">
-      <div class="two-col">
-        <div>
-          <span class="eyebrow">Who We Are</span>
-          <h2 class="section-heading">Bespoke mechanical &amp; energy systems for <em class="em-brand">complex buildings</em></h2>
-          <p class="body-text">Vital Synergy designs, installs and maintains bespoke mechanical and energy systems for schools, factories, offices, hotels and other large buildings. Our work spans advanced heating and cooling, full energy centres, and Building Management System integration, built for performance, reliability and long-term energy efficiency.</p>
-          <p class="body-text-faint">We work alongside consultants, surveyors and framework partners across the North West and beyond, supporting projects where technical accuracy and programme certainty matter. Every solution is engineered to reduce running costs, cut carbon and improve building performance over the lifetime of the asset.</p>
-          <a href="index.html#contact" class="btn-green">Discuss a project →</a>
-        </div>
-        <div class="img-stack">
-          <img class="img-back" src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=600&q=80" alt="Commercial plant room pipework">
-          <img class="img-front" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=480&q=80" alt="Energy infrastructure">
-          <svg class="wm" viewBox="0 0 100 100" fill="none">
-            <path d="M60 5L20 55h35l-15 40 50-55h-35l5-35z" fill="#eb6823"/>
-          </svg>
-        </div>
-      </div>
+      <span class="eyebrow">Executive Summary</span>
+      <p class="es-statement">Vital Synergy is a trusted provider of end-to-end building services engineering, delivering mechanical and electrical systems that enhance performance, reduce energy costs and futureproof estates.</p>
+      <p class="body-text" style="max-width:820px; margin-top:24px;">We partner with organisations across commercial, industrial, public sector, healthcare and education environments to design, install and maintain high-quality infrastructure that meets the evolving demands of energy efficiency, sustainability and compliance.</p>
     </div>
   </section>
 
@@ -148,63 +245,122 @@
     </div>
   </section>
 
-  <!-- ═══ OUR JOURNEY ═══ -->
-  <section class="section sec-overflow">
+  <!-- ═══ TURNKEY APPROACH ═══ -->
+  <section class="section es-approach-section">
     <div class="wrap">
       <div class="two-col">
-        <div class="img-stack order-second">
-          <img class="img-back" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" alt="Industrial engineering environment">
-          <img class="img-front" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=480&q=80" alt="Engineer at work">
+        <div>
+          <span class="eyebrow">Our Approach</span>
+          <h2 class="section-heading">Turnkey delivery from <em class="em-brand">concept to completion</em></h2>
+          <p class="body-text">From initial feasibility to consultancy and design through to installation, facilities management and ongoing maintenance, our full turnkey approach ensures seamless delivery and long-term value.</p>
+          <p class="body-text-faint">Our expertise spans HVAC systems, low-carbon heating, energy centres, district heat networks, building management systems and integrated electrical services. Every solution is designed to reduce operational costs, cut carbon emissions and meet the compliance requirements that govern modern estates management.</p>
+          <p class="body-text-faint">As a single, reliable partner, Vital Synergy provides the confidence, capability and insight organisations need to create efficient, compliant and future-ready buildings.</p>
+          <a href="index.html#contact" class="btn-green" style="margin-top:8px;">Discuss your project →</a>
         </div>
-        <div class="order-first">
-          <span class="eyebrow">Our Journey</span>
-          <h2 class="section-heading">From Vital Heating Solutions to <em class="em-brand">Vital Synergy</em></h2>
-          <p class="body-text">The business began as Vital Heating Solutions, a contractor built on straightforward values: honest advice, reliable workmanship, and installations done properly. From the outset, the focus was on building trust with clients through consistent delivery rather than volume.</p>
-          <p class="body-text-faint">As the team grew and the scope of work expanded into more technically complex projects, including energy centres, BMS integration and large-scale low-carbon systems, the business matured to match. The rebrand to Vital Synergy reflects that evolution: a broader capability, a larger team, and a sharper focus on the commercial and industrial sectors where building performance is critical.</p>
-          <p class="body-text-faint">The values that defined the original business remain unchanged. Vital Synergy continues to operate as a specialist rather than a generalist, taking on projects where engineering rigour and clear communication make a tangible difference to outcomes.</p>
+        <div class="img-stack">
+          <img class="img-back" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Building services engineering">
+          <img class="img-front" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=480&q=80" alt="Mechanical and electrical installation">
+          <svg class="wm" viewBox="0 0 100 100" fill="none">
+            <path d="M60 5L20 55h35l-15 40 50-55h-35l5-35z" fill="#eb6823"/>
+          </svg>
         </div>
-      </div>
-    </div>
-    <div class="deco-wrap">
-      <div class="deco-ticker">
-        <span class="deco-text">Specialist heating &amp; cooling engineering, North West &amp; beyond</span>
-        <span class="deco-text deco-sep">·</span>
-        <span class="deco-text">Specialist heating &amp; cooling engineering, North West &amp; beyond</span>
-        <span class="deco-text deco-sep">·</span>
       </div>
     </div>
   </section>
 
-  <!-- ═══ HOW WE SUPPORT YOUR PROJECTS ═══ -->
+  <!-- ═══ EXPERTISE PILLARS ═══ -->
   <section class="wwd-bg sec-wwd">
     <div class="pill-wrap">
       <div class="dark-pill">
-        <span class="eyebrow eyebrow-tight">How We Support Your Projects</span>
-        <p class="dark-pill-p">Whether you are a consultant, surveyor, framework partner or end client, we provide the technical depth and project discipline to deliver.</p>
+        <span class="eyebrow eyebrow-tight">Areas of Expertise</span>
+        <p class="dark-pill-p">Six core disciplines forming the foundation of our building services engineering capability.</p>
       </div>
     </div>
     <div class="wrap">
-      <div class="four-col">
-        <div class="wwd-card">
-          <div class="wwd-icon"><img src="Assets/Watermark.png" alt="Vital Synergy"></div>
-          <h3 class="card-h3">Bespoke Systems</h3>
-          <p class="card-p">Bespoke heating and mechanical systems designed around the specific demands of complex buildings, not off-the-shelf solutions applied regardless of context.</p>
+    <div class="es-carousel-wrap">
+    <div class="es-pillars-grid">
+      <div class="es-pillars-track">
+
+        <div class="es-pillar-item">
+          <img src="Assets/Pillars%2001%20(Small).jpg" alt="HVAC Systems">
         </div>
-        <div class="wwd-card">
-          <div class="wwd-icon"><img src="Assets/Watermark.png" alt="Vital Synergy"></div>
-          <h3 class="card-h3">Consultant &amp; Surveyor Support</h3>
-          <p class="card-p">Expert support for consultants, quantity surveyors and framework partners: accurate pricing, technical input at design stage, and reliable delivery through to handover.</p>
+        <div class="es-pillar-item">
+          <img src="Assets/Pillars%2002%20(Small).jpg" alt="Low-Carbon Heating">
         </div>
-        <div class="wwd-card">
-          <div class="wwd-icon"><img src="Assets/Watermark.png" alt="Vital Synergy"></div>
-          <h3 class="card-h3">Energy Efficiency</h3>
-          <p class="card-p">Energy-efficient solutions that lower running costs and reduce emissions, with heat pumps, energy centres and BMS integration specified to deliver measurable performance improvements.</p>
+        <div class="es-pillar-item">
+          <img src="Assets/Pillars%2003%20(Small).jpg" alt="Energy Centres">
         </div>
-        <div class="wwd-card">
-          <div class="wwd-icon"><img src="Assets/Watermark.png" alt="Vital Synergy"></div>
-          <h3 class="card-h3">End-to-End Delivery</h3>
-          <p class="card-p">End-to-end project delivery with clear communication throughout, with one accountable partner from initial survey through to commissioning, handover and ongoing maintenance.</p>
+        <div class="es-pillar-item">
+          <img src="Assets/Pillars%2004%20(Small).jpg" alt="District Heat Networks">
         </div>
+        <div class="es-pillar-item">
+          <img src="Assets/Pillars%2005%20(Small).jpg" alt="Building Management Systems">
+        </div>
+        <div class="es-pillar-item">
+          <img src="Assets/Pillars%2006%20(Small).jpg" alt="Integrated Electrical Services">
+        </div>
+
+        <!-- Duplicates for seamless loop -->
+        <div class="es-pillar-item" aria-hidden="true">
+          <img src="Assets/Pillars%2001%20(Small).jpg" alt="">
+        </div>
+        <div class="es-pillar-item" aria-hidden="true">
+          <img src="Assets/Pillars%2002%20(Small).jpg" alt="">
+        </div>
+        <div class="es-pillar-item" aria-hidden="true">
+          <img src="Assets/Pillars%2003%20(Small).jpg" alt="">
+        </div>
+        <div class="es-pillar-item" aria-hidden="true">
+          <img src="Assets/Pillars%2004%20(Small).jpg" alt="">
+        </div>
+        <div class="es-pillar-item" aria-hidden="true">
+          <img src="Assets/Pillars%2005%20(Small).jpg" alt="">
+        </div>
+        <div class="es-pillar-item" aria-hidden="true">
+          <img src="Assets/Pillars%2006%20(Small).jpg" alt="">
+        </div>
+
+      </div>
+    </div>
+    </div><!-- /.es-carousel-wrap -->
+    </div><!-- /.wrap -->
+  </section>
+
+  <!-- ═══ PARTNER STATEMENT ═══ -->
+  <section class="es-partner-section">
+    <div class="wrap">
+      <div class="es-partner-inner">
+        <p class="es-partner-quote">A single, reliable partner for <em>efficient, compliant and future-ready</em> buildings.</p>
+        <p class="es-partner-p">Driven by engineering excellence with purpose, we help clients reduce energy consumption, cut carbon emissions and support carbon reduction across their estates without compromising operational performance. Every project is guided from concept to completion and beyond.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DELIVERY METHODS ═══ -->
+  <section class="es-delivery-section">
+    <div class="wrap">
+      <span class="eyebrow">How We Deliver</span>
+      <h2 class="section-heading" style="color:#fff;">From first brief to <em class="em-brand">long-term performance</em></h2>
+      <div class="es-delivery-grid">
+
+        <div class="es-delivery-card">
+          <i class="fa-solid fa-hammer es-delivery-icon"></i>
+          <h3 class="es-delivery-h3">Comprehensive Installations</h3>
+          <p class="es-delivery-p">New-build and fit-out mechanical and electrical packages, delivered to specification, on programme, by a single accountable team from survey through to commissioning and handover.</p>
+        </div>
+
+        <div class="es-delivery-card">
+          <i class="fa-solid fa-rotate es-delivery-icon"></i>
+          <h3 class="es-delivery-h3">Refurbishments</h3>
+          <p class="es-delivery-p">Upgrade and replacement of ageing building services infrastructure with minimal disruption to ongoing operations, bringing estates up to current efficiency, compliance and performance standards.</p>
+        </div>
+
+        <div class="es-delivery-card">
+          <i class="fa-solid fa-shield-halved es-delivery-icon"></i>
+          <h3 class="es-delivery-h3">Planned &amp; Reactive Maintenance</h3>
+          <p class="es-delivery-p">Scheduled preventative maintenance programmes and rapid reactive response, protecting system performance, extending asset life and ensuring continued regulatory compliance.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -236,12 +392,9 @@
         </div>
         <div>
           <h4 class="footer-col-heading">Information</h4>
-          <a href="about.html" class="footer-link">About Us</a>
-          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="about.html" class="footer-link">About Us</a>          <a href="careers.html" class="footer-link">Careers</a>
           <a href="casestudies.html" class="footer-link">Case Studies</a>
-          <a href="index.html#contact" class="footer-link">Contact</a>
-          <a href="executivesummary.html" class="footer-link">Executive Summary</a>
-          <a href="services.html" class="footer-link">Services</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>          <a href="services.html" class="footer-link">Services</a>
           <a href="social-value.html" class="footer-link">Social Value</a>
         </div>
         <div>
@@ -272,7 +425,7 @@
     </div>
     <div class="copyright-bar">
       <div class="wrap copyright-inner">
-        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
