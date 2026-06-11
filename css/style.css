@@ -572,7 +572,7 @@ body {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: testi-scroll 140s linear infinite;
+  animation: testi-scroll 220s linear infinite;
 }
 .testi-ticker-wrap:hover .testi-ticker-track { animation-play-state: paused; }
 @keyframes testi-scroll {
