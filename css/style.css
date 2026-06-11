@@ -76,8 +76,8 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
-.footer-grid > * { flex: 1 1 180px; min-width: 0; }
-.footer-col-logo  { flex: 1 1 200px; }
+.footer-grid > * { flex: 1 1 200px; min-width: 0; }
+.footer-col-logo  { flex: 2 1 280px; }
 
 @media (min-width: 640px) {
   .four-col { grid-template-columns: 1fr 1fr; }
@@ -616,8 +616,11 @@ body {
   .footer-logo, .socials-row { justify-content: center; }
 }
 .copyright-bar   { border-top: 1px solid rgba(255,255,255,0.08); }
-.copyright-inner { padding: 16px 24px; }
+.copyright-inner { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 .copyright-text  { color: rgba(255,255,255,0.25); font-size: 12px; }
+.copyright-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.copyright-link  { color: rgba(255,255,255,0.25); font-size: 12px; text-decoration: none; transition: color 0.15s; }
+.copyright-link:hover { color: rgba(255,255,255,0.5); }
 
 /* ─────────────────────────────────────────
    SOCIAL ICONS
