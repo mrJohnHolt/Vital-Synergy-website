@@ -420,7 +420,7 @@ body {
 .sec-white    { padding: 56px 24px; background: #fff; }
 .sec-testi-head { padding: 40px 24px 32px; background: #fff; text-align: center; }
 .testi-icon { font-size: 28px; color: var(--brand); opacity: 0.85; margin-bottom: 12px; display: block; }
-.sec-testi    { padding: 72px 24px; }
+.sec-testi    { padding: 72px 0; }
 .sec-sectors  { padding: 96px 24px 0; background: #fff; overflow: hidden; }
 .sec-wwd      { padding: 56px 24px 72px; }
 .sec-stats {
@@ -562,6 +562,51 @@ body {
 .quote-mark { color: var(--brand); font-size: 56px; line-height: 1; font-family: Georgia, serif; font-weight: 700; margin-bottom: 8px; }
 .quote-text { color: rgba(255,255,255,0.85); font-size: 17px; line-height: 1.75; font-style: italic; margin-bottom: 24px; }
 .quote-cite { color: var(--brand); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; font-style: normal; display: block; }
+
+.testi-ticker-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.testi-ticker-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: testi-scroll 140s linear infinite;
+}
+.testi-ticker-wrap:hover .testi-ticker-track { animation-play-state: paused; }
+@keyframes testi-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testi-card {
+  flex: 0 0 360px;
+  width: 360px;
+  height: 360px;
+  background: rgba(0,0,0,0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.testi-card-mark {
+  color: var(--brand); font-size: 44px; line-height: 1;
+  font-family: Georgia, serif; font-weight: 700;
+  margin-bottom: 10px; flex-shrink: 0;
+}
+.testi-card-text {
+  color: rgba(255,255,255,0.85); font-size: 13.5px;
+  line-height: 1.7; font-style: italic; flex: 1; overflow: hidden;
+}
+.testi-card-cite {
+  color: var(--brand); font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.05em; font-style: normal;
+  display: block; margin-top: 16px; flex-shrink: 0;
+}
 
 /* ─────────────────────────────────────────
    DECORATIVE TEXT
