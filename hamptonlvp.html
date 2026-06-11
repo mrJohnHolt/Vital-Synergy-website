@@ -15,21 +15,151 @@
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
+    /* Hero and scope backgrounds */
     .cs-hero {
-      min-height: 50vh;
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
-        url('Assets/hamptonlvp.webp');
-      background-repeat: no-repeat;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/hamptonhotel.webp');
     }
     .cs-scope-section {
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
-        url('Assets/hamptonlvp.webp');
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/hamptonhotel.webp');
     }
-    @media (max-width: 767px) {
-      .cs-hero { background-size: 250%; background-position: 40% center; }
-      .cs-scope-section { background-size: 250%; background-position: 40% center; }
+
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
+    .cs-testimonial {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
     }
   </style>
 </head>
@@ -37,7 +167,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="index.html" class="nav-logo">
@@ -59,221 +189,296 @@
       </div>
     </div>
   </header>
-<main id="main-content">
 
-  <!-- ═══ NAV MODAL ═══ -->
-  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="nav-modal-panel">
-      <div class="nav-modal-head">
-        <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
-        </a>
-        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
-      </div>
-      <nav class="nav-modal-nav">
-        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
-        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
-        <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
-        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-hand-holding-heart"></i>Social Value</a>
-      </nav>
-    </div>
-  </div>
+  <main id="main-content">
 
-  <!-- ═══ 1. BREADCRUMB BAR ═══ -->
-  <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-    <div class="wrap">
-      <div class="cs-breadcrumb-inner">
-        <a href="index.html" class="cs-bc-link">Home</a>
-        <span class="cs-bc-sep">/</span>
-        <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
-        <span class="cs-bc-sep">/</span>
-        <span class="cs-bc-current">Hampton by Hilton, Liverpool John Lennon Airport</span>
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        </nav>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══ 2. HERO ═══ -->
-  <section class="hero-section cs-hero">
-    <div class="hero-body">
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
       <div class="wrap">
-        <div class="hero-text-md">
-          <span class="eyebrow">Case Study / Hospitality</span>
-          <h1 class="hero-h1">Hampton by Hilton,<br>Liverpool John Lennon Airport</h1>
-          <span class="cs-hero-sub">Hospitality Plantroom Remediation</span>
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">Hampton by Hilton, Liverpool John Lennon Airport</span>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ═══ 3. PROJECT META BAR ═══ -->
-  <div class="cs-meta-bar">
-    <div class="wrap cs-meta-inner">
-      <div class="cs-meta-left">
-        <span class="cs-meta-btn">Project Value</span>
-        <span class="cs-meta-value">£57,090 ex VAT (core scope)</span>
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Hospitality</span>
+            <h1 class="hero-h1">Hampton by Hilton,<br>Liverpool John Lennon Airport</h1>
+            <span class="cs-hero-sub">Plantroom Remediation</span>
+          </div>
+        </div>
       </div>
-      <span class="cs-meta-date">Tendered Feb 2024, commissioned March 2026</span>
-    </div>
-  </div>
+    </section>
 
-  <!-- ═══ 4. EXECUTIVE SUMMARY ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <span class="eyebrow">Executive Summary</span>
-      <p class="cs-exec-summary">A live, occupied hotel required remediation following the failure of a pressure reducing valve that caused internal flooding. Vital Synergy delivered a fully phased programme of PRV replacement and plantroom upgrade across the rising shafts and ground floor plantroom, scoped to limit disruption to hotel operation and guests throughout. What began as targeted PRV remediation expanded into a wider booster pump and hot water generation upgrade, restoring resilience and bringing the plantroom infrastructure back to a future-ready standard.</p>
-    </div>
-  </section>
-
-  <!-- ═══ 5. SCOPE SECTION (2×2 grid) ═══ -->
-  <section class="section cs-scope-section">
-    <div class="wrap">
-      <span class="eyebrow">Scope of Works</span>
-      <div class="cs-scope-grid">
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Core Scope Delivered</span>
-          <p class="cs-scope-p">Full replacement of pressure reducing valves across the rising shafts, with new full-bore lever isolation valves to support future maintenance. Thermal insulation reinstated to all affected pipework, with system flushing, chlorination and sterilisation completed under controlled conditions.</p>
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;57,090 ex VAT (core scope)</span>
         </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Booster Set &amp; Pump Upgrade</span>
-          <p class="cs-scope-p">Existing fixed-speed duty/standby booster set replaced with new variable speed pumps and inverter controls, improving energy efficiency, reducing pressure shock across the distribution and supporting more reliable supply to the upper floors.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Plantroom &amp; Hot Water Generation</span>
-          <p class="cs-scope-p">Hot water generation upgraded with new thermal stores, plate heat exchanger and supporting pipework infrastructure. New Bolimno two-part valves, Grundfos secondary return pump and full set of cylinder and butterfly isolations installed to bring the plantroom up to a serviceable, future-ready standard.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Handover &amp; Commissioning</span>
-          <p class="cs-scope-p">Comprehensive RAMS prepared and issued ahead of works to support a live operational environment. Commissioning closed out March 2026 with full as-fitted documentation, mechanical drawings and a complete plantroom commissioning record provided at handover.</p>
-        </div>
-
+        <span class="cs-meta-date">July 2024 &ndash; March 2026</span>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 6. PROJECT DETAIL ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="cs-detail">
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
         <span class="eyebrow">Project Overview</span>
-        <h3 class="section-heading">Project Detail</h3>
-        <p class="body-text">The Hampton by Hilton at Liverpool John Lennon Airport presented a complex remediation challenge. A pressure reducing valve failure had caused internal flooding across multiple floors of the occupied hotel, requiring a carefully sequenced response that could be delivered without closing the building or disrupting guests. Vital Synergy was appointed to design and deliver a phased programme of works covering the affected rising shafts and the ground floor plantroom.</p>
-        <p class="body-text-faint">The scope was developed following a full survey of the plantroom infrastructure, which identified a number of additional deficiencies beyond the immediate PRV failure. The decision was taken to address these within the same programme, avoiding the need for a return visit and ensuring the hotel would be left with a plantroom capable of reliable long-term operation.</p>
-
-        <h4 class="cs-detail-h4">PRV Replacement &amp; Pipework</h4>
-        <p class="cs-detail-p">The core scope centred on the full replacement of pressure reducing valves across the rising shafts. New full-bore lever isolation valves were installed at each location to allow individual sections to be isolated during future maintenance without the need to take down the wider system. All replaced sections were re-insulated with appropriate thermal insulation to reinstate the standard required under current guidance.</p>
-        <p class="cs-detail-p">On completion of the pipework works, the system was flushed, chlorinated and sterilised in accordance with water hygiene requirements. This was completed under controlled conditions given the operational nature of the building, with careful management of water supply to occupied floors throughout.</p>
-
-        <h4 class="cs-detail-h4">Booster Set &amp; Variable Speed Controls</h4>
-        <p class="cs-detail-p">The existing fixed-speed duty/standby booster set was found to be a contributory factor in the pressure shock that had accelerated valve degradation. This was replaced with a new variable speed pump arrangement with inverter controls, providing a more graduated pressure response across the distribution network. The new arrangement improves energy efficiency and reduces wear across the distribution system, delivering more consistent supply pressure to the upper floors.</p>
-        <p class="cs-detail-p">The inverter controls were configured to the specific demand profile of the building, with set points agreed with the hotel's facilities team prior to commissioning to ensure the system performed correctly under occupancy conditions.</p>
-
-        <h4 class="cs-detail-h4">Hot Water Generation &amp; Plantroom Upgrade</h4>
-        <p class="cs-detail-p">The hot water generation system was upgraded as part of the wider plantroom remediation. New thermal stores and a plate heat exchanger were installed, supported by new pipework interconnections and isolation infrastructure. New Bolimno two-part valves were fitted throughout, with a Grundfos secondary return pump installed to maintain temperature across the hot water distribution circuit.</p>
-        <p class="cs-detail-p">A full complement of cylinder and butterfly isolations was installed to provide the plantroom with the flexibility required for future maintenance. The combined effect of these works brought the plantroom from a reactive maintenance position to a standard that will support reliable operation over the medium to long term.</p>
-
-        <h4 class="cs-detail-h4">Commissioning &amp; Handover</h4>
-        <p class="cs-detail-p">Given the live operational environment, comprehensive Risk Assessments and Method Statements were prepared and submitted for approval ahead of each phase of works. All works were sequenced to maintain hot water and cold-water supply to occupied floors at all times, with planned outages agreed and communicated to the hotel management team in advance.</p>
-        <p class="cs-detail-p">Commissioning was completed in March 2026. Full as-fitted documentation, mechanical drawings and a complete plantroom commissioning record were produced and handed over to the client, providing a clear baseline for ongoing management and future maintenance planning.</p>
+        <p class="cs-exec-summary">Vital Synergy was engaged as engineering partner to address cascading failures in the domestic hot water generation and cold-water pressure control systems at this busy airport hotel. What began with a calorifier upgrade in 2024 escalated through two critical failure events — a PRV burst causing internal flooding, and a subsequent cylinder pin-hole leak — into a holistic plantroom remediation programme covering calorifier replacement, water softening, PRV renewal across all risers, and a full booster pump upgrade to variable-speed control. All works were commissioned in March 2026 with a structured handover to the hotel engineering team.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ 7. DOCUMENT DOWNLOAD ═══ -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <a href="#" class="cs-doc-box" aria-label="Download Hampton by Hilton Liverpool John Lennon Airport Case Study (PDF)">
-        <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
-        <div>
-          <span class="cs-doc-name">Hampton by Hilton, Liverpool John Lennon Airport — Case Study</span>
-          <span class="cs-doc-meta">Hampton-Hilton-LJA-Case-Study.pdf · 1.4 MB</span>
-          <span class="cs-doc-cta">Click Here to Download</span>
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">Hampton by Hilton, Liverpool John Lennon Airport</span>
+            <p class="cs-client-desc">A busy airport hotel in Speke, Liverpool (L24 1YD) where uninterrupted hot water supply is critical to guest satisfaction. Vital Synergy was engaged as engineering partner following recurring failures in the domestic hot water generation and cold-water pressure distribution systems, with a mandate to investigate root causes and deliver a lasting remediation.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Hospitality / Hotels</span>
+            <p class="cs-client-desc">Delivering remediation within a live, occupied hotel placed specific demands on programme sequencing and risk management. All interventions were planned riser by riser to minimise outages to guest floors, with planned shutdowns agreed in advance with Chief Engineer Phil Griffiths and the hotel management team. Site-specific Risk Assessments and Method Statements were issued and approved before each phase of works.</p>
+          </div>
         </div>
-      </a>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ═══ 8. RELATED PROJECTS ═══ -->
-  <section class="section cs-related-section">
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Phase 1 &mdash; Calorifier Installation (2024)</span>
+            <p class="cs-scope-p">Four new 749 L storage calorifiers installed on 12 July 2024, boosting hot water capacity and modernising the ageing plant. System chlorination and full handover documentation completed at the close of Phase 1, providing a documented baseline for the newly upgraded hot water generation system.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">PRV Replacement Programme</span>
+            <p class="cs-scope-p">Full replacement of pressure reducing valves across all risers with heavy-duty Caleffi 536-series PRVs rated for approximately 8 bar inlet pressure. New full-bore isolation valves fitted in place of old service valves. Each riser drained, re-pressurised and verified under live flow at bedroom fixtures to confirm balanced pressure throughout all storeys.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Booster Pump System Upgrade</span>
+            <p class="cs-scope-p">Fixed-speed booster set converted to variable-speed operation with new inverter controls and a correctly sized pressure expansion vessel, replacing the inadequate 60 L original. New control logic rotates pump duty for even wear and dual redundancy, eliminating water hammer pressure transients and protecting the new PRVs from surge damage.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Hot Water System Remediation</span>
+            <p class="cs-scope-p">Cylinder No.1 replaced under manufacturer's warranty approval, restoring full four-cylinder operation. Water softener installed on the building's incoming supply to treat all makeup water feeding the calorifiers. Cylinders No.2, 3 and 4 cleaned and fitted with new sacrificial anodes. Comprehensive re-commissioning and chlorination of hot and cold-water circuits performed at handover.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">4</span>
+            <span class="cs-outcome-title">Calorifiers Fully Reinstated</span>
+            <p class="cs-outcome-desc">All four 749 L storage vessels returned to full service, eliminating the capacity shortfall caused by the Cylinder No.1 failure and restoring complete domestic hot water redundancy across the hotel.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">11</span>
+            <span class="cs-outcome-title">Defects Documented</span>
+            <p class="cs-outcome-desc">Senior engineers documented 11 distinct defects with photographic evidence during the 6 November 2025 inspection, providing the evidence base for both the warranty claim and the wider remediation scope.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">749 L</span>
+            <span class="cs-outcome-title">Per Vessel Capacity</span>
+            <p class="cs-outcome-desc">Four calorifiers providing a combined 2,996 L of hot water storage — a resilient platform for the hotel's operational demands, sized to cope with peak occupancy without risk of supply shortfall.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Zero</span>
+            <span class="cs-outcome-title">Pressure Incidents Post-Upgrade</span>
+            <p class="cs-outcome-desc">Variable-speed booster controls and new Caleffi PRVs have delivered stable cold-water pressures with no further over-pressurisation or valve failure events recorded since commissioning in March 2026.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">On Time</span>
+            <span class="cs-outcome-title">Delivered to Programme</span>
+            <p class="cs-outcome-desc">All Phase 2 remediation works completed and commissioned by March 2026 in line with the agreed programme, with no unplanned disruption to hotel operations or guest experience throughout.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">12 Mo.</span>
+            <span class="cs-outcome-title">Defects Liability Coverage</span>
+            <p class="cs-outcome-desc">A 12-month defects liability period applies to all remediation works, providing the client with contractual assurance over the long-term performance of the upgraded plantroom infrastructure.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. COMPLIANCE, SAFETY + PROGRAMME AND DELIVERY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Investigation, Compliance and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">The Hampton by Hilton at Liverpool John Lennon Airport presented a complex, multi-phase remediation challenge. Two critical failure events — a PRV burst in late 2023 causing internal flooding, and a hot water cylinder pin-hole leak in November 2025 — exposed underlying vulnerabilities in both the pressure control and hot water generation systems. Vital Synergy was engaged to investigate root causes and deliver a structured remediation that would address those causes directly, rather than treating symptoms alone.</p>
+          <p class="body-text-faint">All works were delivered within a live, occupied hotel environment. Programme sequencing was agreed riser by riser with Chief Engineer Phil Griffiths, isolating only one riser of guest rooms at a time and scheduling interventions during low-occupancy periods to limit disruption to guests throughout.</p>
+
+          <h4 class="cs-detail-h4">Root Cause Analysis and Investigation</h4>
+          <p class="cs-detail-p">A detailed technical investigation was carried out on 6 November 2025. Senior engineers performed full internal and external inspections of all four hot water vessels and documented 11 distinct defects with photographic evidence. Cylinder No.1 was found to be severely degraded internally by limescale deposits and corrosion, particularly around the cold-feed inlet and inspection flange. Its sacrificial anode had not been replaced since commissioning and was almost completely consumed — manufacturer guidelines call for six-month inspections and annual anode replacement, neither of which had occurred during 16 months of operation.</p>
+          <p class="cs-detail-p">Root cause of the calorifier's premature failure was confirmed as hard water chemistry (site supply classified "slightly hard" per United Utilities data, trending towards moderately hard) combined with a lack of routine maintenance. Cylinder No.1 was deemed beyond economical repair and taken out of service. A parallel review of the cold-water booster and PRV system found that the existing Wolseley "Jet" type PN16 PRVs were inadequate for the booster's fixed-speed operating regime. Pressure transients (water hammer) produced by constant-output pumping, combined with an undersized 60 L expansion vessel and an absence of surge suppression, had overstressed the PRVs and likely precipitated the burst flooding event. Upstream static pressures were measured at approximately 8 bar.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">Phase 1, completed in July 2024, installed four new 749 L storage calorifiers with full system chlorination and handover documentation, addressing the immediate hot water capacity shortfall. Following the November 2025 failure, immediate containment isolated Cylinder No.1 and pre-emptively replaced the anode on Cylinder No.2, restoring supply continuity from the remaining three vessels whilst the warranty claim and wider remediation were progressed.</p>
+          <p class="cs-detail-p">Phase 2 remediation works were tendered in early 2024 and commissioned in March 2026. PRV replacement was delivered across all risers with full-bore isolation valves, tested and verified under live flow. The booster set was retrofitted with modern inverter controls and a correctly sized expansion vessel. Cylinder No.1 was replaced under the manufacturer's warranty; the remaining cylinders were cleaned, re-anoded and re-insulated. A water softener was installed on the building's incoming supply. Comprehensive RAMS were issued and adhered to per phase. The structured handover package provided to the client's engineering team included updated as-fitted documentation, operation manuals for the new control systems, and water treatment maintenance guidelines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download Hampton by Hilton Liverpool Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">Hampton by Hilton, Liverpool John Lennon Airport &mdash; Case Study</span>
+            <span class="cs-doc-meta">Hampton-Hilton-LJA-Case-Study.pdf &middot; 1.4 MB</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. CONCLUSION / CLIENT FEEDBACK -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
+        <div class="cs-testimonial">
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">[ADD DETAIL &mdash; client testimonial quote]</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-name">[ADD DETAIL &mdash; name and role]</p>
+          <p class="cs-testimonial-role">Hampton by Hilton, Liverpool John Lennon Airport</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">Hospitality &amp; Related Sectors</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <a href="cardenpark.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/cardenpark.webp" alt="Carden Park Hotel" class="cs-related-thumb">
+              <span class="csl-sector-badge">Hospitality</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Carden Park Hotel</h4>
+              <p class="cs-related-sub">Commercial M&amp;E Upgrade</p>
+            </div>
+          </a>
+
+          <a href="stpeters.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
+              <span class="csl-sector-badge">Healthcare</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
+              <p class="cs-related-sub">MEP Refurbishment</p>
+            </div>
+          </a>
+
+          <a href="roseacre.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
+              <span class="csl-sector-badge">Education</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
+              <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
     <div class="wrap">
-      <span class="eyebrow">Hospitality &amp; Commercial</span>
-      <h2 class="section-heading">Other related projects</h2>
-      <div class="cs-related-grid">
-
-        <a href="stpeters.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre" class="cs-related-thumb">
-            <span class="csl-sector-badge">Healthcare</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
-            <p class="cs-related-sub">MEP Refurbishment</p>
-          </div>
-        </a>
-
-        <a href="whitaker.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
-            <span class="csl-sector-badge">Cultural / Heritage</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">The Whitaker Museum</h4>
-            <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
-          </div>
-        </a>
-
-        <a href="roseacre.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
-            <span class="csl-sector-badge">Education</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
-            <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
-          </div>
-        </a>
-
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Hospitality</a>
+          <a href="#" class="cs-tag">Plantroom Remediation</a>
+          <a href="#" class="cs-tag">Calorifiers</a>
+          <a href="#" class="cs-tag">PRV Replacement</a>
+          <a href="#" class="cs-tag">Booster Pumps</a>
+          <a href="#" class="cs-tag">Liverpool</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 9. TAG ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-tags-wrap">
-      <div class="cs-tags-row">
-        <a href="#" class="cs-tag">Hospitality</a>
-        <a href="#" class="cs-tag">Plantroom Remediation</a>
-        <a href="#" class="cs-tag">MEP</a>
-        <a href="#" class="cs-tag">Merseyside</a>
+    <!-- 13. SOCIAL SHARE ROW -->
+    <div class="wrap">
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fhampton-hilton-liverpool" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fhampton-hilton-liverpool" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+Hampton+by+Hilton%2C+Liverpool+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ═══ 10. SOCIAL SHARE ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-share-wrap">
-      <div class="cs-share-row">
-        <span class="cs-share-label">Connect</span>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fhampton-hilton-liverpool" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fhampton-hilton-liverpool" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
-        </a>
-        <a href="mailto:?subject=Case+Study%3A+Hampton+by+Hilton%2C+Liverpool+John+Lennon+Airport+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
-          <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ FOOTER ═══ -->
   </main>
-<footer class="site-footer">
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-grid">
         <div class="footer-col-logo">
@@ -297,7 +502,8 @@
           <a href="about.html" class="footer-link">About Us</a>
           <a href="careers.html" class="footer-link">Careers</a>
           <a href="casestudies.html" class="footer-link">Case Studies</a>
-          <a href="index.html#contact" class="footer-link">Contact</a>          <a href="services.html" class="footer-link">Services</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
           <a href="social-value.html" class="footer-link">Social Value</a>
         </div>
         <div>
@@ -312,7 +518,7 @@
     </div>
     <div class="copyright-bar">
       <div class="wrap copyright-inner">
-        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
         <div class="copyright-links">
           <a href="edi-policy.html" class="copyright-link">EDI Policy</a>
           <a href="privacy-policy.html" class="copyright-link">Privacy Policy</a>
