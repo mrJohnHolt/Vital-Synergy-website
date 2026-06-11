@@ -905,7 +905,18 @@ body {
   border-color: var(--brand);
   box-shadow: 0 6px 24px rgba(235,104,35,0.12);
 }
+.cs-related-thumb-wrap { position: relative; overflow: hidden; }
 .cs-related-thumb { width: 100%; height: 170px; object-fit: cover; display: block; background: #1a1a1a; }
+.cs-related-thumb-wrap .csl-sector-badge {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(13,13,13,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 5px 11px; border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
 .cs-related-body { padding: 18px 20px; }
 .cs-related-label {
   font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
