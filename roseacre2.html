@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roseacre Primary Academy &amp; Nursery, Blackpool | Case Study | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* Hero and scope backgrounds */
+    .cs-hero {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/roseacre-1.jpg');
+    }
+    .cs-scope-section {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/roseacre-1.jpg');
+    }
+
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
+    .cs-testimonial {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="services.html" class="header-nav-link">Services</a>
+        <a href="casestudies.html" class="header-nav-link header-nav-link-active">Case Studies</a>
+        <a href="careers.html" class="header-nav-link">Careers</a>
+        <a href="social-value.html" class="header-nav-link">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <div class="wrap">
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">Roseacre Primary Academy &amp; Nursery, Blackpool</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Education</span>
+            <h1 class="hero-h1">Roseacre Primary Academy &amp; Nursery, Blackpool</h1>
+            <span class="cs-hero-sub">Comprehensive Heating System Upgrade</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;TBC</span>
+        </div>
+        <span class="cs-meta-date">Summer 2024 &ndash; Spring 2025</span>
+      </div>
+    </div>
+
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow">Project Overview</span>
+        <p class="cs-exec-summary">Roseacre Primary Academy &amp; Nursery in Blackpool required a full modernisation of its outdated heating system to improve energy efficiency, reduce running costs, and enhance comfort for staff and pupils. Vital Synergy designed and installed a complete new heating solution, replacing aging distribution pipework with 78 high-efficiency emitters and an advanced Building Management System. The project introduced air conditioning in six classrooms and future-proofed the plant room for low-carbon upgrade. All works were delivered with minimal disruption through careful phasing around term times, out-of-hours working, and proactive asbestos management.</p>
+      </div>
+    </section>
+
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">Roseacre Primary Academy &amp; Nursery, Blackpool</span>
+            <p class="cs-client-desc">A large primary school campus in Blackpool serving nursery and primary-age pupils across multiple buildings. The academy trust identified an urgent need to replace inefficient, aging heating infrastructure that was costly to operate and delivering inconsistent comfort across the site. The client required a fully operational school throughout the works, making programme management and stakeholder communication central to the project.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Education</span>
+            <p class="cs-client-desc">Working within a live primary school placed specific demands on sequencing, safety, and site conduct. All works were phased around the school calendar, with disruptive activities scheduled during school holidays and out of hours. Asbestos management was a key consideration, requiring early surveying and licensed removal before any affected areas could be progressed. Low surface-temperature emitters were specified throughout nursery and SEN areas to meet safeguarding requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Heating Distribution &amp; Emitters</span>
+            <p class="cs-scope-p">Full replacement of Low Temperature Hot Water (LTHW) distribution pipework throughout all school buildings, with phenolic thermal insulation and identification labelling applied throughout. Seventy-eight new heating emitters installed across every room and space, including radiators, fan convector units, radiant panels, and low surface-temperature (LST) units where child safety required them.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Plantroom &amp; Controls Upgrade</span>
+            <p class="cs-scope-p">New 600 kW plate heat exchanger installed to provide hydraulic separation between the retained primary boiler circuit and the new secondary distribution system. New pressurisation unit, expansion vessels, pumps, filters, and valves commissioned in the plant room. Advanced Building Management System (BMS) and per-room thermostatic controls installed, with motorised valves and actuators providing granular zoning to classroom level.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Air Conditioning &amp; Electrical Works</span>
+            <p class="cs-scope-p">Six new air-conditioning units installed across Year 4 and Year 5 classrooms (three per floor), complete with refrigeration pipework, controls integration, and dedicated electrical supplies. New electrical circuits, wiring, and control panels provided for all heating and cooling installations, including fused spurs and distribution board connections throughout the building.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Commissioning &amp; Handover</span>
+            <p class="cs-scope-p">Full BSRIA-compliant system flush and chemical dosing, with all circuits balanced and commissioned to design flow rates. BMS controls engineer commissioned and verified the new control system, sensors, and scheduling. Formal witness commissioning test carried out with client representatives. Comprehensive handover package issued including O&amp;M manuals, as-built drawings, updated asset register, Gas Safe, electrical test, and Building Regulations completion certificates.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">78</span>
+            <span class="cs-outcome-title">New Heating Emitters Installed</span>
+            <p class="cs-outcome-desc">A full campus-wide replacement covering every room and space with appropriately specified emitters, including low surface-temperature units in nursery and SEN areas to meet safeguarding requirements.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">6</span>
+            <span class="cs-outcome-title">Air Conditioning Units Added</span>
+            <p class="cs-outcome-desc">Three units each in Year 4 and Year 5 classrooms, providing comfort cooling during warmer months and addressing a longstanding request from school staff that had not previously been met.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Full</span>
+            <span class="cs-outcome-title">BMS &amp; Zoning Integration</span>
+            <p class="cs-outcome-desc">Per-room thermostatic and BMS controls replace a previously unzoned, continuously running system, delivering automatic scheduling, energy monitoring, and precise temperature management across the entire campus.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">100%</span>
+            <span class="cs-outcome-title">Compliant at Handover</span>
+            <p class="cs-outcome-desc">All systems signed off with Gas Safe, BS 7671 electrical test, and Building Regulations completion certificates. Full O&amp;M documentation, as-built drawings, and a comprehensive asset register issued to the client.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">On Time</span>
+            <span class="cs-outcome-title">Delivered to Programme</span>
+            <p class="cs-outcome-desc">Nine-month programme from initial planning to formal handover, sequenced around the school calendar with close coordination between Vital Synergy and the school throughout. All milestone dates met without disruption to pupils or teaching.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Future-Ready</span>
+            <span class="cs-outcome-title">Decarbonisation-Ready Plant Room</span>
+            <p class="cs-outcome-desc">The new plate heat exchanger and pre-installed connection stubs allow an air-source heat pump or second boiler to be added without reworking the distribution system, giving the school a clear pathway to net-zero heating.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. COMPLIANCE, SAFETY + PROGRAMME AND DELIVERY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Compliance, Safety and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">The project was designed, procured and delivered in full compliance with current UK Building Regulations and applicable British Standards. Health and safety management was embedded throughout the programme under a CDM 2015 Construction Phase Plan, with regular toolbox talks and worker inductions carried out from mobilisation through to handover.</p>
+          <p class="body-text-faint">Asbestos surveying and licensed removal were completed before any works commenced in affected areas. Close coordination with the school's leadership team ensured every phase of the programme was aligned with the school calendar, maintaining full operational continuity for pupils and staff throughout.</p>
+
+          <h4 class="cs-detail-h4">Compliance and Safety</h4>
+          <p class="cs-detail-p">A refurbishment and demolition asbestos survey was carried out prior to works commencing, identifying asbestos-containing materials in older sections of the building. A Prime Cost sum was allocated for licensed specialist removal, with all contaminated areas cleared and certificated before installation works proceeded in those zones. All heating installations were designed in accordance with Building Regulations Part L for energy efficiency, with phenolic insulation applied to all new pipework to minimise heat losses and reduce boiler run-hours.</p>
+          <p class="cs-detail-p">Electrical installations were carried out in accordance with BS 7671 (IET Wiring Regulations), with all new circuits tested and certified on completion. The Gas Safe certificate was issued following commissioning of the retained Alpha ARES 350 kW boiler and new plant room equipment. A Building Regulations completion certificate was obtained confirming full compliance of the new heating and cooling systems with current statutory requirements.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">On-site work commenced in October 2024 with asbestos removal carried out under controlled conditions in late October. Main heating installation proceeded zone by zone through late 2024 and early 2025, with the Reception and Year 1 block completed first, followed by the Nursery, library, assembly hall, and remaining classroom zones in sequence. Out-of-hours and weekend working was used for corridor pipe installations and any tasks requiring temporary interruption to heating services, minimising impact on lessons.</p>
+          <p class="cs-detail-p">A formal commissioning witness test was carried out on 25 April 2025 with the client's representatives present, verifying that all circuits were balanced, controls were operating correctly, and all safety interlocks were functional. The updated asset register listing all new equipment and future service schedules was issued on 29 April 2025 as part of the final handover package, giving the school a complete record of the new installation for ongoing facilities management.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download Roseacre Primary Academy &amp; Nursery Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">Roseacre Primary Academy &amp; Nursery &mdash; Case Study</span>
+            <span class="cs-doc-meta">Roseacre-Primary-Academy-Case-Study.pdf &middot; 1.1 MB</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. CONCLUSION / CLIENT FEEDBACK -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
+        <div class="cs-testimonial">
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">[ADD CLIENT QUOTE &mdash; quote text]</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-role">[ADD DETAIL &mdash; name and role] &middot; Roseacre Primary Academy &amp; Nursery, Blackpool</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">Education &amp; Public Sector</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <a href="stpeters.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
+              <span class="csl-sector-badge">Healthcare</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
+              <p class="cs-related-sub">MEP Refurbishment</p>
+            </div>
+          </a>
+
+          <a href="hamptonlvp.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
+              <span class="csl-sector-badge">Hospitality</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
+              <p class="cs-related-sub">Plantroom Remediation</p>
+            </div>
+          </a>
+
+          <a href="whitaker.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
+              <span class="csl-sector-badge">Cultural / Heritage</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">The Whitaker Museum</h4>
+              <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
+    <div class="wrap">
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Education</a>
+          <a href="#" class="cs-tag">Heating Upgrade</a>
+          <a href="#" class="cs-tag">BMS</a>
+          <a href="#" class="cs-tag">Air Conditioning</a>
+          <a href="#" class="cs-tag">Blackpool</a>
+          <a href="#" class="cs-tag">Lancashire</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. SOCIAL SHARE ROW -->
+    <div class="wrap">
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froseacre-primary-academy" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froseacre-primary-academy" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+Roseacre+Primary+Academy+%26+Nursery%2C+Blackpool+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+          <div class="socials-row">
+            <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="font-size:13px;"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="casestudies.html" class="footer-link">Case Studies</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <div class="copyright-links">
+          <a href="edi-policy.html" class="copyright-link">EDI Policy</a>
+          <a href="privacy-policy.html" class="copyright-link">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="copyright-link">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
