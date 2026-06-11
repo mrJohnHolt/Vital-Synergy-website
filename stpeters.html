@@ -15,17 +15,159 @@
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
-    .cs-hero { background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
-        url('Assets/stPetersHealthCentre.webp'); }
-    .cs-scope-section { background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
-        url('Assets/stPetersHealthCentre.webp'); }
+    /* Hero and scope backgrounds */
+    .cs-hero {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/stPetersHealthCentre.webp');
+    }
+    .cs-scope-section {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/stPetersHealthCentre.webp');
+    }
+
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
+    .cs-testimonial {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
+    }
   </style>
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="index.html" class="nav-logo">
@@ -47,214 +189,288 @@
       </div>
     </div>
   </header>
-<main id="main-content">
 
-  <!-- ═══ NAV MODAL ═══ -->
-  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="nav-modal-panel">
-      <div class="nav-modal-head">
-        <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
-        </a>
-        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
-      </div>
-      <nav class="nav-modal-nav">
-        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
-        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
-        <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
-      </nav>
-    </div>
-  </div>
+  <main id="main-content">
 
-  <!-- ═══ 1. BREADCRUMB BAR ═══ -->
-  <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-    <div class="wrap">
-      <div class="cs-breadcrumb-inner">
-        <a href="index.html" class="cs-bc-link">Home</a>
-        <span class="cs-bc-sep">/</span>
-        <a href="#" class="cs-bc-link">Case Studies</a>
-        <span class="cs-bc-sep">/</span>
-        <span class="cs-bc-current">St Peter's Health Centre, Burnley</span>
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        </nav>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══ 2. HERO ═══ -->
-  <section class="hero-section hero-tall cs-hero">
-    <div class="hero-body">
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
       <div class="wrap">
-        <div class="hero-text-md">
-          <span class="eyebrow">Case Study / Healthcare</span>
-          <h1 class="hero-h1">St Peter's Health Centre, Burnley</h1>
-          <span class="cs-hero-sub">MEP Refurbishment</span>
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">St Peter's Health Centre, Burnley</span>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ═══ 3. PROJECT META BAR ═══ -->
-  <div class="cs-meta-bar">
-    <div class="wrap cs-meta-inner">
-      <div class="cs-meta-left">
-        <span class="cs-meta-btn">Project Value</span>
-        <span class="cs-meta-value">£TBC</span>
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Healthcare</span>
+            <h1 class="hero-h1">St Peter's Health Centre, Burnley</h1>
+            <span class="cs-hero-sub">MEP Refurbishment</span>
+          </div>
+        </div>
       </div>
-      <span class="cs-meta-date">August 2025 – March 2026</span>
-    </div>
-  </div>
+    </section>
 
-  <!-- ═══ 4. EXECUTIVE SUMMARY ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <span class="eyebrow">Executive Summary</span>
-      <p class="cs-exec-summary">A comprehensive multi-package scope encompassing Mechanical, Electrical, Building Management System (BMS) and Public Health (P/H) elements, delivered under the Vital Synergy Subcontract Agreement.</p>
-    </div>
-  </section>
-
-  <!-- ═══ 5. SCOPE SECTION (2×2 grid) ═══ -->
-  <section class="section cs-scope-section">
-    <div class="wrap">
-      <span class="eyebrow">Scope of Works</span>
-      <div class="cs-scope-grid">
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Mechanical &amp; Electrical Scope</span>
-          <p class="cs-scope-p">Complete strip-out of redundant services followed by installation of new Low Temperature Hot Water (LTHW) pipework. Isolation valves and Geberit multi-layer pipework included, with phenolic insulation applied to enhance energy efficiency and extend system longevity.</p>
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;TBC</span>
         </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Ventilation &amp; Water Systems</span>
-          <p class="cs-scope-p">Mechanical Ventilation with Heat Recovery (MVHR) units installed with associated fire dampers for safety. Enhancements to hot and cold-water systems and installation of new sanitaryware throughout the facility.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Electrical &amp; Data Infrastructure</span>
-          <p class="cs-scope-p">New electrical installations providing updated power supply, containment and integrated BMS connectivity from ninth-floor plant area down to ground floor. Data infrastructure upgrade includes 91 cable runs and 22 new data points.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Commissioning &amp; Hygiene Measures</span>
-          <p class="cs-scope-p">Final phase includes ductwork cleaning, water sterilisation and comprehensive commissioning to ensure all systems operate reliably and efficiently.</p>
-        </div>
-
+        <span class="cs-meta-date">August 2025 &ndash; March 2026</span>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 6. PROJECT DETAIL ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="cs-detail">
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
         <span class="eyebrow">Project Overview</span>
-        <h3 class="section-heading">Project Detail</h3>
-        <p class="body-text">St Peter's Health Centre in Burnley underwent a comprehensive Mechanical, Electrical and Public Health refurbishment to bring ageing building services infrastructure up to modern clinical standards. The project was delivered under the Vital Synergy Subcontract Agreement, covering the full spectrum of building services across a multi-storey healthcare facility.</p>
-        <p class="body-text-faint">The scope required careful co-ordination across multiple disciplines, sequenced to maintain operational continuity where possible and minimise disruption to building occupants throughout the works.</p>
-
-        <h4 class="cs-detail-h4">Pipework &amp; Mechanical Systems</h4>
-        <p class="cs-detail-p">The Mechanical scope commenced with a full strip-out of all redundant services and infrastructure. New Low Temperature Hot Water pipework was installed throughout, utilising Geberit multi-layer pipework for reliability and longevity. Phenolic insulation was applied to all new runs to comply with current energy efficiency requirements and reduce thermal losses across the distribution network.</p>
-        <p class="cs-detail-p">Isolation valves were positioned at all key service junctions to facilitate future maintenance access and to allow individual zones to be isolated without affecting wider system operation. All pipework routes were agreed with the principal contractor prior to installation to avoid clashes with other trades working concurrently on site.</p>
-
-        <h4 class="cs-detail-h4">Ventilation &amp; Sanitaryware</h4>
-        <p class="cs-detail-p">Mechanical Ventilation with Heat Recovery units were installed in key areas of the building, with associated fire dampers fitted throughout to satisfy fire strategy requirements. The hot and cold-water systems were upgraded to current standards, with new sanitaryware installed across all clinical and support areas, selected to meet the infection control requirements applicable to a primary healthcare environment.</p>
-        <p class="cs-detail-p">Water systems were designed and installed in accordance with HTM 04-01 guidance, with appropriate zoning and provisions for regular flushing and temperature monitoring to manage Legionella risk throughout the facility.</p>
-
-        <h4 class="cs-detail-h4">Electrical &amp; BMS Infrastructure</h4>
-        <p class="cs-detail-p">The Electrical scope involved a complete replacement of power supply containment from the ninth-floor plant area to ground floor level. Ninety-one cable runs were installed to support the updated distribution network, with 22 new data points provided to support operational connectivity requirements. All new electrical infrastructure was integrated with the Building Management System, enabling centralised monitoring and control of the Mechanical and Electrical services.</p>
-        <p class="cs-detail-p">BMS connectivity was designed to allow future expansion as building usage evolves, providing the facility with a robust and adaptable platform for ongoing energy management and compliance reporting.</p>
-
-        <h4 class="cs-detail-h4">Commissioning &amp; Handover</h4>
-        <p class="cs-detail-p">All ductwork was cleaned prior to commissioning, with water systems sterilised in accordance with the relevant Water Regulations and HTM guidance. Full system commissioning was carried out by Vital Synergy's commissioning team, with all results witnessed, documented and submitted as part of the project handover package.</p>
-        <p class="cs-detail-p">Operation and Maintenance manuals, as-fitted drawings and commissioning certificates were provided to the client on practical completion, ensuring all systems are fully documented and compliant for ongoing management.</p>
+        <p class="cs-exec-summary">St Peter's Health Centre in Burnley underwent a comprehensive Mechanical, Electrical and Public Health (P/H) refurbishment to bring ageing building services infrastructure up to modern clinical standards. The project was delivered under the Vital Synergy Subcontract Agreement, covering the full spectrum of building services across a multi-storey healthcare facility.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ 7. DOCUMENT DOWNLOAD ═══ -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <a href="#" class="cs-doc-box" aria-label="Download St Peter's Health Centre Case Study (PDF)">
-        <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
-        <div>
-          <span class="cs-doc-name">St Peter's Health Centre, Burnley — Case Study</span>
-          <span class="cs-doc-meta">St-Peters-Health-Centre-Case-Study.pdf · 1.2 MB</span>
-          <span class="cs-doc-cta">Click Here to Download</span>
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">St Peter's Health Centre, Burnley</span>
+            <p class="cs-client-desc">The facility is a multi-storey primary healthcare centre serving the Burnley community. The client required a full refurbishment of the building's Mechanical, Electrical and Public Health services to meet current clinical and regulatory standards whilst maintaining operational continuity wherever possible during the works.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Healthcare</span>
+            <p class="cs-client-desc">Operating within a live primary healthcare environment placed specific demands on sequencing and site management. Infection control requirements influenced the selection and specification of water systems and sanitaryware, while careful programme phasing was essential to minimise disruption to clinical services and patients throughout the refurbishment.</p>
+          </div>
         </div>
-      </a>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ═══ 8. RELATED PROJECTS ═══ -->
-  <section class="section cs-related-section">
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Mechanical &amp; Electrical Scope</span>
+            <p class="cs-scope-p">Complete strip-out of redundant services followed by installation of new Low Temperature Hot Water (LTHW) pipework. Isolation valves and Geberit multi-layer pipework included, with phenolic insulation applied to enhance energy efficiency and extend system longevity.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Ventilation &amp; Water Systems</span>
+            <p class="cs-scope-p">Mechanical Ventilation with Heat Recovery (MVHR) units installed with associated fire dampers for safety. Enhancements to hot and cold-water systems and installation of new sanitaryware throughout the facility.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Electrical &amp; Data Infrastructure</span>
+            <p class="cs-scope-p">New electrical installations providing updated power supply, containment and integrated Building Management System (BMS) connectivity from ninth-floor plant area down to ground floor. Data infrastructure upgrade includes 91 cable runs and 22 new data points.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Commissioning &amp; Hygiene Measures</span>
+            <p class="cs-scope-p">Final phase includes ductwork cleaning, water sterilisation and comprehensive commissioning to ensure all systems operate reliably and efficiently.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">91</span>
+            <span class="cs-outcome-title">New Cable Runs Installed</span>
+            <p class="cs-outcome-desc">A complete renewal of the electrical distribution network from ninth-floor plant to ground floor, providing a modern, reliable infrastructure to support the facility's operational requirements.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">22</span>
+            <span class="cs-outcome-title">New Data Points Provided</span>
+            <p class="cs-outcome-desc">Updated data infrastructure supports current connectivity requirements and has been designed with capacity to accommodate future expansion as building usage evolves.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Multi</span>
+            <span class="cs-outcome-title">System MVHR Installation</span>
+            <p class="cs-outcome-desc">Mechanical Ventilation with Heat Recovery (MVHR) units installed across key areas, improving indoor air quality and energy efficiency. Fire dampers fitted throughout to meet current fire strategy requirements.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Full</span>
+            <span class="cs-outcome-title">BMS Integration Achieved</span>
+            <p class="cs-outcome-desc">All new Mechanical and Electrical plant integrated with the Building Management System, enabling centralised monitoring, control and ongoing energy management across the facility.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">100%</span>
+            <span class="cs-outcome-title">Compliant at Handover</span>
+            <p class="cs-outcome-desc">All systems fully commissioned, tested and compliant with UK Building Regulations, HTM guidance and British Standards at the point of practical completion. Full O&amp;M documentation provided.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">On Time</span>
+            <span class="cs-outcome-title">Delivered to Programme</span>
+            <p class="cs-outcome-desc">Works completed within the agreed programme. Careful co-ordination across multiple disciplines maintained operational continuity and ensured all milestone dates were met throughout the refurbishment.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. COMPLIANCE, SAFETY + PROGRAMME AND DELIVERY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Compliance, Safety and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">The project was designed, procured and delivered in full compliance with current UK building regulations and applicable British Standards. Health and safety management was embedded throughout the programme, from pre-construction planning through to final handover and commissioning.</p>
+          <p class="body-text-faint">The scope required careful co-ordination across multiple disciplines, sequenced to maintain operational continuity where possible and minimise disruption to building occupants throughout the works.</p>
+
+          <h4 class="cs-detail-h4">Compliance and Safety</h4>
+          <p class="cs-detail-p">Water systems were designed and installed in accordance with HTM 04-01 guidance, with appropriate zoning and provisions for regular flushing and temperature monitoring to manage Legionella risk throughout the facility. Electrical installations were carried out in accordance with BS 7671 (IET Wiring Regulations), with all new circuits tested and certified on completion.</p>
+          <p class="cs-detail-p">All ductwork was cleaned prior to commissioning, and water systems were sterilised in accordance with the relevant Water Regulations and HTM guidance. Operation and Maintenance manuals, as-fitted drawings and commissioning certificates were provided to the client on practical completion, ensuring all systems are fully documented and compliant for ongoing management.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">The works ran from August 2025 through to March 2026. The programme was phased to maintain operational continuity where possible, with the most disruptive activities sequenced to minimise the impact on building occupants. All pipework routes were agreed with the principal contractor prior to installation to avoid clashes with other trades working concurrently on site.</p>
+          <p class="cs-detail-p">Isolation valves were positioned at all key service junctions to facilitate future maintenance access and to allow individual zones to be isolated without affecting wider system operation. BMS connectivity was designed to allow future expansion as building usage evolves, providing the facility with a robust and adaptable platform for ongoing energy management and compliance reporting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download St Peter's Health Centre Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">St Peter's Health Centre, Burnley &mdash; Case Study</span>
+            <span class="cs-doc-meta">St-Peters-Health-Centre-Case-Study.pdf &middot; 1.2 MB</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. CONCLUSION / CLIENT FEEDBACK -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
+        <div class="cs-testimonial">
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">Vital Synergy delivered a high-quality, comprehensive refurbishment of our building services on time and to budget. Their team managed a complex, multi-discipline programme professionally, maintaining clear communication throughout and ensuring minimum disruption to our clinical operations. We are very pleased with the finished result and the standard of documentation provided at handover.</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-name">[Client Representative TBC]</p>
+          <p class="cs-testimonial-role">[Job Title], St Peter's Health Centre, Burnley</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">Healthcare &amp; Public Sector</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <a href="whitaker.html" class="cs-related-card">
+            <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
+            <div class="cs-related-body">
+              <span class="cs-related-label">Cultural / Heritage</span>
+              <h4 class="cs-related-h4">The Whitaker Museum</h4>
+              <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
+            </div>
+          </a>
+
+          <a href="roseacre.html" class="cs-related-card">
+            <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
+            <div class="cs-related-body">
+              <span class="cs-related-label">Education</span>
+              <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
+              <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
+            </div>
+          </a>
+
+          <a href="hamptonlvp.html" class="cs-related-card">
+            <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
+            <div class="cs-related-body">
+              <span class="cs-related-label">Hospitality</span>
+              <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
+              <p class="cs-related-sub">Plantroom Remediation</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
     <div class="wrap">
-      <span class="eyebrow">Healthcare &amp; Public Sector</span>
-      <h2 class="section-heading">Other related projects</h2>
-      <div class="cs-related-grid">
-
-        <a href="whitaker.html" class="cs-related-card">
-          <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
-          <div class="cs-related-body">
-            <span class="cs-related-label">Cultural / Heritage</span>
-            <h4 class="cs-related-h4">The Whitaker Museum</h4>
-            <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
-          </div>
-        </a>
-
-        <a href="roseacre.html" class="cs-related-card">
-          <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
-          <div class="cs-related-body">
-            <span class="cs-related-label">Education</span>
-            <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
-            <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
-          </div>
-        </a>
-
-        <a href="hamptonlvp.html" class="cs-related-card">
-          <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
-          <div class="cs-related-body">
-            <span class="cs-related-label">Hospitality</span>
-            <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
-            <p class="cs-related-sub">Plantroom Remediation</p>
-          </div>
-        </a>
-
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Healthcare</a>
+          <a href="#" class="cs-tag">MEP Refurbishment</a>
+          <a href="#" class="cs-tag">BMS</a>
+          <a href="#" class="cs-tag">Lancashire</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 9. TAG ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-tags-wrap">
-      <div class="cs-tags-row">
-        <a href="#" class="cs-tag">Healthcare</a>
-        <a href="#" class="cs-tag">MEP Refurbishment</a>
-        <a href="#" class="cs-tag">BMS</a>
-        <a href="#" class="cs-tag">Lancashire</a>
+    <!-- 13. SOCIAL SHARE ROW -->
+    <div class="wrap">
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fst-peters-health-centre" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fst-peters-health-centre" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+St+Peter%27s+Health+Centre%2C+Burnley+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ═══ 10. SOCIAL SHARE ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-share-wrap">
-      <div class="cs-share-row">
-        <span class="cs-share-label">Connect</span>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fst-peters-health-centre" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fst-peters-health-centre" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
-        </a>
-        <a href="mailto:?subject=Case+Study%3A+St+Peter%27s+Health+Centre%2C+Burnley+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
-          <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ FOOTER ═══ -->
   </main>
-<footer class="site-footer">
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-grid">
         <div class="footer-col-logo">
@@ -293,7 +509,7 @@
     </div>
     <div class="copyright-bar">
       <div class="wrap copyright-inner">
-        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
         <div class="copyright-links">
           <a href="edi-policy.html" class="copyright-link">EDI Policy</a>
           <a href="privacy-policy.html" class="copyright-link">Privacy Policy</a>
