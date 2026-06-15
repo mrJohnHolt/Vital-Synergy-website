@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Park Drive Commercial Facility | Case Study | Vital Synergy</title>
+  <title>Park Drive Hospital Facility, Newcastle upon Tyne | Case Study | Vital Synergy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
@@ -15,17 +15,158 @@
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
-    .cs-hero { background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
-        url('Assets/freemanHospital.webp'); }
-    .cs-scope-section { background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
-        url('Assets/freemanHospital.webp'); }
+    .cs-hero {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/freemanHospital.webp');
+    }
+    .cs-scope-section {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/freemanHospital.webp');
+    }
+
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
+    .cs-testimonial {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
+    }
   </style>
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="index.html" class="nav-logo">
@@ -47,224 +188,298 @@
       </div>
     </div>
   </header>
-<main id="main-content">
 
-  <!-- ═══ NAV MODAL ═══ -->
-  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="nav-modal-panel">
-      <div class="nav-modal-head">
-        <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
-        </a>
-        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
-      </div>
-      <nav class="nav-modal-nav">
-        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
-        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
-        <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
-        <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
-        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-heart"></i>Social Value</a>
-      </nav>
-    </div>
-  </div>
+  <main id="main-content">
 
-  <!-- ═══ 1. BREADCRUMB BAR ═══ -->
-  <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-    <div class="wrap">
-      <div class="cs-breadcrumb-inner">
-        <a href="index.html" class="cs-bc-link">Home</a>
-        <span class="cs-bc-sep">/</span>
-        <a href="stpeters.html" class="cs-bc-link">Case Studies</a>
-        <span class="cs-bc-sep">/</span>
-        <span class="cs-bc-current">Park Drive Commercial Facility</span>
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+          <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
+          <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-heart"></i>Social Value</a>
+        </nav>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══ 2. HERO ═══ -->
-  <section class="hero-section hero-tall cs-hero">
-    <div class="hero-body">
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
       <div class="wrap">
-        <div class="hero-text-md">
-          <span class="eyebrow">Case Study / Commercial</span>
-          <h1 class="hero-h1">Park Drive Commercial Facility</h1>
-          <span class="cs-hero-sub">M&amp;E Package</span>
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">Park Drive, Newcastle upon Tyne</span>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ═══ 3. PROJECT META BAR ═══ -->
-  <div class="cs-meta-bar">
-    <div class="wrap cs-meta-inner">
-      <div class="cs-meta-left">
-        <span class="cs-meta-btn">Project Value</span>
-        <span class="cs-meta-value">£437,892.00</span>
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Healthcare</span>
+            <h1 class="hero-h1">Park Drive, Newcastle upon Tyne</h1>
+            <span class="cs-hero-sub">Full M&amp;E Package</span>
+          </div>
+        </div>
       </div>
-      <span class="cs-meta-date">Delivered in 10 weeks</span>
-    </div>
-  </div>
+    </section>
 
-  <!-- ═══ 4. EXECUTIVE SUMMARY ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <span class="eyebrow">Executive Summary</span>
-      <p class="cs-exec-summary">A comprehensive mechanical and electrical (M&amp;E) package delivered for this commercial facility. The project was estimated to last between eight and twelve weeks; all works were completed and handed over in 10 weeks. The order was placed in accordance with Vital Synergy's Standard Terms &amp; Conditions of Sale, ensuring consistent quality and compliance throughout the project.</p>
-    </div>
-  </section>
-
-  <!-- ═══ 5. SCOPE SECTION (2×2 grid) ═══ -->
-  <section class="section cs-scope-section">
-    <div class="wrap">
-      <span class="eyebrow">Scope of Works</span>
-      <div class="cs-scope-grid">
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Mechanical &amp; Electrical Scope</span>
-          <p class="cs-scope-p">Pumps, valves and heating distribution manifolds integrated into the system. Pipework installed throughout the building, including risers and isolation valves, with thermal insulation applied to maintain energy efficiency and reliability.</p>
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;437,892</span>
         </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Health &amp; Safety Compliance</span>
-          <p class="cs-scope-p">RAMS prepared covering COSHH, noise and vibration to ensure full compliance with health and safety regulations throughout all phases of the project.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Water Systems &amp; Commissioning</span>
-          <p class="cs-scope-p">Hot and cold-water systems installed, valves and pipework commissioned, chlorination completed. On-site commissioning included pressure testing, system balancing, flushing and formed certification.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Quality Assurance &amp; Documentation</span>
-          <p class="cs-scope-p">Factory Acceptance Testing (FAT) carried out on all plant control panels before site delivery. Full O&amp;M Manual issued at handover with schematics, certification and lifecycle requirements.</p>
-        </div>
-
+        <span class="cs-meta-date">Delivered in 10 weeks</span>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 6. PROJECT DETAIL ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="cs-detail">
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
         <span class="eyebrow">Project Overview</span>
-        <h3 class="section-heading">Project Detail</h3>
-        <p class="body-text">A full mechanical and electrical package was delivered for this commercial facility under Vital Synergy's Standard Terms &amp; Conditions of Sale. The project scope covered the complete installation of heating distribution, pipework infrastructure, water services, commissioning, and quality documentation, with all works completed and handed over within 10 weeks.</p>
-        <p class="body-text-faint">The programme was originally estimated at between eight and twelve weeks. Careful planning, proactive sequencing of trades, and close coordination between the site team and building occupants allowed the project to be completed at the lower end of that estimate, with no compromise to quality or compliance.</p>
-
-        <h4 class="cs-detail-h4">Mechanical &amp; Electrical Scope</h4>
-        <p class="cs-detail-p">The mechanical installation encompassed pumps, valves and heating distribution manifolds, all integrated into the existing building systems. Pipework was installed throughout the facility, including vertical risers serving each floor level, with isolation valves positioned at all key service junctions to facilitate future maintenance and zone isolation without disruption to wider building operation.</p>
-        <p class="cs-detail-p">Thermal insulation was applied to all new pipework runs in accordance with current energy efficiency requirements. The insulation specification was selected to minimise heat loss across the distribution network and extend the working life of the installed system, reducing operational costs over the long term.</p>
-
-        <h4 class="cs-detail-h4">Health &amp; Safety Compliance</h4>
-        <p class="cs-detail-p">Comprehensive Risk Assessments and Method Statements (RAMS) were prepared prior to the commencement of works. The RAMS documentation addressed COSHH requirements relating to materials used on site, alongside noise and vibration assessments to manage the impact of mechanical works on building users and surrounding occupants.</p>
-        <p class="cs-detail-p">All health and safety documentation was reviewed and approved before each work phase commenced. Vital Synergy's site team conducted regular toolbox talks throughout the project, ensuring that all operatives remained fully briefed on the specific hazards present at each stage of the installation.</p>
-
-        <h4 class="cs-detail-h4">Water Systems &amp; Commissioning</h4>
-        <p class="cs-detail-p">Hot and cold-water services were installed throughout the facility, with all valves and pipework sized and routed to meet current water regulations. On completion of installation, the water systems were subject to a full chlorination programme to meet the requirements of the relevant Water Regulations guidance prior to handover.</p>
-        <p class="cs-detail-p">On-site commissioning was carried out by Vital Synergy's commissioning team and encompassed pressure testing of all new pipework, system balancing to ensure correct flow distribution, and a full flushing regime. All commissioning results were witnessed, documented and submitted as part of the formal certification package at practical completion.</p>
-
-        <h4 class="cs-detail-h4">Quality Assurance &amp; Documentation</h4>
-        <p class="cs-detail-p">Factory Acceptance Testing was carried out on all plant control panels at the manufacturer's facility before delivery to site. This ensured that all control equipment arrived on site fully tested and ready for integration, reducing the risk of site-based commissioning delays and confirming that panels met the project specification prior to installation.</p>
-        <p class="cs-detail-p">A complete Operation and Maintenance Manual was compiled and issued to the client at handover. The O&amp;M Manual included full schematics of all installed systems, commissioning and test certification, manufacturer product data sheets, and lifecycle replacement schedules, providing the building owner with a comprehensive reference document for the ongoing management and maintenance of all M&amp;E services.</p>
+        <p class="cs-exec-summary">Vital Synergy delivered a comprehensive mechanical and electrical services package for a hospital facility at Park Drive, Newcastle upon Tyne. The project involved the upgrade of core building services to support operational and clinical requirements whilst meeting strict programme, quality, and compliance expectations. All works were completed and handed over within 10 weeks against an anticipated programme of 8 to 12 weeks, with the final contract value of &#xa3;437,892 delivered on time and within budget.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ 7. DOCUMENT DOWNLOAD ═══ -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <a href="#" class="cs-doc-box" aria-label="Download Park Drive Commercial Facility M&amp;E Package Case Study (PDF)">
-        <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
-        <div>
-          <span class="cs-doc-name">Park Drive Commercial Facility — M&amp;E Package Case Study</span>
-          <span class="cs-doc-meta">Park-Drive-ME-Package-Case-Study.pdf · 1.1 MB</span>
-          <span class="cs-doc-cta">Click Here to Download</span>
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">Park Drive, Newcastle upon Tyne</span>
+            <p class="cs-client-desc">A hospital facility requiring the full upgrade of core mechanical and electrical building services. The client needed a reliable, compliant infrastructure to support operational and clinical requirements, delivered to a demanding programme with robust health and safety management throughout.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Healthcare</span>
+            <p class="cs-client-desc">Delivering within a hospital environment placed specific demands on health and safety management, infection control awareness, and programme certainty. Coordination between trades, early sequencing, and parallel working were all essential to meeting the rigorous standards expected in a healthcare setting whilst achieving handover at the lower end of the estimated programme window.</p>
+          </div>
         </div>
-      </a>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ═══ 8. RELATED PROJECTS ═══ -->
-  <section class="section cs-related-section">
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Mechanical Installation</span>
+            <p class="cs-scope-p">Pumps, valves and heating distribution manifolds installed and integrated throughout the building. Pipework runs installed including vertical risers and isolation valves at all key junctions, with full thermal insulation applied to improve energy efficiency and extend system longevity.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Water Systems &amp; Commissioning</span>
+            <p class="cs-scope-p">Hot and cold water services installed throughout the facility. All pipework and valves commissioned, with a full chlorination programme carried out to meet Water Regulations guidance. On-site commissioning included pressure testing, system balancing and a complete flushing regime.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Electrical Works</span>
+            <p class="cs-scope-p">Electrical scope included power supplies, control panels and integration with building systems as required. All electrical works were carried out by accredited contractors and tested and certified in accordance with current UK regulations prior to handover.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Quality Assurance &amp; Documentation</span>
+            <p class="cs-scope-p">Factory Acceptance Testing conducted on all plant control panels prior to site delivery. A comprehensive Operations and Maintenance manual was issued at handover, including full system schematics, commissioning certification, test results and lifecycle guidance.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">&#xa3;437k</span>
+            <span class="cs-outcome-title">Delivered Within Budget</span>
+            <p class="cs-outcome-desc">The full M&amp;E package was completed at a final contract value of &#xa3;437,892 with no budget overrun, demonstrating effective cost control across all mechanical and electrical disciplines.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">10wk</span>
+            <span class="cs-outcome-title">Programme Achieved</span>
+            <p class="cs-outcome-desc">All works completed and handed over within 10 weeks, at the lower end of the 8 to 12 week estimated programme, through early coordination and parallel trade working.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">On Time</span>
+            <span class="cs-outcome-title">Delivered to Programme</span>
+            <p class="cs-outcome-desc">Clear communication, regular progress reviews and proactive risk management ensured all milestones were met and the project was handed over on schedule without disruption to cost or quality.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Zero</span>
+            <span class="cs-outcome-title">Zero Incidents on Site</span>
+            <p class="cs-outcome-desc">The project was delivered without incident. Comprehensive RAMS covering COSHH, noise and vibration were in place throughout, with all operatives inducted and working to agreed safe systems of work.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Full</span>
+            <span class="cs-outcome-title">FAT on All Control Panels</span>
+            <p class="cs-outcome-desc">Factory Acceptance Testing was completed on all plant control panels at the manufacturer's facility before site delivery, reducing commissioning risk and confirming specification compliance prior to installation.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">100%</span>
+            <span class="cs-outcome-title">Compliant at Handover</span>
+            <p class="cs-outcome-desc">All systems fully commissioned, pressure tested, balanced and certified at practical completion. A complete O&amp;M manual was issued, providing the client with a comprehensive reference for ongoing building management.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PROJECT DETAIL -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Compliance, Safety and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">Vital Synergy delivered a full turnkey M&amp;E package for this hospital facility, covering the complete installation of heating distribution, pipework infrastructure, water services, electrical works, commissioning and quality documentation. The project was completed and handed over within 10 weeks, at a final value of &#xa3;437,892, meeting both programme and budget targets.</p>
+          <p class="body-text-faint">The programme was originally estimated at between eight and twelve weeks. Early coordination, phased installation and parallel working between trades enabled efficient progress on site and ensured the project was completed at the lower end of that estimate without any compromise to quality or compliance standards required within a healthcare environment.</p>
+
+          <h4 class="cs-detail-h4">Compliance and Safety</h4>
+          <p class="cs-detail-p">Health and safety management was embedded throughout the project from pre-construction planning through to handover. Comprehensive Risk Assessments and Method Statements were prepared prior to commencing works, addressing COSHH requirements, noise assessments and vibration control measures. All operatives were inducted on site and worked in accordance with agreed safe systems of work throughout. The project was completed without incident, reflecting strong safety leadership across all disciplines.</p>
+          <p class="cs-detail-p">Water systems were installed in accordance with current Water Regulations guidance. A full chlorination programme was carried out on completion of the water services installation to ensure compliance with water hygiene standards prior to handover. All electrical works were completed and tested by accredited contractors in line with current UK regulations, with formal certification submitted as part of the handover documentation package.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">The project was carefully programmed from the outset to achieve practical completion within the agreed timeframe. Early trade coordination, sequenced installation and concurrent working across mechanical and electrical scopes maintained consistent progress on site. Regular progress reviews and direct communication between the site team and client ensured that any emerging risks were identified and resolved promptly, without impact on the agreed programme or cost plan.</p>
+          <p class="cs-detail-p">A full commissioning process was undertaken prior to handover, encompassing pressure testing of all pipework, system flushing and balancing, water chlorination and functional testing of all mechanical and electrical systems. All commissioning results were witnessed and documented. The project was handed over with all systems fully operational and supported by a complete Operations and Maintenance manual, providing the building owner with a robust reference for the ongoing management and maintenance of all installed building services.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download Park Drive, Newcastle upon Tyne Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">Park Drive, Newcastle upon Tyne &mdash; Case Study</span>
+            <span class="cs-doc-meta">Park-Drive-Newcastle-Case-Study.pdf &middot; 1.1 MB</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. TESTIMONIAL -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
+        <div class="cs-testimonial">
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">[ADD CLIENT QUOTE &mdash; quote text]</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-name">[ADD DETAIL &mdash; name]</p>
+          <p class="cs-testimonial-role">[ADD DETAIL &mdash; role and organisation]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">Healthcare &amp; Public Sector</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <a href="hamptonlvp.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
+              <span class="csl-sector-badge">Hospitality</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
+              <p class="cs-related-sub">Plantroom Remediation</p>
+            </div>
+          </a>
+
+          <a href="stpeters.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
+              <span class="csl-sector-badge">Healthcare</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
+              <p class="cs-related-sub">MEP Refurbishment</p>
+            </div>
+          </a>
+
+          <a href="roseacre.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
+              <span class="csl-sector-badge">Education</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
+              <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
     <div class="wrap">
-      <span class="eyebrow">Commercial &amp; Industrial</span>
-      <h2 class="section-heading">Other related projects</h2>
-      <div class="cs-related-grid">
-
-        <a href="hamptonlvp.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
-            <span class="csl-sector-badge">Hospitality</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
-            <p class="cs-related-sub">Plantroom Remediation</p>
-          </div>
-        </a>
-
-        <a href="stpeters.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
-            <span class="csl-sector-badge">Healthcare</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
-            <p class="cs-related-sub">MEP Refurbishment</p>
-          </div>
-        </a>
-
-        <a href="roseacre.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
-            <span class="csl-sector-badge">Education</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
-            <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
-          </div>
-        </a>
-
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Healthcare</a>
+          <a href="#" class="cs-tag">M&amp;E Package</a>
+          <a href="#" class="cs-tag">Mechanical</a>
+          <a href="#" class="cs-tag">Electrical</a>
+          <a href="#" class="cs-tag">Commissioning</a>
+          <a href="#" class="cs-tag">Newcastle</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 9. TAG ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-tags-wrap">
-      <div class="cs-tags-row">
-        <a href="#" class="cs-tag">Commercial</a>
-        <a href="#" class="cs-tag">M&amp;E Package</a>
-        <a href="#" class="cs-tag">Mechanical</a>
-        <a href="#" class="cs-tag">Electrical</a>
-        <a href="#" class="cs-tag">Commissioning</a>
-        <a href="#" class="cs-tag">Lancashire</a>
+    <!-- 13. SOCIAL SHARE ROW -->
+    <div class="wrap">
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fpark-drive-newcastle" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fpark-drive-newcastle" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+Park+Drive%2C+Newcastle+upon+Tyne+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ═══ 10. SOCIAL SHARE ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-share-wrap">
-      <div class="cs-share-row">
-        <span class="cs-share-label">Connect</span>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fpark-drive" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fpark-drive" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
-        </a>
-        <a href="mailto:?subject=Case+Study%3A+Park+Drive+Commercial+Facility+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
-          <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ FOOTER ═══ -->
   </main>
-<footer class="site-footer">
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-grid">
         <div class="footer-col-logo">
