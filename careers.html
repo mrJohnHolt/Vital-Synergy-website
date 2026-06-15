@@ -78,7 +78,49 @@
       font-size: 11px;
       flex-shrink: 0;
     }
-    .career-card .btn-green { align-self: center; }
+    .career-card .btn-green { align-self: flex-start; }
+    .career-card-featured {
+      border-top: 4px solid var(--brand);
+    }
+    .career-featured-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+    .career-card-featured .career-job-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .career-card-featured .career-company {
+      margin-bottom: 12px;
+    }
+    .career-card-featured .career-meta {
+      flex: 0;
+      margin-bottom: 14px;
+    }
+    .career-featured-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    @media (min-width: 1024px) {
+      #vacancies .four-col {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+      }
+      #vacancies .career-card-featured {
+        grid-row: span 2;
+      }
+    }
   </style>
 </head>
 
@@ -255,6 +297,18 @@
     <div class="wrap">
       <div class="four-col">
 
+        <div class="career-card career-card-featured">
+          <span class="career-featured-badge">Featured Role</span>
+          <h3 class="career-job-title">Graduate Design Engineer</h3>
+          <p class="career-company">Vital Synergy</p>
+          <div class="career-meta">
+            <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Ribble Valley HQ</span>
+            <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
+          </div>
+          <p class="career-featured-desc">An exciting opportunity for a driven engineering graduate to develop their skills across a wide range of building services disciplines, working directly with our Design Director on live commercial and public sector projects.</p>
+          <a href="index.html#contact" class="btn-green btn-sm">Apply Now</a>
+        </div>
+
         <div class="career-card">
           <h3 class="career-job-title">Site Manager</h3>
           <p class="career-company">Vital Synergy</p>
@@ -287,7 +341,7 @@
 
         <div class="career-card">
           <h3 class="career-job-title">Reactive Gas Engineer</h3>
-          <p class="career-company">Vital Heating Solutions</p>
+          <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Burnley</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
