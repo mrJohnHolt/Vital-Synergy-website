@@ -3,65 +3,163 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Whitaker Museum | Case Study | Vital Synergy</title>
+  <title>The Whitaker Museum, Rawtenstall | Case Study | Vital Synergy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
   </script>
   <link rel="icon" type="image/png" href="Assets/Watermark.png">
-  <link rel="apple-touch-icon" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
+    /* Hero and scope backgrounds */
     .cs-hero {
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.28) 50%, rgba(0,0,0,0.7) 100%),
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
         url('Assets/The-Whitaker.jpg');
     }
     .cs-scope-section {
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 100%),
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
         url('Assets/The-Whitaker.jpg');
     }
 
-    /* Testimonial Quote */
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
     .cs-testimonial {
       max-width: 760px;
-      background: #f9f9f9;
-      border-left: 3px solid var(--brand);
-      border-radius: 0 8px 8px 0;
-      padding: 20px 24px;
-      margin: 32px 0 0;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
     }
-    .cs-testimonial-text {
-      font-size: 14.5px; font-style: italic; color: #333; line-height: 1.7; margin-bottom: 10px;
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
     }
-    .cs-testimonial-cite { font-size: 12.5px; font-weight: 600; color: var(--brand); font-style: normal; }
-
-    /* Before / After */
-    .cs-compare-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden;
-      max-width: 560px; margin-top: 16px;
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
     }
-    .cs-compare-head {
-      padding: 10px 16px; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
     }
-    .cs-compare-head-before { background: #f2f2f2; color: #888; border-right: 1px solid #e8e8e8; }
-    .cs-compare-head-after { background: var(--brand); color: #fff; }
-    .cs-compare-row { display: contents; }
-    .cs-compare-cell {
-      padding: 11px 16px; font-size: 13px; line-height: 1.5; border-top: 1px solid #e8e8e8;
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .cs-compare-cell-label { color: #888; border-right: 1px solid #e8e8e8; font-size: 12px; }
-    .cs-compare-cell-after { color: #1a1a1a; font-weight: 600; }
-    .cs-compare-label-col {
-      grid-column: 1 / -1;
-      padding: 9px 16px; font-size: 12px; font-weight: 700; color: #555;
-      background: #fafafa; border-top: 1px solid #e8e8e8;
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
     }
   </style>
 </head>
@@ -69,7 +167,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="index.html" class="nav-logo">
@@ -91,224 +189,297 @@
       </div>
     </div>
   </header>
-<main id="main-content">
 
-  <!-- ═══ NAV MODAL ═══ -->
-  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="nav-modal-panel">
-      <div class="nav-modal-head">
-        <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
-        </a>
-        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
-      </div>
-      <nav class="nav-modal-nav">
-        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
-        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
-        <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
-        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-hand-holding-heart"></i>Social Value</a>
-      </nav>
-    </div>
-  </div>
+  <main id="main-content">
 
-  <!-- ═══ 1. BREADCRUMB ═══ -->
-  <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-    <div class="wrap">
-      <div class="cs-breadcrumb-inner">
-        <a href="index.html" class="cs-bc-link">Home</a>
-        <span class="cs-bc-sep">/</span>
-        <a href="stpeters.html" class="cs-bc-link">Case Studies</a>
-        <span class="cs-bc-sep">/</span>
-        <span class="cs-bc-current">The Whitaker Museum</span>
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        </nav>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══ 2. HERO ═══ -->
-  <section class="hero-section hero-tall cs-hero">
-    <div class="hero-body">
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
       <div class="wrap">
-        <div class="hero-text-md">
-          <span class="eyebrow">Case Study / Cultural &amp; Heritage</span>
-          <h1 class="hero-h1">The Whitaker Museum</h1>
-          <span class="cs-hero-sub">Gas Safety System Upgrade and Compliance</span>
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">The Whitaker Museum, Rawtenstall</span>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ═══ 3. PROJECT META BAR ═══ -->
-  <div class="cs-meta-bar">
-    <div class="wrap cs-meta-inner">
-      <div class="cs-meta-left">
-        <span class="cs-meta-btn">Sector</span>
-        <span class="cs-meta-value">Cultural / Heritage</span>
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Cultural &amp; Heritage</span>
+            <h1 class="hero-h1">The Whitaker Museum, Rawtenstall</h1>
+            <span class="cs-hero-sub">Kitchen Gas Safety System Upgrade</span>
+          </div>
+        </div>
       </div>
-      <span class="cs-meta-date">Rawtenstall, Lancashire</span>
-    </div>
-  </div>
+    </section>
 
-  <!-- ═══ 4. EXECUTIVE SUMMARY ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <span class="eyebrow">Executive Summary</span>
-      <p class="cs-exec-summary">The Whitaker Museum required a review and rectification of its kitchen gas safety interlock system to ensure full compliance with safety regulations. The system had critical issues including incorrect wiring, a faulty safety push button, and a CO2 monitor not wired to isolate the gas solenoid valve when necessary. Vital Synergy investigated and resolved all system faults within a single visit, restoring compliance and operational reliability with minimal disruption to museum operations.</p>
-    </div>
-  </section>
-
-  <!-- ═══ 5. SCOPE SECTION (2×2 grid) ═══ -->
-  <section class="section cs-scope-section">
-    <div class="wrap">
-      <span class="eyebrow">Scope of Works</span>
-      <div class="cs-scope-grid">
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Investigation &amp; Assessment</span>
-          <p class="cs-scope-p">Full site inspection of the kitchen gas interlock system to identify compliance gaps. Assessment confirmed incorrect wiring on the S&amp;S Northern CT1250 gas interlock unit, use of temporary terminal blocks, and a faulty external gas safety push button located near the kitchen doorway.</p>
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;TBC</span>
         </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Rewiring &amp; Component Replacement</span>
-          <p class="cs-scope-p">The S&amp;S Northern CT1250 gas interlock unit was fully rewired to the correct specification, eliminating temporary terminal blocks throughout. The faulty external gas safety push button was replaced with a compliant unit, restoring manual shut-off capability at the kitchen entrance.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Safety Testing &amp; Verification</span>
-          <p class="cs-scope-p">Full safety checks conducted on all system components including the gas solenoid valve and fan pressure switches. Pressure switch operations verified to confirm gas shut-off in the absence of airflow. CO2 monitor wiring corrected to ensure effective gas solenoid valve isolation in the event of a carbon monoxide detection event.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Compliance &amp; Recommendations</span>
-          <p class="cs-scope-p">All works completed in line with current UK gas safety regulations. Expert recommendation provided to terminate fire alarm cabling in the EM safety shut-off rather than the BMS control terminal, enhancing emergency shut-off functionality and improving the system's response to fire events.</p>
-        </div>
-
+        <span class="cs-meta-date">Rawtenstall, Lancashire</span>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 6. PROJECT DETAIL ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="cs-detail">
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
         <span class="eyebrow">Project Overview</span>
-        <h3 class="section-heading">Project Detail</h3>
-        <p class="body-text">The Whitaker is a museum and art gallery in Rawtenstall that plays an important role in the cultural life of the Rossendale Valley. Like many heritage buildings, its operational infrastructure had evolved incrementally over time, and a routine review identified significant compliance deficiencies in the kitchen's gas safety interlock system. Vital Synergy was called to investigate, diagnose, and remediate the issues within a single planned visit to minimise disruption to the museum's day-to-day programme.</p>
-        <p class="body-text-faint">The investigation uncovered a combination of wiring errors and failed components that, in combination, meant the system could not perform its primary safety function reliably. Each fault was addressed methodically, with all remediation work completed and verified before the engineer left site.</p>
+        <p class="cs-exec-summary">Vital Synergy was engaged by The Whitaker Museum in Rawtenstall to diagnose, repair, and restore their commercial kitchen gas safety interlock system following the discovery that critical safety components were malfunctioning and non-compliant. Working methodically around public operating hours, the team identified three separate technical failures, executed targeted corrective works, and verified the entire interlock chain through rigorous testing — returning the kitchen to full regulatory compliance with zero disruption to museum visitors and staff.</p>
+      </div>
+    </section>
 
-        <h4 class="cs-detail-h4">Investigation &amp; Findings</h4>
-        <p class="cs-detail-p">On arrival, a full inspection of the S&amp;S Northern CT1250 gas interlock unit was carried out. The wiring was found to be incorrect, with temporary terminal blocks present in the circuit that introduced points of potential failure and did not meet the standard required for a safety-critical installation. The external gas safety push button near the kitchen doorway was tested and found to be faulty, meaning that manual shut-off from that location was not operational.</p>
-        <p class="cs-detail-p">A further critical finding was that the CO2 monitor had not been correctly wired to isolate the gas solenoid valve in the event of an activation. This meant that in a carbon monoxide detection scenario, the system would alert but would not take the required action of isolating the gas supply, representing a significant gap in the safety response chain.</p>
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">The Whitaker Museum, Rawtenstall</span>
+            <p class="cs-client-desc">A prominent cultural heritage and community venue in the Rossendale Valley, The Whitaker Museum operates a commercial kitchen used for public events and visitor catering. The museum required urgent expert intervention to address a malfunctioning gas safety interlock system that had rendered the kitchen non-compliant and presented a direct risk to staff and visitor safety.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Cultural / Heritage</span>
+            <p class="cs-client-desc">Heritage venues carry unique compliance obligations alongside their public-facing responsibilities. A gas safety failure in a museum kitchen would directly threaten public safety, disrupt events programming, and jeopardise the museum's operating licence. Vital Synergy's approach balanced the urgency of the safety remediation against the need to protect the museum's day-to-day visitor operations throughout the works.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <h4 class="cs-detail-h4">Rewiring &amp; Rectification</h4>
-        <p class="cs-detail-p">The CT1250 interlock unit was fully rewired to the correct specification, with all temporary terminal blocks removed and replaced with permanent, compliant connections. The faulty push button near the kitchen doorway was replaced with a fully functional unit, restoring manual gas shut-off capability at that location. All remedial wiring was completed and labelled in accordance with current standards.</p>
-        <p class="cs-detail-p">The CO2 monitor wiring was corrected to ensure that an activation event would correctly trigger isolation of the gas solenoid valve. This closes what had been a fundamental gap in the emergency response sequence and ensures the system now behaves as designed in all foreseeable fault conditions.</p>
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
 
-        <h4 class="cs-detail-h4">Safety Verification &amp; Testing</h4>
-        <p class="cs-detail-p">On completion of the remedial works, a full functional test of all system components was carried out. Fan pressure switch operations were verified to confirm that gas shut-off occurs correctly in the absence of adequate airflow. The gas solenoid valve was tested to confirm correct isolation response under each demand condition. All test results were recorded and all components confirmed as fully operational before the engineer left site.</p>
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Fault Diagnosis &amp; Assessment</span>
+            <p class="cs-scope-p">Comprehensive on-site review of the entire gas interlock system, including the control unit wiring, emergency shut-off push-button, and CO&#x2082; sensor connections. Three discrete points of non-compliance were identified and documented before any remediation works commenced.</p>
+          </div>
 
-        <h4 class="cs-detail-h4">Recommendations for Future-Proofing</h4>
-        <p class="cs-detail-p">In addition to the remedial works, a recommendation was made to terminate the fire alarm cabling at the EM safety shut-off terminal rather than the BMS control terminal. This relatively straightforward change would ensure that a fire alarm activation directly triggers an emergency gas isolation, rather than relying on the BMS to interpret and act on the signal. The recommendation was provided in writing to the museum's facilities team for consideration and scheduling.</p>
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Electrical Rewiring</span>
+            <p class="cs-scope-p">Full rewiring of the central gas interlock control panel to its original design specification, eliminating all temporary terminal connections. This restored correct signalling between the gas solenoid valve, ventilation fans, and safety sensors — re-establishing the integrity of the interlock control circuit.</p>
+          </div>
 
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Hardware Replacement</span>
+            <p class="cs-scope-p">Replacement of the faulty emergency gas isolation push-button at the kitchen entrance with a new, fully functional unit. The CO&#x2082; monitor was also correctly integrated into the gas solenoid valve circuit, ensuring that elevated carbon dioxide levels will trigger an automatic gas supply isolation as designed.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">System Testing &amp; Integration</span>
+            <p class="cs-scope-p">Rigorous functional testing of every interlock component — gas solenoid valve, fan pressure switches, and CO&#x2082; sensor — under all operating conditions. A recommendation to integrate the gas supply with the fire alarm system was also provided to automate isolation during fire events.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">3</span>
+            <span class="cs-outcome-title">Critical Faults Resolved</span>
+            <p class="cs-outcome-desc">Wiring error, faulty push-button, and disconnected CO&#x2082; sensor — all three compliance failures identified and corrected in a single, structured engagement.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">100%</span>
+            <span class="cs-outcome-title">Regulatory Compliance</span>
+            <p class="cs-outcome-desc">Gas interlock system now meets all required gas safety standards, eliminating prior compliance risks and ensuring the kitchen can operate safely and lawfully.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Zero</span>
+            <span class="cs-outcome-title">Operational Disruption</span>
+            <p class="cs-outcome-desc">All works planned and executed outside of public operating hours, keeping the museum fully open and its visitor programme unaffected throughout the project.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Full</span>
+            <span class="cs-outcome-title">Safety Chain Testing</span>
+            <p class="cs-outcome-desc">Every interlock component — solenoid valve, fan pressure switches, CO&#x2082; sensor — tested and verified under all operating conditions before handover.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Restored</span>
+            <span class="cs-outcome-title">Emergency Isolation</span>
+            <p class="cs-outcome-desc">New push-button unit gives kitchen staff instant, reliable manual gas cut-off from a safe location — restoring a critical safety capability that had been compromised.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Enhanced</span>
+            <span class="cs-outcome-title">Fire Alarm Integration</span>
+            <p class="cs-outcome-desc">Recommendation provided to link the gas supply to the fire alarm system, ensuring automatic isolation during a fire event and adding a further layer of emergency protection.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. COMPLIANCE, SAFETY + PROGRAMME AND DELIVERY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Compliance, Safety and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">During the initial assessment of The Whitaker Museum's commercial kitchen, Vital Synergy identified three discrete technical faults within the gas safety interlock system — each one capable of preventing the automatic isolation of the gas supply in an emergency. A structured remediation plan was developed to address each fault in sequence, with all works scheduled outside of public operating hours to protect the museum's day-to-day operations.</p>
+          <p class="body-text-faint">Coordination with the museum's facilities staff was maintained throughout the project. Every stage of the repair process was documented, and a comprehensive final test of the complete interlock chain was carried out before the kitchen was handed back as a compliant, fully operational environment.</p>
+
+          <h4 class="cs-detail-h4">Compliance and Safety</h4>
+          <p class="cs-detail-p">The gas interlock control panel was fully rewired to its original design specification, removing all temporary terminal connections that had compromised the reliability of the control circuitry. Following rewiring, the CO&#x2082; monitor was correctly integrated into the gas solenoid valve circuit, ensuring that elevated carbon dioxide concentrations in the kitchen will trigger an automatic gas supply isolation as required by the system design and current gas safety regulations.</p>
+          <p class="cs-detail-p">The faulty emergency gas shut-off push-button at the kitchen entrance was replaced with a new, fully functional unit, restoring the manual isolation capability that staff depend on during any gas-related emergency. In addition to the immediate corrective works, Vital Synergy recommended modifications to the fire alarm cabling to enable automatic gas isolation in the event of a fire — a recommendation that further strengthens the site's overall emergency response and aligns with current best practice for commercial kitchen gas safety.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">All works were planned and executed around the museum's public-facing schedule, with disruptive activities carried out outside visitor hours. This approach ensured that catering and events operations were not disrupted during the course of the remediation, and that the museum's reputation for visitor experience was fully protected throughout the engagement.</p>
+          <p class="cs-detail-p">On completion of all corrective works, every component of the gas safety interlock system was subject to rigorous functional testing under the full range of operating conditions. Test records were produced to confirm compliance, and the museum's facilities team were fully briefed on the operation of all repaired and replaced components at the point of handover — providing the museum with a complete record and the confidence of a fully compliant, future-proof gas safety installation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download The Whitaker Museum Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">The Whitaker Museum, Rawtenstall &mdash; Case Study</span>
+            <span class="cs-doc-meta">Whitaker-Museum-Case-Study.pdf &middot; PDF</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. CONCLUSION / CLIENT FEEDBACK -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
         <div class="cs-testimonial">
-          <p class="cs-testimonial-text">"The work carried out by Vital Synergy was exceptional. Their attention to detail and expertise ensured The Whitaker Museum's kitchen gas system is now fully compliant and safer than ever. We highly recommend their services for professional gas safety solutions."</p>
-          <cite class="cs-testimonial-cite">Teri Booth, The Whitaker Museum</cite>
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">[ADD CLIENT QUOTE — quote text]</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-name">[ADD DETAIL — name]</p>
+          <p class="cs-testimonial-role">[ADD DETAIL — role and organisation]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">Cultural &amp; Heritage</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <a href="roseacre.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
+              <span class="csl-sector-badge">Education</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
+              <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
+            </div>
+          </a>
+
+          <a href="stpeters.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
+              <span class="csl-sector-badge">Healthcare</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
+              <p class="cs-related-sub">MEP Refurbishment</p>
+            </div>
+          </a>
+
+          <a href="hamptonlvp.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/hamptonlvp.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
+              <span class="csl-sector-badge">Hospitality</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
+              <p class="cs-related-sub">Plantroom Remediation</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
+    <div class="wrap">
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Cultural</a>
+          <a href="#" class="cs-tag">Gas Safety</a>
+          <a href="#" class="cs-tag">Compliance</a>
+          <a href="#" class="cs-tag">Lancashire</a>
+          <a href="#" class="cs-tag">Rawtenstall</a>
+          <a href="#" class="cs-tag">Commercial Kitchen</a>
+          <a href="#" class="cs-tag">M&amp;E</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 7. DOCUMENT DOWNLOAD ═══ -->
-  <section class="section" style="padding-top:0">
+    <!-- 13. SOCIAL SHARE ROW -->
     <div class="wrap">
-      <a href="#" class="cs-doc-box" aria-label="Download The Whitaker Museum Case Study (PDF)">
-        <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
-        <div>
-          <span class="cs-doc-name">The Whitaker Museum — Case Study</span>
-          <span class="cs-doc-meta">The-Whitaker-Museum-Case-Study.pdf · 0.9 MB</span>
-          <span class="cs-doc-cta">Click Here to Download</span>
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fwhitaker-museum" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fwhitaker-museum" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+The+Whitaker+Museum%2C+Rawtenstall+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
         </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ═══ 8. RELATED PROJECTS ═══ -->
-  <section class="section cs-related-section">
-    <div class="wrap">
-      <span class="eyebrow">Cultural, Heritage &amp; Public Sector</span>
-      <h2 class="section-heading">Other related projects</h2>
-      <div class="cs-related-grid">
-
-        <a href="roseacre.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy" class="cs-related-thumb">
-            <span class="csl-sector-badge">Education</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
-            <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
-          </div>
-        </a>
-
-        <a href="stpeters.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre" class="cs-related-thumb">
-            <span class="csl-sector-badge">Healthcare</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
-            <p class="cs-related-sub">MEP Refurbishment</p>
-          </div>
-        </a>
-
-        <a href="hamptonlvp.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/hamptonlvp.webp" alt="Hampton by Hilton, Liverpool" class="cs-related-thumb">
-            <span class="csl-sector-badge">Hospitality</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
-            <p class="cs-related-sub">Plantroom Remediation</p>
-          </div>
-        </a>
-
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 9. TAG ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-tags-wrap">
-      <div class="cs-tags-row">
-        <a href="#" class="cs-tag">Cultural</a>
-        <a href="#" class="cs-tag">Gas Safety</a>
-        <a href="#" class="cs-tag">Compliance</a>
-        <a href="#" class="cs-tag">Lancashire</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ 10. SOCIAL SHARE ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-share-wrap">
-      <div class="cs-share-row">
-        <span class="cs-share-label">Connect</span>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fthe-whitaker-museum" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fthe-whitaker-museum" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
-        </a>
-        <a href="mailto:?subject=Case+Study%3A+The+Whitaker+Museum+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
-          <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ FOOTER ═══ -->
   </main>
-<footer class="site-footer">
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-grid">
         <div class="footer-col-logo">
@@ -347,7 +518,7 @@
     </div>
     <div class="copyright-bar">
       <div class="wrap copyright-inner">
-        <p class="copyright-text">Copyright © Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
         <div class="copyright-links">
           <a href="edi-policy.html" class="copyright-link">EDI Policy</a>
           <a href="privacy-policy.html" class="copyright-link">Privacy Policy</a>
