@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roberts Bakery | Case Study | Vital Synergy</title>
+  <title>Roberts Bakery, Northwich | Case Study | Vital Synergy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
@@ -15,17 +15,159 @@
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
-    .cs-hero { background-image: linear-gradient(to bottom, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.32) 50%, rgba(0,0,0,0.74) 100%),
-        url('Assets/robertsbakery.webp'); }
-    .cs-scope-section { background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
-        url('Assets/robertsbakery.webp'); }
+    /* Hero and scope backgrounds */
+    .cs-hero {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('Assets/robertsbakery.webp');
+    }
+    .cs-scope-section {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('Assets/robertsbakery.webp');
+    }
+
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
+    .cs-testimonial {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
+    }
   </style>
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="index.html" class="nav-logo">
@@ -47,257 +189,296 @@
       </div>
     </div>
   </header>
-<main id="main-content">
 
-  <!-- ═══ NAV MODAL ═══ -->
-  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="nav-modal-panel">
-      <div class="nav-modal-head">
-        <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
-        </a>
-        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
-      </div>
-      <nav class="nav-modal-nav">
-        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
-        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
-        <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
-        <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
-        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-heart"></i>Social Value</a>
-      </nav>
-    </div>
-  </div>
+  <main id="main-content">
 
-  <!-- ═══ 1. BREADCRUMB BAR ═══ -->
-  <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-    <div class="wrap">
-      <div class="cs-breadcrumb-inner">
-        <a href="index.html" class="cs-bc-link">Home</a>
-        <span class="cs-bc-sep">/</span>
-        <a href="stpeters.html" class="cs-bc-link">Case Studies</a>
-        <span class="cs-bc-sep">/</span>
-        <span class="cs-bc-current">Roberts Bakery</span>
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        </nav>
       </div>
     </div>
-  </nav>
 
-  <!-- ═══ 2. HERO ═══ -->
-  <section class="hero-section hero-tall cs-hero">
-    <div class="hero-body">
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
       <div class="wrap">
-        <div class="hero-text-md">
-          <span class="eyebrow">Case Study / Industrial</span>
-          <h1 class="hero-h1">Roberts Bakery</h1>
-          <span class="cs-hero-sub">Industrial Ventilation Upgrade</span>
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">Roberts Bakery, Northwich</span>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ═══ 3. PROJECT META BAR ═══ -->
-  <div class="cs-meta-bar">
-    <div class="wrap cs-meta-inner">
-      <div class="cs-meta-left">
-        <span class="cs-meta-btn">Project Value</span>
-        <span class="cs-meta-value">£53,738 ex VAT</span>
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Food &amp; Beverage Manufacturing</span>
+            <h1 class="hero-h1">Roberts Bakery, Northwich</h1>
+            <span class="cs-hero-sub">Industrial Ventilation Upgrade</span>
+          </div>
+        </div>
       </div>
-      <span class="cs-meta-date">Industrial &nbsp;·&nbsp; Live Production Facility</span>
-    </div>
-  </div>
+    </section>
 
-  <!-- ═══ 4. EXECUTIVE SUMMARY ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <span class="eyebrow">Executive Summary</span>
-      <p class="cs-exec-summary">A targeted industrial ventilation upgrade delivered within a live production facility, designed to enhance operational efficiency, hygiene and burner performance without interrupting bakery output.</p>
-    </div>
-  </section>
-
-  <!-- ═══ 5. SCOPE SECTION (2×2 grid) ═══ -->
-  <section class="section cs-scope-section">
-    <div class="wrap">
-      <span class="eyebrow">Scope of Works</span>
-      <div class="cs-scope-grid">
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Ventilation &amp; Hygiene Improvements</span>
-          <p class="cs-scope-p">Removal and upgrade of outdated ventilation components to enhance operational efficiency and safety. External louvres equipped with insect and vermin mesh installed to improve air intake hygiene and maintain product quality standards throughout the facility.</p>
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;53,738 ex VAT</span>
         </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Infrastructure Upgrades</span>
-          <p class="cs-scope-p">Upgrade of medium-pressure gas infrastructure and high voltage electrical infrastructure. New automated control systems installed to improve operational efficiencies and enable real-time monitoring of production environment conditions.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Burner &amp; Plenum Works</span>
-          <p class="cs-scope-p">Fabrication and installation of bespoke airflow plenums designed to stabilise the forced gas burner air supply. Engineered to optimise burner operation and combustion efficiencies, reducing energy waste and improving consistency of the baking process.</p>
-        </div>
-
-        <div class="cs-scope-block">
-          <span class="cs-scope-heading">Commissioning</span>
-          <p class="cs-scope-p">Comprehensive commissioning activities carried out including airflow checks, system balancing, verification procedures and thorough documentation of the complete installation, ensuring all works met specification and regulatory requirements.</p>
-        </div>
-
+        <span class="cs-meta-date">TBC</span>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 6. PROJECT DETAIL ═══ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="cs-detail">
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
         <span class="eyebrow">Project Overview</span>
-        <h3 class="section-heading">Project Detail</h3>
-        <p class="body-text">Vital Synergy was appointed to carry out a targeted ventilation and infrastructure upgrade at Roberts Bakery, a live industrial production facility. The scope of works was carefully sequenced to avoid disruption to ongoing bakery output, with all works planned and executed around the operational demands of the production environment.</p>
-        <p class="body-text-faint">The project encompassed ventilation improvements, gas and electrical infrastructure upgrades, bespoke plenum fabrication and full commissioning. All phases were co-ordinated closely with the client's site management team to maintain production continuity and comply with the hygiene and food safety standards applicable to a live food manufacturing environment.</p>
-
-        <h4 class="cs-detail-h4">Ventilation &amp; Hygiene Improvements</h4>
-        <p class="cs-detail-p">The existing ventilation components had reached the end of their serviceable life and were contributing to air quality and hygiene concerns within the production environment. All redundant equipment was removed and replaced with upgraded components selected to meet current industrial ventilation standards and the specific demands of a food production facility.</p>
-        <p class="cs-detail-p">External louvres were fitted with insect and vermin mesh to prevent ingress through air intake points. In a live food manufacturing environment, contamination control at all system boundaries is a fundamental requirement, and the new louvre specifications were selected and installed to provide robust, long-term protection without restricting airflow performance.</p>
-
-        <h4 class="cs-detail-h4">Infrastructure Upgrades</h4>
-        <p class="cs-detail-p">The medium-pressure gas infrastructure serving the production area was upgraded to support the revised burner configuration and ensure safe, reliable operation within current gas safety regulations. All gas works were carried out by Gas Safe registered engineers, with full pressure testing and tightness testing completed prior to recommissioning.</p>
-        <p class="cs-detail-p">High voltage electrical infrastructure was upgraded in parallel with the gas works. New automated control systems were installed to replace manual controls, providing the facility with improved operational efficiencies and the ability to monitor environmental conditions and system performance in real time. The new controls also support predictive maintenance by logging operational data for review by the site team.</p>
-
-        <h4 class="cs-detail-h4">Burner &amp; Plenum Works</h4>
-        <p class="cs-detail-p">The forced gas burner serving the production ovens required a stable, consistent air supply to operate efficiently. Variations in inlet airflow were contributing to combustion inconsistencies and energy losses. To resolve this, bespoke airflow plenums were designed and fabricated by Vital Synergy's in-house team, engineered specifically for the geometry and airflow characteristics of the existing installation.</p>
-        <p class="cs-detail-p">The plenums were installed to provide a stabilised air supply to the burner, eliminating the turbulence that had been affecting combustion quality. Following installation, burner performance was verified against the manufacturer's specification, confirming improved combustion efficiency and a more consistent heat output across the production cycle.</p>
-
-        <h4 class="cs-detail-h4">Commissioning &amp; Documentation</h4>
-        <p class="cs-detail-p">All systems were commissioned on completion of the installation works. Airflow checks were carried out across the ventilation network and balanced to achieve the design flow rates at each outlet and inlet point. System verification procedures confirmed that all equipment was operating within the specified parameters before the facility was returned to full production use.</p>
-        <p class="cs-detail-p">Thorough documentation of the complete installation was compiled and issued to the client at handover. Records include as-installed drawings, commissioning test results, gas tightness certificates, electrical test certificates and equipment data sheets, providing Roberts Bakery with a complete reference for ongoing maintenance and future compliance inspections.</p>
+        <p class="cs-exec-summary">A critical ventilation upgrade to Oven No. 3 at Roberts Bakery's flagship Northwich facility, delivered entirely within a live food manufacturing environment. Vital Synergy installed new external louvres, custom airflow plenums and extensive ductwork to serve nine gas burners, improving combustion efficiency and ensuring safe, compliant operation without interrupting a single shift of production.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ 7. DOCUMENT DOWNLOAD ═══ -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <a href="#" class="cs-doc-box" aria-label="Download Roberts Bakery Industrial Ventilation Upgrade Case Study (PDF)">
-        <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
-        <div>
-          <span class="cs-doc-name">Roberts Bakery — Industrial Ventilation Upgrade Case Study</span>
-          <span class="cs-doc-meta">Roberts-Bakery-Ventilation-Case-Study.pdf · 0.9 MB</span>
-          <span class="cs-doc-cta">Click Here to Download</span>
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">Roberts Bakery, Northwich, Cheshire</span>
+            <p class="cs-client-desc">A fourth-generation, family-run bread producer with a flagship production site in Northwich, Cheshire. Roberts Bakery engaged Vital Synergy following an established working relationship formed through earlier plant improvement works at the Northwich site, trusting us to deliver a technically complex upgrade with minimal impact on their operation.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Food &amp; Beverage Manufacturing</span>
+            <p class="cs-client-desc">Continuous-production food manufacturing imposes exceptional demands on any engineering contractor. Hygiene standards, contamination control and strict food safety protocols governed every aspect of the project. All works were carefully sequenced around Roberts Bakery's production schedule to protect output and maintain the bakery's uninterrupted service to its customers.</p>
+          </div>
         </div>
-      </a>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ═══ 8. RELATED PROJECTS ═══ -->
-  <section class="section cs-related-section">
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Fresh Air Intake &amp; External Louvres</span>
+            <p class="cs-scope-p">Installation of two large external louvres fitted with integrated insect mesh, providing the fresh air intake required by Oven No. 3's nine gas burners. Positioned and specified to prevent contamination ingress at all air intake points, in full compliance with food industry hygiene requirements.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Custom Plenums &amp; Ductwork</span>
+            <p class="cs-scope-p">Fabrication and installation of custom-engineered airflow plenums and extensive ductwork connecting the external louvres to the oven. Designed to deliver a stable, consistent air supply to each of the nine burners, optimising combustion performance and reducing energy waste across the baking cycle.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Access &amp; High-Level Installation</span>
+            <p class="cs-scope-p">Working at height within an active food production setting required meticulous planning and close coordination with a specialist access equipment provider. Portable platforms were used to safely reach overhead installation points, under a formal Working at Height plan and in full compliance with the client's site safety protocols.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Commissioning &amp; Test Points</span>
+            <p class="cs-scope-p">Full on-site commissioning including airflow measurements, safety interlock checks and verification of integrated test points installed to support future maintenance access. Comprehensive documentation produced at handover, confirming the system operates as designed and in accordance with regulatory requirements.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Zero</span>
+            <span class="cs-outcome-title">Accidents or Near Misses</span>
+            <p class="cs-outcome-desc">Comprehensive RAMS, daily toolbox talks and strict on-site controls delivered a zero-incident project across all phases of installation within a live food production environment.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">9</span>
+            <span class="cs-outcome-title">Burners Served</span>
+            <p class="cs-outcome-desc">Oven No. 3's nine gas burners now receive a stable, consistent supply of fresh combustion air, improving efficiency and ensuring safe, reliable oven operation.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">On Time</span>
+            <span class="cs-outcome-title">Delivered to Programme</span>
+            <p class="cs-outcome-desc">All works completed on schedule, sequenced around Roberts Bakery's production downtime windows with no disruption to bakery output at any stage of the project.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">100%</span>
+            <span class="cs-outcome-title">Food-Safe Throughout</span>
+            <p class="cs-outcome-desc">Battery-operated tools, dedicated cutting zones, strict cleanliness routines and mandatory hygiene PPE ensured zero food safety risk during every phase of the installation.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Full</span>
+            <span class="cs-outcome-title">System Commissioned</span>
+            <p class="cs-outcome-desc">Airflow measurements, safety interlock checks and test point verification all completed and documented at handover, with comprehensive records issued to the client.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Live</span>
+            <span class="cs-outcome-title">Production Uninterrupted</span>
+            <p class="cs-outcome-desc">The upgrade was delivered entirely within an operational food manufacturing facility. Roberts Bakery continued production throughout without a single shift impacted by the works.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. COMPLIANCE, SAFETY + PROGRAMME AND DELIVERY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Compliance, Safety and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">Vital Synergy was engaged by Roberts Bakery to upgrade the ventilation system serving Oven No. 3 at their Northwich production site. Working within a continuous-production food facility, every aspect of the project -- from initial planning through to final commissioning -- was designed to protect food safety, maintain hygiene standards, and keep the bakery running without interruption.</p>
+          <p class="body-text-faint">An existing working relationship with Roberts Bakery's site management team provided the foundation for a collaborative and well-coordinated delivery. Works were sequenced around the bakery's production schedule, with all planning decisions made in close consultation with site management and supported by formal RAMS and daily toolbox talks throughout the programme.</p>
+
+          <h4 class="cs-detail-h4">Compliance and Safety</h4>
+          <p class="cs-detail-p">Before commencing on site, Vital Synergy's team produced comprehensive Risk Assessments and Method Statements (RAMS), addressing every identified hazard -- including working at height in confined plant areas, gas proximity risks, and the contamination-control requirements of a live food production environment. Dedicated cutting zones were established for all ductwork fabrication. Battery-operated tools were specified throughout to eliminate fire risk in the vicinity of gas infrastructure. Strict site cleanliness routines were maintained at all times, with all tools and materials kept tidy and accounted for to prevent any risk of contamination within the bakery.</p>
+          <p class="cs-detail-p">All personnel attended site-specific inductions and adhered to Roberts Bakery's hygiene requirements, wearing appropriate clean protective clothing -- including overalls and hair nets -- throughout all work within the production area. Zero accidents and zero near misses were recorded across the full project. Daily toolbox talks reinforced safe working practices and quality expectations at every stage, ensuring the team remained focused and compliant from start to finish. The client's management noted the high standard of professionalism and housekeeping maintained by the Vital Synergy team throughout the programme.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">The installation was carried out in carefully planned phases, with each work area isolated before work commenced. Portable platforms were used to access high-level installation points, and the team coordinated directly with Roberts Bakery's site management and an on-site access equipment provider to sequence all activities within available production downtime windows. Clear and regular communication with site management meant that adjustments could be made swiftly without impacting the agreed programme.</p>
+          <p class="cs-detail-p">On completion of the mechanical installation, Vital Synergy's engineers undertook full commissioning of the new ventilation system -- including airflow measurements, safety interlock checks and verification of the integrated test points installed to support future maintenance access. The new Oven No. 3 ventilation system is fully operational, providing a reliable supply of fresh combustion air and ensuring the oven runs safely and consistently. Comprehensive handover documentation was issued to the client, confirming that the system performs as designed and in full compliance with applicable regulations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download Roberts Bakery Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">Roberts Bakery, Northwich &mdash; Case Study</span>
+            <span class="cs-doc-meta">Roberts-Bakery-Ventilation-Case-Study.pdf &middot; 0.9 MB</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. TESTIMONIAL -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
+        <div class="cs-testimonial">
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">[ADD CLIENT QUOTE &mdash; quote text here]</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-name">[ADD DETAIL &mdash; name]</p>
+          <p class="cs-testimonial-role">[ADD DETAIL &mdash; role, Roberts Bakery]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">More Case Studies</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <a href="cardenpark.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/cardenpark.webp" alt="Carden Park Hotel and Spa, Cheshire" class="cs-related-thumb">
+              <span class="csl-sector-badge">Hospitality</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Carden Park Hotel and Spa, Cheshire</h4>
+              <p class="cs-related-sub">Commercial M&amp;E Package</p>
+            </div>
+          </a>
+
+          <a href="hamptonlvp.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
+              <span class="csl-sector-badge">Hospitality</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Hampton by Hilton, Liverpool John Lennon Airport</h4>
+              <p class="cs-related-sub">Plantroom Remediation</p>
+            </div>
+          </a>
+
+          <a href="whitaker.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
+              <span class="csl-sector-badge">Cultural / Heritage</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">The Whitaker Museum</h4>
+              <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
     <div class="wrap">
-      <span class="eyebrow">More Case Studies</span>
-      <h2 class="section-heading">Other related projects</h2>
-      <div class="cs-related-grid">
-
-        <a href="parkdrive.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/freemanHospital.webp" alt="Park Drive Commercial Facility" class="cs-related-thumb">
-            <span class="csl-sector-badge">Commercial</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Park Drive Commercial Facility</h4>
-            <p class="cs-related-sub">M&amp;E Package</p>
-          </div>
-        </a>
-
-        <a href="cardenpark.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/cardenpark.webp" alt="Carden Park Hotel" class="cs-related-thumb">
-            <span class="csl-sector-badge">Hospitality</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Carden Park Hotel</h4>
-            <p class="cs-related-sub">Commercial M&amp;E Package</p>
-          </div>
-        </a>
-
-        <a href="stpeters.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/stPetersHealthCentre.webp" alt="St Peter's Health Centre, Burnley" class="cs-related-thumb">
-            <span class="csl-sector-badge">Healthcare</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">St Peter's Health Centre, Burnley</h4>
-            <p class="cs-related-sub">MEP Refurbishment</p>
-          </div>
-        </a>
-
-        <a href="hamptonlvp.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/hamptonhotel.webp" alt="Hampton by Hilton, Liverpool John Lennon Airport" class="cs-related-thumb">
-            <span class="csl-sector-badge">Hospitality</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Hampton by Hilton, Liverpool</h4>
-            <p class="cs-related-sub">Plantroom Remediation</p>
-          </div>
-        </a>
-
-        <a href="roseacre.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
-            <span class="csl-sector-badge">Education</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
-            <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
-          </div>
-        </a>
-
-        <a href="whitaker.html" class="cs-related-card">
-          <div class="cs-related-thumb-wrap">
-            <img src="Assets/The-Whitaker.jpg" alt="The Whitaker Museum" class="cs-related-thumb">
-            <span class="csl-sector-badge">Cultural / Heritage</span>
-          </div>
-          <div class="cs-related-body">
-            <h4 class="cs-related-h4">The Whitaker Museum</h4>
-            <p class="cs-related-sub">Gas Safety System Upgrade and Compliance</p>
-          </div>
-        </a>
-
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Food &amp; Beverage</a>
+          <a href="#" class="cs-tag">Ventilation</a>
+          <a href="#" class="cs-tag">Gas Works</a>
+          <a href="#" class="cs-tag">Commissioning</a>
+          <a href="#" class="cs-tag">Live Production</a>
+          <a href="#" class="cs-tag">Cheshire</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ 9. TAG ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-tags-wrap">
-      <div class="cs-tags-row">
-        <a href="#" class="cs-tag">Industrial</a>
-        <a href="#" class="cs-tag">Ventilation</a>
-        <a href="#" class="cs-tag">Gas Infrastructure</a>
-        <a href="#" class="cs-tag">Burner Works</a>
-        <a href="#" class="cs-tag">Commissioning</a>
-        <a href="#" class="cs-tag">Food Production</a>
+    <!-- 13. SOCIAL SHARE ROW -->
+    <div class="wrap">
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froberts-bakery" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froberts-bakery" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+Roberts+Bakery%2C+Northwich+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ═══ 10. SOCIAL SHARE ROW ═══ -->
-  <div class="wrap">
-    <div class="cs-share-wrap">
-      <div class="cs-share-row">
-        <span class="cs-share-label">Connect</span>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froberts-bakery" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Froberts-bakery" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
-        </a>
-        <a href="mailto:?subject=Case+Study%3A+Roberts+Bakery+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
-          <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ FOOTER ═══ -->
   </main>
-<footer class="site-footer">
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-grid">
         <div class="footer-col-logo">
@@ -321,7 +502,8 @@
           <a href="about.html" class="footer-link">About Us</a>
           <a href="careers.html" class="footer-link">Careers</a>
           <a href="casestudies.html" class="footer-link">Case Studies</a>
-          <a href="index.html#contact" class="footer-link">Contact</a>          <a href="services.html" class="footer-link">Services</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
           <a href="social-value.html" class="footer-link">Social Value</a>
         </div>
         <div>
