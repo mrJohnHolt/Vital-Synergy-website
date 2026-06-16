@@ -815,7 +815,7 @@ body {
    CASE STUDY PAGES
 ───────────────────────────────────────── */
 
-/* Hero — background-image set per page */
+/* Hero: background-image set per page */
 .cs-hero {
   background-size: cover;
   background-position: center;
@@ -874,7 +874,7 @@ body {
   padding-left: 20px; margin-top: 14px;
 }
 
-/* Scope Grid — background-image set per page */
+/* Scope Grid: background-image set per page */
 .cs-scope-section {
   background-size: cover;
   background-position: center;
