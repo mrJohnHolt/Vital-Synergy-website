@@ -289,31 +289,38 @@
 
       <!-- Right: form -->
       <div class="contact-form-card">
-        <form method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID">
+        <div data-fs-success class="form-success-msg">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>Thank you for your message. We will be in touch shortly.</p>
+        </div>
+        <div data-fs-error class="form-global-error"></div>
+        <form id="cf-form">
           <input type="hidden" name="_subject" value="New enquiry from Vital Synergy website">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="cf-name">Full Name *</label>
-              <input class="form-input" type="text" id="cf-name" name="name" placeholder="John Smith" required>
+              <input class="form-input" type="text" id="cf-name" name="name" placeholder="John Smith" required data-fs-field>
+              <span data-fs-error="name" class="form-error-text"></span>
             </div>
             <div class="form-group">
               <label class="form-label" for="cf-email">Email Address *</label>
-              <input class="form-input" type="email" id="cf-email" name="email" placeholder="john@company.co.uk" required>
+              <input class="form-input" type="email" id="cf-email" name="email" placeholder="john@company.co.uk" required data-fs-field>
+              <span data-fs-error="email" class="form-error-text"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="cf-phone">Phone Number</label>
-              <input class="form-input" type="tel" id="cf-phone" name="phone" placeholder="01282 000 000">
+              <input class="form-input" type="tel" id="cf-phone" name="phone" placeholder="01282 000 000" data-fs-field>
             </div>
             <div class="form-group">
               <label class="form-label" for="cf-company">Company</label>
-              <input class="form-input" type="text" id="cf-company" name="company" placeholder="Your organisation">
+              <input class="form-input" type="text" id="cf-company" name="company" placeholder="Your organisation" data-fs-field>
             </div>
           </div>
           <div class="form-group form-group-full">
             <label class="form-label" for="cf-subject">How Can We Help? *</label>
-            <select class="form-select" id="cf-subject" name="subject" required>
+            <select class="form-select" id="cf-subject" name="subject" required data-fs-field>
               <option value="" disabled selected>Select an option</option>
               <option value="Get a Quote">Get a Quote</option>
               <option value="General Enquiry">General Enquiry</option>
@@ -321,12 +328,14 @@
               <option value="Partnership">Partnership Opportunity</option>
               <option value="Careers">Careers</option>
             </select>
+            <span data-fs-error="subject" class="form-error-text"></span>
           </div>
           <div class="form-group form-group-full">
             <label class="form-label" for="cf-message">Message *</label>
-            <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell us about your project or enquiry..." required></textarea>
+            <textarea class="form-textarea" id="cf-message" name="message" placeholder="Tell us about your project or enquiry..." required data-fs-field></textarea>
+            <span data-fs-error="message" class="form-error-text"></span>
           </div>
-          <button type="submit" class="btn-green form-submit">Send Message</button>
+          <button type="submit" class="btn-green form-submit" data-fs-submit-btn>Send Message</button>
         </form>
       </div>
 
@@ -385,5 +394,10 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#cf-form', formId: 'xojzbrdy' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
