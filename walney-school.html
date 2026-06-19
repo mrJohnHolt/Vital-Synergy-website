@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walney School, Barrow-in-Furness | Case Study | Vital Synergy</title>
+  <meta name="description" content="Multi-phase heating and hot water system replacement at Walney School, Barrow-in-Furness: new boiler cascade, full pipework renewal and zoned digital controls delivered across three phases without disrupting term time.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* Hero and scope backgrounds */
+    /* PLACEHOLDER IMAGE — replace with real Walney School photography when supplied */
+    .cs-hero {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=85');
+    }
+    .cs-scope-section {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.52) 100%),
+        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=85');
+    }
+
+    /* Client and Sector */
+    .cs-client-section { background: #f7f7f5; }
+    .cs-client-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .cs-client-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    .cs-client-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cs-client-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eb6823;
+    }
+    .cs-client-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.3;
+    }
+    .cs-client-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Key Outcomes */
+    .cs-outcomes-section {
+      background: #0d0d0d;
+      padding: 4rem 0;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cs-outcomes-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .cs-outcome-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .cs-outcome-card:hover { background: rgba(255,255,255,0.1); }
+    .cs-outcome-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #eb6823;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .cs-outcome-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.25rem;
+    }
+    .cs-outcome-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .cs-outcomes-eyebrow { color: rgba(255,255,255,0.45); }
+    .cs-outcomes-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-top: 0.25rem;
+    }
+
+    /* Testimonial */
+    .cs-testimonial-section {
+      background: #1a1a1a;
+      padding: 5rem 0;
+    }
+    .cs-testimonial {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cs-testimonial-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #eb6823;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -0.5rem;
+    }
+    .cs-testimonial-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .cs-testimonial-divider {
+      width: 48px;
+      height: 3px;
+      background: #eb6823;
+      margin: 1.5rem auto;
+      border-radius: 2px;
+    }
+    .cs-testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .cs-testimonial-role {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="services.html" class="header-nav-link">Services</a>
+        <a href="casestudies.html" class="header-nav-link header-nav-link-active">Case Studies</a>
+        <a href="careers.html" class="header-nav-link">Careers</a>
+        <a href="social-value.html" class="header-nav-link">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- NAV MODAL -->
+    <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="nav-modal-panel">
+        <div class="nav-modal-head">
+          <a href="index.html" class="nav-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          </a>
+          <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <nav class="nav-modal-nav">
+          <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+          <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+          <a href="casestudies.html" class="nav-modal-link nav-modal-link-active"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+          <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
+          <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-heart"></i>Social Value</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 1. BREADCRUMB -->
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <div class="wrap">
+        <div class="cs-breadcrumb-inner">
+          <a href="index.html" class="cs-bc-link">Home</a>
+          <span class="cs-bc-sep">/</span>
+          <a href="casestudies.html" class="cs-bc-link">Case Studies</a>
+          <span class="cs-bc-sep">/</span>
+          <span class="cs-bc-current">Walney School, Barrow-in-Furness</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. HERO -->
+    <section class="hero-section hero-tall cs-hero">
+      <div class="hero-body">
+        <div class="wrap">
+          <div class="hero-text-md">
+            <span class="eyebrow">Case Study / Education</span>
+            <h1 class="hero-h1">Walney School, Barrow-in-Furness</h1>
+            <span class="cs-hero-sub">Multi-Phase Heating and Hot Water System Replacement</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECT META BAR -->
+    <div class="cs-meta-bar">
+      <div class="wrap cs-meta-inner">
+        <div class="cs-meta-left">
+          <span class="cs-meta-btn">Project Value</span>
+          <span class="cs-meta-value">&#xa3;700k</span>
+        </div>
+        <span class="cs-meta-date">2024 &ndash; 2025</span>
+      </div>
+    </div>
+
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow">Project Overview</span>
+        <p class="cs-exec-summary">Vital Synergy delivered a comprehensive, multi-phase upgrade of the ageing heating and hot water infrastructure at Walney School, Barrow-in-Furness, replacing failing mid-20th-century boiler plant and distribution pipework with a modern, high-efficiency system. The works were carefully phased around the school calendar to avoid any disruption to teaching, with rigorous safety and quality management maintained throughout. The new installation has transformed the learning environment with consistent warmth, improved air quality and greater energy efficiency, securing the school's heating needs for decades to come.</p>
+      </div>
+    </section>
+
+    <!-- 5. CLIENT AND SECTOR -->
+    <section class="section cs-client-section">
+      <div class="wrap">
+        <span class="eyebrow">Client and Sector</span>
+        <h2 class="section-heading">Client Overview</h2>
+        <div class="cs-client-grid">
+          <div class="cs-client-card">
+            <span class="cs-client-label">Client</span>
+            <span class="cs-client-value">Walney School, Barrow-in-Furness</span>
+            <p class="cs-client-desc">A large secondary school on Walney Island, Cumbria, originally constructed in the 1950s with various extensions added over the decades. By 2025 its heating infrastructure, corroded pipework and failing 25-year-old boilers, was well beyond its intended lifespan, prompting Furness Education Trust to commission a full replacement.</p>
+          </div>
+          <div class="cs-client-card">
+            <span class="cs-client-label">Sector</span>
+            <span class="cs-client-value">Education</span>
+            <p class="cs-client-desc">Key project drivers were reliability and safety of heating and hot water supply, energy efficiency to control rising costs, and compliance with modern building standards, all delivered while keeping a large, partly occupied secondary school fully operational.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SCOPE OF WORKS (2x2 glassmorphism grid) -->
+    <section class="section cs-scope-section">
+      <div class="wrap">
+        <span class="eyebrow">Scope of Works</span>
+        <div class="cs-scope-grid">
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Survey, Planning &amp; Phased Programme</span>
+            <p class="cs-scope-p">A full survey of the existing plant, distribution network and building fabric informed a three-phase delivery plan, sequenced around school holidays and off-peak periods. Daily briefings and close coordination with school leadership and other contractors on site ensured disruptive works never affected teaching time.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">High-Efficiency Boiler Cascade</span>
+            <p class="cs-scope-p">The dilapidated basement plant room's ageing boilers were replaced with a cascade of modern, modular condensing boilers. Operating in cascade allows the system to modulate output to demand while providing built-in standby redundancy, so the school is never left without heat if one unit is offline.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Hot Water Generation &amp; Distribution</span>
+            <p class="cs-scope-p">New high-capacity insulated cylinders secure a consistent hot water supply across the campus. A complete network of insulated pipework replaced corroded, decades-old distribution, some of it over 70 years old, improving heat retention and reducing future maintenance.</p>
+          </div>
+
+          <div class="cs-scope-block">
+            <span class="cs-scope-heading">Heat Emitters &amp; Digital Controls</span>
+            <p class="cs-scope-p">Low surface temperature radiators and quiet fan-assisted convector heaters now serve classrooms, offices and common areas. A new digital control system gives staff zoned scheduling control, resolving the uneven heating that previously left some rooms cold and others overheated.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KEY OUTCOMES AND BENEFITS -->
+    <section class="cs-outcomes-section">
+      <div class="wrap">
+        <span class="eyebrow cs-outcomes-eyebrow">Results</span>
+        <h2 class="cs-outcomes-heading">Key Outcomes and Benefits</h2>
+        <div class="cs-outcomes-grid">
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">3</span>
+            <span class="cs-outcome-title">Phases Delivered</span>
+            <p class="cs-outcome-desc">The full boiler plant and distribution renewal was sequenced into three carefully planned phases, aligned with school holidays and off-peak periods to keep Walney School fully operational throughout.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Zero</span>
+            <span class="cs-outcome-title">Unscheduled Closures</span>
+            <p class="cs-outcome-desc">No class time was lost to the works &ndash; disruptive activity, including drilling and pipe routing, was scheduled outside class hours or during holiday breaks.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">70+ Years</span>
+            <span class="cs-outcome-title">Pipework Renewed</span>
+            <p class="cs-outcome-desc">Corroded distribution pipework, some installed when the school was built in the 1950s, was replaced campus-wide with modern, better-insulated materials.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">&#xa3;700k</span>
+            <span class="cs-outcome-title">Infrastructure Investment</span>
+            <p class="cs-outcome-desc">A comprehensive renewal of the boiler plant, hot water generation, distribution network and controls, delivered on schedule and within budget.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Zoned</span>
+            <span class="cs-outcome-title">Digital Heating Control</span>
+            <p class="cs-outcome-desc">A new digital control system gives staff scheduled, area-by-area control of heating, eliminating the cold spots and overheating caused by the previous all-or-nothing system.</p>
+          </div>
+
+          <div class="cs-outcome-card">
+            <span class="cs-outcome-stat">Redundant</span>
+            <span class="cs-outcome-title">Boiler Cascade Resilience</span>
+            <p class="cs-outcome-desc">Multiple modular condensing boilers operating in cascade ensure the school is never left without heat, even if a single unit goes offline.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. COMPLIANCE, SAFETY + PROGRAMME AND DELIVERY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cs-detail">
+          <span class="eyebrow">Compliance, Safety and Delivery</span>
+          <h3 class="section-heading">Project Detail</h3>
+          <p class="body-text">A rigorous health and safety plan governed every stage of the works, from pre-construction planning through to final commissioning and handover. Close coordination with Walney School's facilities team and Furness Education Trust kept all parties informed of progress and upcoming activity throughout the programme.</p>
+          <p class="body-text-faint">Major works were sequenced into three phases aligned with school holidays and off-peak periods, with testing, water treatment and balancing completed before each phase was handed back into use.</p>
+
+          <h4 class="cs-detail-h4">Compliance and Safety</h4>
+          <p class="cs-detail-p">Work in proximity to historical asbestos-containing pipe insulation was planned and carried out by licensed specialists in line with UK regulations and best practice. Site-specific protocols, including secure fencing, controlled access points and mandatory sign-in and sign-out procedures, kept work areas segregated from occupied parts of the school at all times.</p>
+          <p class="cs-detail-p">All personnel completed comprehensive site inductions, including safeguarding training appropriate to a live school environment. Detailed method statements and risk assessments were prepared ahead of each phase, with daily briefings and inspections upholding workmanship standards throughout.</p>
+
+          <h4 class="cs-detail-h4">Programme and Delivery</h4>
+          <p class="cs-detail-p">Early, detailed planning ensured noisy or disruptive tasks, such as drilling through walls and floors for new pipe routes, took place outside class hours or during holiday periods. On-site briefings and daily progress updates kept the headteacher and faculty informed at every stage, removing any need for unscheduled school closures.</p>
+          <p class="cs-detail-p">Vital Synergy also coordinated its programme with other contractors working on site, including concurrent roof repairs, integrating both works without conflict. Floor finishes and ceilings disturbed by the pipework replacement were reinstated to a high standard, handing the school back in excellent condition.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DOCUMENT DOWNLOAD -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <a href="#" class="cs-doc-box" aria-label="Download Walney School Case Study (PDF)">
+          <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
+          <div>
+            <span class="cs-doc-name">Walney School, Barrow-in-Furness: Case Study</span>
+            <span class="cs-doc-meta">Walney-School-Case-Study.pdf &middot; [ADD FILE SIZE]</span>
+            <span class="cs-doc-cta">Click Here to Download</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. CONCLUSION / CLIENT FEEDBACK -->
+    <section class="cs-testimonial-section">
+      <div class="wrap">
+        <div class="cs-testimonial">
+          <span class="cs-testimonial-mark">&#x201c;</span>
+          <p class="cs-testimonial-quote">[ADD CLIENT QUOTE &mdash; quote text]</p>
+          <div class="cs-testimonial-divider"></div>
+          <p class="cs-testimonial-role">[ADD DETAIL &mdash; name and role] &middot; Walney School, Barrow-in-Furness</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. RELATED PROJECTS -->
+    <section class="section cs-related-section">
+      <div class="wrap">
+        <span class="eyebrow">Education &amp; Phased Delivery</span>
+        <h2 class="section-heading">Other related projects</h2>
+        <div class="cs-related-grid">
+
+          <!-- PLACEHOLDER IMAGE — replace with real Hollins High School photography when supplied -->
+          <a href="hollins-high-school.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1675747158934-5f82097d2c21?auto=format&fit=crop&w=600&q=80" alt="The Hollins High School, Accrington" class="cs-related-thumb">
+              <span class="csl-sector-badge">Education</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">The Hollins High School, Accrington</h4>
+              <p class="cs-related-sub">Low-Carbon Heating Retrofit and Energy Efficiency Upgrade</p>
+            </div>
+          </a>
+
+          <!-- PLACEHOLDER IMAGE — replace with real Rhyddings High School photography when supplied -->
+          <a href="rhyddings-high-school.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Rhyddings High School, Oswaldtwistle" class="cs-related-thumb">
+              <span class="csl-sector-badge">Education</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Rhyddings High School, Oswaldtwistle</h4>
+              <p class="cs-related-sub">Phased Heating System Upgrade and BMS Renewal</p>
+            </div>
+          </a>
+
+          <a href="roseacre.html" class="cs-related-card">
+            <div class="cs-related-thumb-wrap">
+              <img src="Assets/roseacre-1.jpg" alt="Roseacre Primary Academy &amp; Nursery" class="cs-related-thumb">
+              <span class="csl-sector-badge">Education</span>
+            </div>
+            <div class="cs-related-body">
+              <h4 class="cs-related-h4">Roseacre Primary Academy &amp; Nursery</h4>
+              <p class="cs-related-sub">Comprehensive Heating System Upgrade</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TAG ROW -->
+    <div class="wrap">
+      <div class="cs-tags-wrap">
+        <div class="cs-tags-row">
+          <a href="#" class="cs-tag">Education</a>
+          <a href="#" class="cs-tag">Heating Replacement</a>
+          <a href="#" class="cs-tag">Boiler Cascade</a>
+          <a href="#" class="cs-tag">Barrow-in-Furness</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. SOCIAL SHARE ROW -->
+    <div class="wrap">
+      <div class="cs-share-wrap">
+        <div class="cs-share-row">
+          <span class="cs-share-label">Connect</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fwalney-school-heating-replacement" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Check+out+this+Vital+Synergy+case+study%3A+https%3A%2F%2Fwww.vitalsynergy.co.uk%2Fcase-studies%2Fwalney-school-heating-replacement" class="cs-share-link" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:14px;"></i>
+          </a>
+          <a href="mailto:?subject=Case+Study%3A+Walney+School%2C+Barrow-in-Furness+%7C+Vital+Synergy&body=I+thought+this+Vital+Synergy+case+study+might+be+of+interest." class="cs-share-link" aria-label="Share by Email">
+            <i class="fa-solid fa-envelope" style="font-size:12px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+          <div class="socials-row">
+            <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="font-size:13px;"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="casestudies.html" class="footer-link">Case Studies</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>          <a href="services.html" class="footer-link">Services</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <div class="copyright-links">
+          <a href="edi-policy.html" class="copyright-link">EDI Policy</a>
+          <a href="privacy-policy.html" class="copyright-link">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="copyright-link">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
