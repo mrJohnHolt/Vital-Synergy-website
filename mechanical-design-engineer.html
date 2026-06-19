@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mechanical Design Engineer | Careers | Vital Synergy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#eb6823' } } } }
+  </script>
+  <link rel="icon" type="image/png" href="Assets/Watermark.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ── Vacancy: Breadcrumb ── */
+    .jv-breadcrumb { margin-top: 60px; background: #f6f6f6; border-bottom: 1px solid #e8e8e8; padding: 11px 0; }
+    .jv-breadcrumb-inner { display: flex; align-items: center; flex-wrap: wrap; }
+    .jv-bc-link { color: #666; font-size: 12px; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+    .jv-bc-link:hover { color: var(--brand); }
+    .jv-bc-sep { color: #bbb; font-size: 12px; margin: 0 8px; }
+    .jv-bc-current { color: #aaa; font-size: 12px; }
+
+    /* ── Vacancy: Hero ── */
+    .jv-hero {
+      min-height: 50vh;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.72) 100%),
+        url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .jv-hero-sub {
+      display: inline-block;
+      background: rgba(235,104,35,0.12);
+      border: 1px solid rgba(235,104,35,0.28);
+      color: var(--brand);
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 14px; border-radius: 6px; margin-top: 0;
+    }
+
+    /* ── Vacancy: Meta Bar card ── */
+    .jv-meta-bar {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 16px;
+    }
+    .jv-meta-bar .jv-hero-sub { margin-top: 0; }
+    .jv-meta-inner { display: contents; }
+    .jv-meta-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .jv-meta-value { color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600; }
+    .jv-meta-divider { color: rgba(255,255,255,0.25); font-size: 14px; }
+    .jv-meta-date { color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 500; }
+
+    /* ── Vacancy: Summary ── */
+    .jv-exec-summary {
+      max-width: 820px;
+      font-size: 16px; line-height: 1.78; color: #333;
+      border-left: 3px solid var(--brand);
+      padding-left: 20px; margin-top: 14px;
+    }
+    .jv-exec-summary + .jv-exec-summary { margin-top: 16px; }
+
+    /* ── Vacancy: Detail ── */
+    .jv-detail { max-width: 820px; }
+    .jv-detail-h4 { font-size: 14.5px; font-weight: 700; color: #1a1a1a; margin: 28px 0 10px; }
+    .jv-detail-p { color: #555; font-size: 14px; line-height: 1.78; margin-bottom: 14px; }
+
+    /* ── Vacancy: Lists ── */
+    .jv-list {
+      list-style: none; padding: 0; margin: 0 0 8px;
+      display: flex; flex-direction: column; gap: 9px;
+    }
+    .jv-list li {
+      padding-left: 22px; position: relative;
+      color: #555; font-size: 14px; line-height: 1.65;
+    }
+    .jv-list li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--brand);
+    }
+
+    /* ── Vacancy: Apply CTA ── */
+    .jv-apply-section { background: #f9f9f9; }
+    .jv-apply-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .jv-apply-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .jv-apply-contact a { color: var(--brand); font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.15s; }
+    .jv-apply-contact a:hover { opacity: 0.75; }
+    .jv-apply-contact span { color: #888; font-size: 13px; }
+
+    /* ── Stats Parallax Break ── */
+    .jv-stats-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 100%),
+        url('Assets/PlantRoom.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 80px 24px;
+    }
+    @media (max-width: 1023px) { .jv-stats-bg { background-attachment: scroll; } }
+    .jv-stats-bg .stat-grid { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 639px) { .jv-stats-bg .stat-grid { grid-template-columns: 1fr; } }
+
+    /* ── Benefits Card Grid ── */
+    .jv-benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (min-width: 640px) { .jv-benefits-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+    @media (min-width: 1024px) { .jv-benefits-grid { grid-template-columns: repeat(4, 1fr); } }
+    .jv-benefit-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 22px 16px 18px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07), 0 1px 4px rgba(235,104,35,0.06);
+      border: 1px solid #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .jv-benefit-card .jv-card-icon {
+      width: 44px; height: 44px;
+      background: rgba(235,104,35,0.09);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--brand);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .jv-benefit-card .jv-card-label {
+      font-size: 12px; font-weight: 600; color: #1a1a1a; line-height: 1.45;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="header-nav-link">Home</a>
+        <a href="about.html" class="header-nav-link">About</a>
+        <a href="services.html" class="header-nav-link">Services</a>
+        <a href="casestudies.html" class="header-nav-link">Case Studies</a>
+        <a href="careers.html" class="header-nav-link header-nav-link-active">Careers</a>
+        <a href="social-value.html" class="header-nav-link">Social Value</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:01282773338" class="header-phone"><i class="fa-solid fa-phone"></i>01282 773 338</a>
+        <button class="hamburger-btn" id="nav-open" aria-label="Open menu" aria-expanded="false" aria-controls="nav-modal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+  <!-- NAV MODAL -->
+  <div class="nav-modal" id="nav-modal" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-modal-panel">
+      <div class="nav-modal-head">
+        <a href="index.html" class="nav-logo">
+          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+        </a>
+        <button class="nav-modal-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
+      </div>
+      <nav class="nav-modal-nav">
+        <a href="index.html" class="nav-modal-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="about.html" class="nav-modal-link"><i class="fa-solid fa-circle-info"></i>About</a>
+        <a href="services.html" class="nav-modal-link"><i class="fa-solid fa-wrench"></i>Services</a>
+        <a href="casestudies.html" class="nav-modal-link"><i class="fa-solid fa-folder-open"></i>Case Studies</a>
+        <a href="careers.html" class="nav-modal-link"><i class="fa-solid fa-briefcase"></i>Careers</a>
+        <a href="social-value.html" class="nav-modal-link"><i class="fa-solid fa-hand-holding-heart"></i>Social Value</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="jv-breadcrumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <div class="jv-breadcrumb-inner">
+        <a href="index.html" class="jv-bc-link">Home</a>
+        <span class="jv-bc-sep">/</span>
+        <a href="careers.html" class="jv-bc-link">Careers</a>
+        <span class="jv-bc-sep">/</span>
+        <span class="jv-bc-current">Mechanical Design Engineer</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section hero-tall jv-hero">
+    <div class="hero-body">
+      <div class="wrap">
+        <div class="hero-text-md">
+          <span class="eyebrow">Vacancy / Full-Time</span>
+          <h1 class="hero-h1">Mechanical Design Engineer</h1>
+          <div class="jv-meta-bar">
+            <span class="jv-hero-sub">Vital Synergy &nbsp;&middot;&nbsp; Ribble Valley HQ</span>
+            <div class="jv-meta-inner">
+              <div class="jv-meta-left">
+                <span class="jv-meta-value">Location: Ribble Valley HQ</span>
+                <span class="jv-meta-divider">|</span>
+                <span class="jv-meta-value">Full-Time, Permanent</span>
+                <span class="jv-meta-divider">|</span>
+                <span class="jv-meta-date">Closes: 30 June 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPENING SUMMARY -->
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">The Role</span>
+      <p class="jv-exec-summary">Are you a skilled Mechanical Design Engineer with a passion for delivering high-quality mechanical and electrical solutions across commercial projects? Do you thrive in a fast-paced environment where innovation, precision, and low-carbon design are at the forefront?</p>
+      <p class="jv-exec-summary">Vital Synergy is seeking an experienced and driven Design Engineer to join our growing team. This is an exciting opportunity to play a key role in the design and delivery of complex projects, working collaboratively with multidisciplinary teams and contributing to cutting-edge, sustainable engineering solutions. You'll be part of a forward-thinking business where your expertise is valued, and your career can continue to develop.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT VITAL SYNERGY -->
+  <section class="section" style="background:#f9f9f9;">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="jv-detail">
+          <span class="eyebrow">The Company</span>
+          <h3 class="section-heading">About Vital Synergy</h3>
+          <p class="jv-detail-p">With over 20 years of engineering excellence, Vital Synergy is a trusted partner in delivering end-to-end building solutions. We support the transition to clean energy and low-carbon systems through: innovative building services engineering, renewable energy integration, energy efficiency solutions, and collaborative partnerships that drive sustainability across communities and industries.</p>
+          <h4 class="jv-detail-h4">Our Expertise</h4>
+          <p class="jv-detail-p">We specialise in the design, installation, and management of decentralised energy and multi-utility networks, focusing on low and zero carbon technologies. Our expertise spans bespoke commercial heating, industrial plumbing, and mechanical engineering. Our remote-access BMS platforms enable clients to monitor, measure, and optimise energy use for greater efficiency and sustainability.</p>
+          <h4 class="jv-detail-h4">Our Portfolio</h4>
+          <p class="jv-detail-p">Our portfolio includes projects across Commercial, Industrial, Education, Housing, Local Authority, and Agricultural sectors. From Air Source Heat Pumps to high-efficiency commercial plant rooms.</p>
+        </div>
+        <div class="img-stack">
+          <img src="Assets/PlantRoom.jpg" alt="Commercial plant room installation" class="img-back">
+          <img src="Assets/MAndE.jpg" alt="Mechanical and electrical engineering" class="img-front">
+          <img src="Assets/Watermark.png" alt="" class="wm" aria-hidden="true">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE OVERVIEW -->
+  <section class="section">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">What You Will Do</span>
+        <h3 class="section-heading">Role Overview</h3>
+        <p class="jv-detail-p">This is a full-time, permanent role where you will take ownership of engineering project delivery from concept through to completion, working closely with project managers, site teams, and wider stakeholders to ensure high-quality outcomes. You'll play a key role across design, coordination, and project delivery, applying your technical expertise to live projects while driving best practice, supporting team collaboration, and contributing to the successful delivery of efficient, buildable solutions.</p>
+        <h4 class="jv-detail-h4">Key Responsibilities</h4>
+        <ul class="jv-list">
+          <li>Lead the design, planning, and delivery of mechanical and electrical engineering projects</li>
+          <li>Produce and review technical drawings, calculations, and specifications to ensure accuracy, compliance, and buildability</li>
+          <li>Carry out site visits and surveys to inform design development and support delivery on site</li>
+          <li>Coordinate project activities, managing progress, resources, and programme milestones</li>
+          <li>Prepare and maintain high-quality project documentation, reports, and technical records</li>
+          <li>Ensure full compliance with Health &amp; Safety standards, including RAMS and company procedures</li>
+          <li>Collaborate effectively with internal teams, subcontractors, and suppliers to deliver coordinated solutions</li>
+          <li>Apply and develop expertise in low-carbon technologies, including ASHP, GSHP, and energy-efficient systems</li>
+          <li>Engage with clients and attend meetings, providing technical input and supporting project delivery</li>
+          <li>Contribute to continuous improvement and support the development of junior team members where appropriate</li>
+          <li>Perform detailed HVAC calculations including heat loss, heat gain, ventilation rates, and system sizing</li>
+          <li>Design HVAC systems including ductwork, pipework, plant rooms, and distribution networks</li>
+          <li>Select appropriate HVAC equipment such as ASHPs, GSHPs, boilers, chillers, AHUs, and ventilation systems</li>
+          <li>Ensure designs comply with CIBSE, Building Regulations, and industry best practice</li>
+          <li>Undertake mechanical and electrical load calculations (heating, cooling, ventilation, electrical distribution, lighting etc.)</li>
+          <li>Ensure designs comply with relevant standards (CIBSE, BS, IET Wiring Regulations, Building Regulations)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS PARALLAX BREAK -->
+  <section class="jv-stats-bg">
+    <div class="wrap">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years of Engineering Excellence</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Sectors We Operate In</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Net Zero</div>
+          <div class="stat-label">Focus on Low Carbon Technologies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & QUALIFICATIONS -->
+  <section class="section" style="background:#f9f9f9;">
+    <div class="wrap">
+      <div class="jv-detail">
+        <span class="eyebrow">What We Are Looking For</span>
+        <h3 class="section-heading">Experience &amp; Qualifications</h3>
+        <ul class="jv-list">
+          <li>Degree in Mechanical Engineering, Electrical Engineering, Building Services Engineering or similar</li>
+          <li>Strong interest in building services, M&amp;E, and sustainable energy solutions</li>
+          <li>Excellent understanding of engineering principles</li>
+          <li>Strong IT skills with Microsoft Office, AutoCAD (essential) &amp; Revit (desirable)</li>
+          <li>Excellent communication and teamwork skills</li>
+          <li>Willingness to learn and develop within a fast-paced environment</li>
+          <li>Strong organisational skills and attention to detail</li>
+          <li>Full UK driving licence</li>
+          <li>Right to work in the UK</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">The Package</span>
+      <h3 class="section-heading">What We Offer</h3>
+      <div class="jv-benefits-grid">
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+          <span class="jv-card-label">Competitive salary (dependent on experience)</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+          <span class="jv-card-label">Company pension scheme</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-square-parking"></i></div>
+          <span class="jv-card-label">On-site parking</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-shirt"></i></div>
+          <span class="jv-card-label">Uniform and PPE</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-tags"></i></div>
+          <span class="jv-card-label">Employee discounts</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-calendar-plus"></i></div>
+          <span class="jv-card-label">Additional holiday days with length of service</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="jv-card-label">Ongoing training and professional development</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <span class="jv-card-label">Clear career progression pathways</span>
+        </div>
+        <div class="jv-benefit-card">
+          <div class="jv-card-icon"><i class="fa-solid fa-leaf"></i></div>
+          <span class="jv-card-label">Opportunity to work on large-scale commercial and low-carbon projects</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY CTA -->
+  <section class="section jv-apply-section">
+    <div class="wrap">
+      <div class="jv-apply-inner">
+        <span class="eyebrow">Ready to Take the Next Step?</span>
+        <h2 class="cta-h2">Apply for this <em class="em-brand">position</em></h2>
+        <p class="cta-p">If you're looking to enhance your engineering career, gain hands-on experience, and work on meaningful projects that make a real impact, we want to hear from you.</p>
+        <a href="mailto:careers@vitalsynergy.co.uk?subject=Application%3A+Mechanical+Design+Engineer" class="btn-green">Apply Now</a>
+        <div class="jv-apply-contact">
+          <span>Email your CV and cover letter to</span>
+          <a href="mailto:careers@vitalsynergy.co.uk">careers@vitalsynergy.co.uk</a>
+          <span>For any initial questions, feel free to call us on</span>
+          <a href="tel:01282773338">01282 773338</a>
+          <span>we're happy to help!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col-logo">
+          <a href="index.html" class="footer-logo">
+            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+          </a>
+          <div class="badges-row">
+            <span class="badge">CIBSE</span>
+            <span class="badge">ESOS</span>
+            <span class="badge">ISO</span>
+          </div>
+          <div class="socials-row">
+            <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="font-size:13px;"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Information</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="casestudies.html" class="footer-link">Case Studies</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="social-value.html" class="footer-link">Social Value</a>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Support</h4>
+          <p class="footer-address">Friendship Mill, Whalley Rd,<br>Read, Burnley, BB12 7PN, Lancashire</p>
+          <span class="footer-contact">+44 (0) 1282 773 338</span>
+          <span class="footer-contact">sales@vitalsynergy.co.uk</span>
+          <span class="footer-contact-last">www.vitalsynergy.co.uk</span>
+          <p class="footer-reg">Company Reg 10601953<br>VAT Reg 262002847</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar">
+      <div class="wrap copyright-inner">
+        <p class="copyright-text">Copyright &copy; Vital Synergy Ltd 2026. All Rights Reserved.</p>
+        <div class="copyright-links">
+          <a href="edi-policy.html" class="copyright-link">EDI Policy</a>
+          <a href="privacy-policy.html" class="copyright-link">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="copyright-link">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

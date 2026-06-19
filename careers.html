@@ -41,7 +41,9 @@
       box-shadow: 0 6px 28px rgba(0,0,0,0.18);
       display: flex;
       flex-direction: column;
+      transition: transform 0.2s ease;
     }
+    .career-card:hover { transform: translateY(-4px); }
     .career-job-title {
       font-size: 15px;
       font-weight: 700;
@@ -112,9 +114,33 @@
       margin-bottom: 20px;
       flex: 1;
     }
+    .career-card-desc .career-meta {
+      flex: 0;
+      margin-bottom: 14px;
+    }
+
+    /* ── Careers: Bento grid ── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 640px) {
+      .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .career-card-featured {
+        grid-column: 1 / -1;
+      }
+    }
     @media (min-width: 1024px) {
-      #vacancies .four-col {
-        grid-template-columns: repeat(3, 1fr);
+      #vacancies .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .career-card-featured {
+        grid-column: 1 / 3;
       }
     }
   </style>
@@ -291,25 +317,39 @@
       </div>
     </div>
     <div class="wrap">
-      <div class="four-col">
+      <div class="bento-grid">
 
-        <div class="career-card">
+        <div class="career-card career-card-featured">
+          <span class="career-featured-badge">Featured Career Opportunity</span>
+          <h3 class="career-job-title">Mechanical Design Engineer</h3>
+          <p class="career-company">Vital Synergy</p>
+          <div class="career-meta">
+            <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Ribble Valley HQ</span>
+            <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
+          </div>
+          <p class="career-featured-desc">Join our design team to develop efficient, low-carbon mechanical systems for major UK projects, from first concept through to site-ready specification.</p>
+          <a href="mechanical-design-engineer.html" class="btn-green btn-sm">View Role</a>
+        </div>
+
+        <div class="career-card career-card-desc">
           <h3 class="career-job-title">Graduate Design Engineer</h3>
           <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Ribble Valley HQ</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
           </div>
+          <p class="career-featured-desc">A structured route into building services design, learning from experienced engineers across real low-carbon projects.</p>
           <a href="graduate-design-engineer.html" class="btn-green btn-sm">View Role</a>
         </div>
 
-        <div class="career-card">
+        <div class="career-card career-card-desc">
           <h3 class="career-job-title">Commercial Site Manager</h3>
           <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Ribble Valley HQ</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
           </div>
+          <p class="career-featured-desc">Lead site delivery on commercial M&amp;E projects, coordinating trades to meet programme and quality standards.</p>
           <a href="commercial-site-manager.html" class="btn-green btn-sm">View Role</a>
         </div>
 
@@ -325,43 +365,47 @@
         </div>
         -->
 
-        <div class="career-card">
+        <div class="career-card career-card-desc">
           <h3 class="career-job-title">Electrical Estimator</h3>
           <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Read HQ</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
           </div>
+          <p class="career-featured-desc">Price and estimate electrical systems for commercial projects, helping clients cut costs and emissions.</p>
           <a href="electrical-estimator.html" class="btn-green btn-sm">View Role</a>
         </div>
 
-        <div class="career-card">
+        <div class="career-card career-card-desc">
           <h3 class="career-job-title">Electrician</h3>
           <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Burnley</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
           </div>
+          <p class="career-featured-desc">Lead high-quality electrical installations and guide a skilled team across commercial projects.</p>
           <a href="electrician.html" class="btn-green btn-sm">View Role</a>
         </div>
 
-        <div class="career-card">
+        <div class="career-card career-card-desc">
           <h3 class="career-job-title">Senior Mechanical Estimator</h3>
           <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Ribble Valley HQ</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
           </div>
+          <p class="career-featured-desc">Lead estimating and pricing for mechanical and electrical systems on bespoke carbon reduction projects.</p>
           <a href="senior-mechanical-estimator.html" class="btn-green btn-sm">View Role</a>
         </div>
 
-        <div class="career-card">
+        <div class="career-card career-card-desc">
           <h3 class="career-job-title">Reactive Gas Engineer</h3>
           <p class="career-company">Vital Synergy</p>
           <div class="career-meta">
             <span class="career-meta-item"><i class="fa-solid fa-location-dot"></i>Burnley</span>
             <span class="career-meta-item"><i class="fa-regular fa-calendar"></i>Closes: 30 June 2026</span>
           </div>
+          <p class="career-featured-desc">Maintain, service and repair commercial and domestic heating systems, keeping customers safe and warm.</p>
           <a href="reactive-gas-engineer.html" class="btn-green btn-sm">View Role</a>
         </div>
 
