@@ -75,6 +75,7 @@ Six `.cs-outcome-card` blocks on a dark (`#0d0d0d`) background. Each has:
 - Lead paragraph (`.body-text`) + supporting paragraph (`.body-text-faint`)
 - `<h4 class="cs-detail-h4">Compliance and Safety</h4>` + 2 paragraphs
 - `<h4 class="cs-detail-h4">Programme and Delivery</h4>` + 2 paragraphs
+- `<h4 class="cs-detail-h4">Technical Scope Summary</h4>` + one lead sentence + a `.cs-scope-table-wrap` table (`.cs-scope-table`) with two columns, "System / Component" and "Upgrades Implemented". One row per scope item from section 8 (same groupings, written in fuller technical detail). This table and its CSS are not part of the `stpeters.html` base template — copy the markup and styles from an existing page that has them (e.g. `rhyddings-high-school.html`) rather than inventing new classes.
 
 ### 11. Testimonial (`.cs-testimonial-section`)
 Dark (`#1a1a1a`) section. Opening `&#x201c;` quotation mark, `.cs-testimonial-quote` paragraph, `.cs-testimonial-divider`, optional `.cs-testimonial-name`, `.cs-testimonial-role`. Use placeholders if the quote is not yet available.
@@ -92,7 +93,7 @@ Start the server if not already running (`node serve.mjs`). Screenshot the new p
 ```
 node screenshot.mjs http://localhost:3000/[filename] [label]
 ```
-Read the PNG. Verify: hero image loads, meta bar shows correct value and dates, all six outcome cards render, scope grid glassmorphism cards are visible, footer is intact, no broken images. Fix any issues and take a second screenshot.
+Read the PNG. Verify: hero image loads, meta bar shows correct value and dates, all six outcome cards render, scope grid glassmorphism cards are visible, the Technical Scope Summary table renders correctly, footer is intact, no broken images. Fix any issues and take a second screenshot.
 
 ## Step 5 — Wire into the site (ask the user)
 
