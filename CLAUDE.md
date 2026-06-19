@@ -67,10 +67,9 @@ Mandatory sections in order:
 4. Executive summary (`.cs-exec-summary`)
 5. Scope grid (`.cs-scope-section` parallax + `.cs-scope-grid` 2×2 glassmorphism)
 6. Project detail (`.cs-detail` with H4 sub-sections)
-7. Document download (`.cs-doc-box`)
-8. Related projects (`.cs-related-section` + `.cs-related-grid` 3-col)
-9. Tag row (`.cs-tags-wrap`)
-10. Share row (`.cs-share-wrap`)
+7. Related projects (`.cs-related-section` + `.cs-related-grid` 3-col)
+8. Tag row (`.cs-tags-wrap`)
+9. Share row (`.cs-share-wrap`)
 
 Glassmorphism card pattern (scope blocks and career cards on dark backgrounds):
 ```css

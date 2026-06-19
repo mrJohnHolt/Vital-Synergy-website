@@ -25,13 +25,12 @@ Before writing a single line of HTML, confirm you have all of the following. If 
 - **Three related projects** — for each: filename, image path, sector badge text, H4 heading, and short subtitle.
 - **Tags** — comma-separated list, e.g. `Education, Heating Upgrade, BMS, Lancashire`
 - **Share URL slug** — the path segment used in social share URLs, e.g. `roseacre-primary-academy`
-- **PDF filename** — for the document download box, e.g. `Roseacre-Primary-Academy-Case-Study.pdf`
 
 ## Step 3 — Build the Page
 
 Read `stpeters.html` in full before writing anything. The new page is a verbatim copy of that file's structure with the inputs from Step 2 substituted in. **Never invent new CSS classes.** The inline `<style>` block is copied exactly — only the `.cs-hero` and `.cs-scope-section` `background-image` URLs change.
 
-Build these 14 sections in order:
+Build these 13 sections in order:
 
 ### 1. `<head>`
 - `<title>`: `[Page title] | Case Study | Vital Synergy`
@@ -77,25 +76,13 @@ Six `.cs-outcome-card` blocks on a dark (`#0d0d0d`) background. Each has:
 - `<h4 class="cs-detail-h4">Compliance and Safety</h4>` + 2 paragraphs
 - `<h4 class="cs-detail-h4">Programme and Delivery</h4>` + 2 paragraphs
 
-### 11. Document Download (`.cs-doc-box`)
-```html
-<a href="#" class="cs-doc-box" aria-label="Download [Page title] Case Study (PDF)">
-  <i class="fa-solid fa-file-pdf cs-doc-icon"></i>
-  <div>
-    <span class="cs-doc-name">[Page title] &mdash; Case Study</span>
-    <span class="cs-doc-meta">[PDF filename] &middot; [size]</span>
-    <span class="cs-doc-cta">Click Here to Download</span>
-  </div>
-</a>
-```
-
-### 12. Testimonial (`.cs-testimonial-section`)
+### 11. Testimonial (`.cs-testimonial-section`)
 Dark (`#1a1a1a`) section. Opening `&#x201c;` quotation mark, `.cs-testimonial-quote` paragraph, `.cs-testimonial-divider`, optional `.cs-testimonial-name`, `.cs-testimonial-role`. Use placeholders if the quote is not yet available.
 
-### 13. Related Projects (`.cs-related-section`)
+### 12. Related Projects (`.cs-related-section`)
 Three `.cs-related-card` anchor links. Each has a thumbnail image, a `.csl-sector-badge` overlay, and a body with `.cs-related-h4` + `.cs-related-sub`.
 
-### 14. Tags + Share (`.cs-tags-wrap` / `.cs-share-wrap`)
+### 13. Tags + Share (`.cs-tags-wrap` / `.cs-share-wrap`)
 - Tags: one `.cs-tag` anchor per tag (all `href="#"`)
 - Share: LinkedIn sharing URL, WhatsApp `wa.me` URL, and `mailto:` link — all using the share URL slug and page title.
 
