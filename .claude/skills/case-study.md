@@ -109,7 +109,8 @@ Read the PNG. Verify: hero image loads, meta bar shows correct value and dates, 
 
 ## Step 5 — Wire into the site (ask the user)
 
+Every case study is a flat link — there is no Case Studies dropdown anywhere in the codebase. The header nav and burger modal nav link straight to `casestudies.html`, and that page's `.csl-grid` is the only listing of case studies. New pages are reachable only by being added to that grid (and optionally cross-linked via related-project cards).
+
 Ask whether to also:
-1. Add a card to `casestudies.html`
-2. Add the new page as a related project on relevant existing case study pages
-3. Add an entry to the Case Studies dropdown in the header nav on every HTML file (use Python batch-replace as specified in CLAUDE.md)
+1. Add a card to `casestudies.html`'s `.csl-grid`
+2. Add the new page as a related project on relevant existing case study pages (swap out the least-relevant of the existing three `.cs-related-card` entries on each page to keep reciprocal links sector-relevant)
