@@ -565,24 +565,27 @@ body {
 
 .testi-ticker-wrap {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  padding: 0 24px;
 }
 .testi-ticker-track {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: testi-scroll 140s linear infinite;
+  --testi-step: calc(100vw - 24px); /* card width (100vw - 48px) + 24px gap */
+  animation: testi-scroll-mobile 20s ease-in-out infinite;
 }
-.testi-ticker-wrap:hover .testi-ticker-track { animation-play-state: paused; }
-@keyframes testi-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes testi-scroll-mobile {
+  0%, 22.5%  { transform: translateX(0); }
+  25%, 47.5% { transform: translateX(calc(-1 * var(--testi-step))); }
+  50%, 72.5% { transform: translateX(calc(-2 * var(--testi-step))); }
+  75%, 97.5% { transform: translateX(calc(-3 * var(--testi-step))); }
+  100%       { transform: translateX(calc(-4 * var(--testi-step))); }
 }
 .testi-card {
-  flex: 0 0 360px;
-  width: 360px;
-  height: 360px;
+  flex: 0 0 calc(100vw - 48px);
+  width: calc(100vw - 48px);
+  height: auto;
+  min-height: 320px;
   background: rgba(0,0,0,0.32);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -606,6 +609,26 @@ body {
   color: var(--brand); font-size: 11.5px; font-weight: 600;
   letter-spacing: 0.05em; font-style: normal;
   display: block; margin-top: 16px; flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .testi-ticker-wrap {
+    padding: 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+  .testi-ticker-track {
+    animation: testi-scroll 140s linear infinite;
+  }
+  .testi-ticker-wrap:hover .testi-ticker-track { animation-play-state: paused; }
+  @keyframes testi-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .testi-card {
+    flex: 0 0 360px;
+    width: 360px;
+    height: 360px;
+  }
 }
 
 /* ─────────────────────────────────────────
