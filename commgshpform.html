@@ -13,6 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="preload" href="css/section.css?v=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/section.css?v=1"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     .nb-hero {
@@ -21,32 +23,11 @@
         url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1920&q=85');
       background-size: cover; background-position: center;
     }
-    .nb-form-section { background: #f6f6f6; padding: 64px 24px; }
-    .nb-form-card {
-      max-width: 760px; margin: 0 auto; background: #fff; border-radius: 14px;
-      padding: 40px 40px 36px; box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-    }
-    @media (max-width: 600px) { .nb-form-card { padding: 28px 20px 24px; } }
-    .nb-field { margin-bottom: 20px; }
+
     .nb-label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 6px; }
-    .nb-help { font-size: 12px; color: #999; margin-top: 5px; display: block; }
-    .nb-input, .nb-textarea {
-      width: 100%; padding: 11px 14px; font-size: 14px; font-family: inherit; color: #1a1a1a;
-      background: #f8f8f8; border: 1.5px solid #e8e8e8; border-radius: 8px;
-      outline: none; transition: border-color 0.18s, background 0.18s;
-    }
-    .nb-input:focus, .nb-textarea:focus { border-color: var(--brand); background: #fff; }
-    .nb-input::placeholder, .nb-textarea::placeholder { color: #bbb; }
+
     .nb-textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
-    .nb-file {
-      display: block; width: 100%; padding: 10px 14px; font-size: 13px;
-      background: #f8f8f8; border: 1.5px dashed #ddd; border-radius: 8px;
-      cursor: pointer; color: #666; transition: border-color 0.18s;
-    }
-    .nb-file:hover { border-color: var(--brand); }
-    .radio-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-    .radio-option { position: relative; }
-    .radio-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+
     .radio-option label {
       display: inline-flex; align-items: center; gap: 7px;
       padding: 9px 16px; border-radius: 8px; border: 1.5px solid #e8e8e8;
@@ -54,45 +35,7 @@
       cursor: pointer; white-space: nowrap; user-select: none;
       transition: border-color 0.15s, background 0.15s, color 0.15s;
     }
-    .radio-option input:checked + label {
-      border-color: var(--brand); background: rgba(235,104,35,0.07);
-      color: var(--brand); font-weight: 600;
-    }
-    .consent-wrap { display: flex; gap: 12px; align-items: flex-start; }
-    .nb-checkbox { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--brand); margin-top: 2px; }
-    .consent-text { font-size: 13px; color: #555; line-height: 1.6; }
-    .nb-info-box {
-      background: rgba(235,104,35,0.06); border-left: 3px solid var(--brand);
-      border-radius: 0 8px 8px 0; padding: 14px 16px; margin-bottom: 20px;
-      font-size: 13px; color: #555; font-weight: 500;
-    }
-    .step-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; gap: 12px; }
-    .step-counter { font-size: 12px; color: #aaa; font-weight: 500; }
-    .btn-prev {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: transparent; color: #555; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      padding: 10px 20px; border-radius: 10px; border: 1.5px solid #ddd;
-      cursor: pointer; font-family: inherit; transition: border-color 0.15s, color 0.15s;
-    }
-    .btn-prev:hover { border-color: #aaa; color: #1a1a1a; }
-    .btn-next {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--blue); color: #fff; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      padding: 10px 22px; border-radius: 10px; border: none;
-      cursor: pointer; font-family: inherit; transition: background 0.18s, transform 0.14s;
-    }
-    .btn-next:hover { background: #174578; transform: translateY(-1px); }
-    .btn-submit {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--brand); color: #fff; font-size: 12px; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      padding: 12px 28px; border-radius: 10px; border: none;
-      cursor: pointer; font-family: inherit; transition: background 0.18s, transform 0.14s;
-    }
-    .btn-submit:hover { background: #c9551a; transform: translateY(-1px); }
-    .nb-divider { border: none; border-top: 1px solid #f0f0f0; margin: 22px 0; }
+
   </style>
 </head>
 
@@ -128,7 +71,7 @@
     <div class="nav-modal-panel">
       <div class="nav-modal-head">
         <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          <img loading="lazy" decoding="async" src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
         </a>
         <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
       </div>
@@ -230,7 +173,7 @@
           </div>
           <div class="step-nav">
             <span class="step-counter">Step 1 of 4</span>
-            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
 
@@ -303,9 +246,9 @@
             </div>
           </div>
           <div class="step-nav">
-            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left"></i> Back</button>
             <span class="step-counter">Step 2 of 4</span>
-            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
 
@@ -323,28 +266,28 @@
           </div>
           <div class="nb-field">
             <label class="nb-label" for="three-phase">Is it a three-phase electricity/power supply?</label>
-            <textarea class="nb-textarea" id="three-phase" name="three_phase_supply" placeholder="e.g. Yes, three-phase 400V confirmed" style="min-height:70px;"></textarea>
+            <textarea class="nb-textarea nb-textarea-sm" id="three-phase" name="three_phase_supply" placeholder="e.g. Yes, three-phase 400V confirmed"></textarea>
           </div>
           <div class="nb-field">
             <label class="nb-label" for="plant-room">What are the Plant Room dimensions?</label>
-            <textarea class="nb-textarea" id="plant-room" name="plant_room_dimensions" placeholder="e.g. 4m x 3m x 2.8m (L x W x H)" style="min-height:70px;"></textarea>
+            <textarea class="nb-textarea nb-textarea-sm" id="plant-room" name="plant_room_dimensions" placeholder="e.g. 4m x 3m x 2.8m (L x W x H)"></textarea>
           </div>
           <div class="nb-field">
             <label class="nb-label" for="emitters">What are the current Emitters?</label>
-            <textarea class="nb-textarea" id="emitters" name="current_emitters" placeholder="e.g. Steel panel radiators, fan coil units, underfloor heating" style="min-height:70px;"></textarea>
+            <textarea class="nb-textarea nb-textarea-sm" id="emitters" name="current_emitters" placeholder="e.g. Steel panel radiators, fan coil units, underfloor heating"></textarea>
           </div>
           <div class="nb-field">
             <label class="nb-label" for="other-info">Any other relevant information:</label>
             <textarea class="nb-textarea" id="other-info" name="other_info"></textarea>
           </div>
           <div class="nb-info-box">
-            <i class="fa-solid fa-circle-info" style="color:var(--brand); margin-right:8px;"></i>
+            <i class="fa-solid fa-circle-info"></i>
             You can upload plans, diagrams, and floor plans on the next page.
           </div>
           <div class="step-nav">
-            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left"></i> Back</button>
             <span class="step-counter">Step 3 of 4</span>
-            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></button>
+            <button type="button" class="btn-next btn-step-next">Next <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
 
@@ -378,9 +321,9 @@
             </div>
           </div>
           <div class="step-nav">
-            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Back</button>
+            <button type="button" class="btn-prev btn-step-prev"><i class="fa-solid fa-arrow-left"></i> Back</button>
             <span class="step-counter">Step 4 of 4</span>
-            <button type="submit" class="btn-submit">Submit Enquiry <i class="fa-solid fa-paper-plane" style="font-size:11px;"></i></button>
+            <button type="submit" class="btn-submit">Submit Enquiry <i class="fa-solid fa-paper-plane"></i></button>
           </div>
         </div>
 
@@ -395,7 +338,7 @@
       <div class="footer-grid">
         <div class="footer-col-logo">
           <a href="index.html" class="footer-logo">
-            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+            <img loading="lazy" decoding="async" src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
           </a>
           <div class="badges-row">
             <span class="badge">CIBSE</span>
@@ -406,7 +349,7 @@
             <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
             <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
             <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="font-size:13px;"></i></a>
+            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
         <div>

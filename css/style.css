@@ -1093,3 +1093,6 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+.soc-btn i { font-size: 13px; }
+.sec-alt { background: #f9f9f9; }

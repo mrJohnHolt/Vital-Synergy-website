@@ -14,15 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="preload" href="css/section.css?v=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/section.css?v=1"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
-    /* ── Services: Breadcrumb ── */
-    .svc-breadcrumb { margin-top: 60px; background: #f6f6f6; border-bottom: 1px solid #e8e8e8; padding: 11px 0; }
-    .svc-breadcrumb-inner { display: flex; align-items: center; flex-wrap: wrap; }
-    .svc-bc-link { color: #666; font-size: 12px; font-weight: 500; text-decoration: none; transition: color 0.15s; }
-    .svc-bc-link:hover { color: var(--brand); }
-    .svc-bc-sep { color: #bbb; font-size: 12px; margin: 0 8px; }
-    .svc-bc-current { color: #aaa; font-size: 12px; }
 
     /* ── Services: Hero ── */
     .svc-hero {
@@ -36,73 +31,6 @@
       flex-direction: column;
     }
 
-    /* ── Services: Summary ── */
-    .svc-summary {
-      max-width: 820px;
-      font-size: 16px; line-height: 1.78; color: #333;
-      border-left: 3px solid var(--brand);
-      padding-left: 20px; margin-top: 14px;
-    }
-
-    /* ── Services: Cards section ── */
-    .svc-cards-bg {
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.60) 100%),
-        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=85');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    @media (max-width: 1023px) { .svc-cards-bg { background-attachment: scroll; } }
-
-    /* ── Services: 3-column grid ── */
-    .svc-grid {
-      display: grid; grid-template-columns: 1fr; gap: 24px;
-    }
-    @media (min-width: 640px)  { .svc-grid { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 1024px) { .svc-grid { grid-template-columns: 1fr 1fr 1fr; } }
-
-    /* ── Services: Individual card ── */
-    .svc-card {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.13);
-      border-radius: 10px;
-      padding: 32px 26px 28px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
-      display: flex;
-      flex-direction: column;
-    }
-    .svc-card-icon {
-      font-size: 28px; color: var(--brand);
-      margin-bottom: 18px; display: block;
-    }
-    .svc-card-icon::before { content: ''; display: block; width: 44px; height: 44px; }
-    .svc-card-heading {
-      font-size: 15px; font-weight: 700; color: #fff;
-      margin-bottom: 10px; line-height: 1.3;
-    }
-    .svc-card-sub {
-      color: rgba(255,255,255,0.68); font-size: 13px; line-height: 1.72; flex: 1;
-    }
-    .svc-card-divider {
-      height: 1px; background: rgba(255,255,255,0.1); margin: 18px 0;
-    }
-    .svc-card-link {
-      font-size: 11.5px; font-weight: 700; letter-spacing: 0.07em;
-      text-transform: uppercase; color: var(--brand);
-      text-decoration: none; transition: opacity 0.15s;
-    }
-    .svc-card-link:hover { opacity: 0.75; }
-
-    /* ── Services: icon sizing ── */
-    .svc-card .fa-solid,
-    .svc-card .fa-regular { font-size: 28px; color: var(--brand); margin-bottom: 18px; display: block; }
-
-    /* ── Services: CTA section ── */
-    .svc-cta-section { background: #f9f9f9; }
-    .svc-cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
   </style>
 </head>
 
@@ -138,7 +66,7 @@
     <div class="nav-modal-panel">
       <div class="nav-modal-head">
         <a href="index.html" class="nav-logo">
-          <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
+          <img loading="lazy" decoding="async" src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img">
         </a>
         <button class="nav-modal-close" id="nav-close" aria-label="Close menu">✕</button>
       </div>
@@ -225,8 +153,8 @@
           <span class="eyebrow">Our Capability</span>
           <h2 class="section-heading">One partner for the full <em class="em-brand">building lifecycle</em></h2>
           <p class="svc-summary">Vital Synergy delivers mechanical and electrical engineering, building management systems, and facilities management as a single, integrated service. From initial design through to long-term maintenance, every stage is handled by one accountable team.</p>
-          <p class="body-text-faint" style="margin-top:20px;">We work across commercial, industrial, education, and public sector environments. Our in-house design capability, combined with directly employed engineers, means faster programmes, tighter quality control, and clear lines of responsibility throughout.</p>
-          <a href="index.html#contact" class="btn-green" style="margin-top:8px;">Discuss a project</a>
+          <p class="body-text-faint svc-intro-sub">We work across commercial, industrial, education, and public sector environments. Our in-house design capability, combined with directly employed engineers, means faster programmes, tighter quality control, and clear lines of responsibility throughout.</p>
+          <a href="index.html#contact" class="btn-green btn-mt">Discuss a project</a>
         </div>
         <div class="img-stack">
           <img class="img-back" src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=600&q=80" alt="Commercial plant room">
@@ -352,7 +280,7 @@
           <h3 class="svc-card-heading">Low-Carbon &amp; Renewables</h3>
           <p class="svc-card-sub">Heat pumps, solar PV, hydrogen-ready infrastructure and decarbonisation retrofits that cut emissions and help organisations futureproof their buildings without compromising performance.</p>
           <div class="svc-card-divider"></div>
-          <div style="display:flex;gap:16px;">
+          <div class="svc-card-links">
             <a href="commashpform.html" class="svc-card-link">ASHP enquiry</a>
             <a href="commgshpform.html" class="svc-card-link">GSHP enquiry</a>
           </div>
@@ -435,9 +363,9 @@
         <span class="eyebrow">Work With Us</span>
         <h2 class="cta-h2">Ready to discuss your <em class="em-brand">next project?</em></h2>
         <p class="cta-p">Speak to our team about your building's mechanical, electrical, or facilities requirements. Whether you need a single service or a fully integrated programme, we're ready to help.</p>
-        <div class="btn-row" style="justify-content:center;">
+        <div class="btn-row btn-row-center">
           <a href="index.html#contact" class="btn-green">Get in touch</a>
-          <a href="stpeters.html" class="btn-outline" style="color:#1a1a1a; border-color:rgba(0,0,0,0.25);">View case studies</a>
+          <a href="stpeters.html" class="btn-outline btn-outline-dark">View case studies</a>
         </div>
       </div>
     </div>
@@ -450,7 +378,7 @@
       <div class="footer-grid">
         <div class="footer-col-logo">
           <a href="index.html" class="footer-logo">
-            <img src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
+            <img loading="lazy" decoding="async" src="Assets/Vital synergy logo EE - Transparent.png" alt="Vital Synergy" class="logo-img-lg">
           </a>
           <div class="badges-row">
             <span class="badge">CIBSE</span>
@@ -461,7 +389,7 @@
             <a href="https://www.facebook.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
             <a href="https://www.instagram.com/vitalsynergyltd/" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
             <a href="https://www.linkedin.com/company/vital-synergy-ltd" target="_blank" rel="noopener" class="soc-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="font-size:13px;"></i></a>
+            <a href="https://wa.me/441282773338" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
         <div>

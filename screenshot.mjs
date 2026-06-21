@@ -1,6 +1,6 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const puppeteer = require('C:/Users/John/.claude/skills/gstack/node_modules/puppeteer-core');
+const puppeteer = require('puppeteer-core');
 import { existsSync, mkdirSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
@@ -24,10 +24,24 @@ const chromePaths = [
 const executablePath = chromePaths.find(p => existsSync(p));
 if (!executablePath) throw new Error('Chrome not found in puppeteer cache');
 
-const browser = await puppeteer.launch({ executablePath, headless: true });
+const browser = await puppeteer.launch({ executablePath, headless: true, protocolTimeout: 60000 });
 const page = await browser.newPage();
 await page.setViewport({ width: 1440, height: 900 });
 await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+
+// trigger any loading="lazy" images by scrolling through the full page in real steps (yielding so the
+// browser's lazy-load observer actually fires), then give it a fixed window to finish fetching
+await page.evaluate(async () => {
+  const step = window.innerHeight;
+  const height = document.body.scrollHeight;
+  for (let y = 0; y < height; y += step) {
+    window.scrollTo(0, y);
+    await new Promise(r => setTimeout(r, 150));
+  }
+  window.scrollTo(0, 0);
+});
+await new Promise(r => setTimeout(r, 1500));
+
 await page.screenshot({ path: filepath, fullPage: true });
 await browser.close();
 console.log(`Saved: ${filepath}`);
