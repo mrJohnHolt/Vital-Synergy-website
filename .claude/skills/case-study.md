@@ -1,6 +1,6 @@
 ---
 name: case-study
-description: Build a new Vital Synergy case study page. Use when asked to create a new case study, add a project page, or produce an HTML file for a completed project. Gathers project details from the user or a supplied brief, builds the full page from the stpeters.html template, and runs screenshot verification.
+description: Build a new Vital Synergy case study page. Use when asked to create a new case study, add a project page, or produce an HTML file for a completed project. Gathers project details from the user or a supplied brief, builds the full page from the rhyddings-high-school.html template, and runs screenshot verification.
 license: Complete terms in LICENSE.txt
 ---
 
@@ -28,7 +28,7 @@ Before writing a single line of HTML, confirm you have all of the following. If 
 
 ## Step 3 — Build the Page
 
-Read `stpeters.html` in full before writing anything. The new page is a verbatim copy of that file's structure with the inputs from Step 2 substituted in. **Never invent new CSS classes.** The inline `<style>` block is copied exactly — only the `.cs-hero` and `.cs-scope-section` `background-image` URLs change.
+Read `rhyddings-high-school.html` in full before writing anything. The new page is a verbatim copy of that file's structure with the inputs from Step 2 substituted in. **Never invent new CSS classes.** The inline `<style>` block is copied exactly — only the `.cs-hero` and `.cs-scope-section` `background-image` URLs change.
 
 Build these 13 sections in order:
 
@@ -38,7 +38,7 @@ Build these 13 sections in order:
 - All other `<head>` content (Tailwind CDN, Google Fonts, style.css, Font Awesome) is identical.
 
 ### 2. Header + Nav Modal
-Copy verbatim from `stpeters.html`. The `header-nav-link-active` class stays on the Case Studies link. The nav modal is identical on every page.
+Copy verbatim from `rhyddings-high-school.html`. The `header-nav-link-active` class stays on the Case Studies link. The nav modal is identical on every page.
 
 ### 3. Breadcrumb (`.cs-breadcrumb`)
 `Home / Case Studies / [Page title]`
@@ -75,7 +75,7 @@ Six `.cs-outcome-card` blocks on a dark (`#0d0d0d`) background. Each has:
 - Lead paragraph (`.body-text`) + supporting paragraph (`.body-text-faint`)
 - `<h4 class="cs-detail-h4">Compliance and Safety</h4>` + 2 paragraphs
 - `<h4 class="cs-detail-h4">Programme and Delivery</h4>` + 2 paragraphs
-- `<h4 class="cs-detail-h4">Technical Scope Summary</h4>` + one lead sentence + a `.cs-scope-table-wrap` table (`.cs-scope-table`) with two columns, "System / Component" and "Upgrades Implemented". One row per scope item from section 8 (same groupings, written in fuller technical detail). This table and its CSS are not part of the `stpeters.html` base template — copy the markup and styles from an existing page that has them (e.g. `rhyddings-high-school.html`) rather than inventing new classes.
+- `<h4 class="cs-detail-h4">Technical Scope Summary</h4>` + one lead sentence + a `.cs-scope-table-wrap` table (`.cs-scope-table`) with two columns, "System / Component" and "Upgrades Implemented". One row per scope item from section 8 (same groupings, written in fuller technical detail). This table and its CSS are not part of the `rhyddings-high-school.html` base template — copy the markup and styles from an existing page that has them (e.g. `rhyddings-high-school.html`) rather than inventing new classes.
 
 ### 11. Testimonial (`.cs-testimonial-section`)
 Dark (`#1a1a1a`) section. Opening `&#x201c;` quotation mark, `.cs-testimonial-quote` paragraph, `.cs-testimonial-divider`, optional `.cs-testimonial-name`, `.cs-testimonial-role`. Use placeholders if the quote is not yet available.
