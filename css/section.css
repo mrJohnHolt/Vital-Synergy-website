@@ -154,49 +154,55 @@
 }
 
 .cs-scope-table-wrap {
-  overflow-x: auto;
   margin-top: 1.25rem;
   border: 1px solid #ece9e4;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.cs-scope-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.88rem;
-  line-height: 1.65;
-}
-
-.cs-scope-table th,
-    .cs-scope-table td {
+.cs-scope-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
   padding: 0.9rem 1.1rem;
-  text-align: left;
-  vertical-align: top;
   border-bottom: 1px solid #ece9e4;
 }
 
-.cs-scope-table th {
-  background: #f7f7f5;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #eb6823;
-  white-space: nowrap;
+.cs-scope-row:last-child {
+  border-bottom: none;
 }
 
-.cs-scope-table td:first-child {
+.cs-scope-row-head {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .cs-scope-row {
+    grid-template-columns: 38% 1fr;
+    gap: 1.1rem;
+  }
+  .cs-scope-row-head {
+    display: grid;
+    background: #f7f7f5;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #eb6823;
+  }
+}
+
+.cs-scope-label {
   font-weight: 700;
   color: #0d0d0d;
-  white-space: nowrap;
+  font-size: 0.88rem;
 }
 
-.cs-scope-table td {
+.cs-scope-desc {
   color: #555;
-}
-
-.cs-scope-table tr:last-child td {
-  border-bottom: none;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
 }
 
 .jv-breadcrumb {
@@ -923,15 +929,6 @@
   .csl-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-/* -- rhyddings-high-school.html (page-unique) -- */
-.cs-scope-table th,
-    .cs-scope-table td {
-  padding: 0.9rem 1.1rem;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 1px solid #ece9e4;
 }
 
 /* -- careers.html (page-unique) -- */
