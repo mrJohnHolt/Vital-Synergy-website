@@ -21,14 +21,14 @@ Before writing a single line of HTML, confirm you have all of the following. If 
 - **Project value** — e.g. `£57,090 ex VAT` or `£TBC`
 - **Project dates** — e.g. `Summer 2024 – Spring 2025`
 - **Project brief / content** — a written brief or the individual section texts below. If the user supplies a free-text brief, extract the content for each section from it.
-- **Testimonial** — quote text, name, and role. If not yet available, use the placeholder pattern: `[ADD CLIENT QUOTE — quote text]` and `[ADD DETAIL — name and role]`.
+- **Testimonial** — quote text, name, and role. If not yet available, write a fictional testimonial grounded in the actual project facts (referencing real scope/outcomes from the brief), prefixed `[PLACEHOLDER TESTIMONIAL — for client review]`, with the role line prefixed `[PLACEHOLDER ROLE]`. Never leave a bare bracket stand-in with no real sentence — the quote must read like an actual quote.
 - **Three related projects** — for each: filename, image path, sector badge text, H4 heading, and short subtitle.
 - **Tags** — comma-separated list, e.g. `Education, Heating Upgrade, BMS, Lancashire`
 - **Share URL slug** — the path segment used in social share URLs, e.g. `roseacre-primary-academy`
 
 ## Step 3 — Build the Page
 
-Read `rhyddings-high-school.html` in full before writing anything. The new page is a verbatim copy of that file's structure with the inputs from Step 2 substituted in. **Never invent new CSS classes.** The inline `<style>` block is copied exactly — only the `.cs-hero` and `.cs-scope-section` `background-image` URLs change.
+Read `rhyddings-high-school.html` in full before writing anything. The new page is a verbatim copy of that file's structure with the inputs from Step 2 substituted in. **Never invent new CSS classes.** The inline `<style>` block is copied exactly — only the `.cs-hero` and `.cs-scope-section` `background-image` URLs change. **Never add a Document Download / PDF download section.** No case study page offers a downloadable PDF — this is not one of the 13 template sections and must not be invented, even if a PDF filename is mentioned in the brief.
 
 Build these 13 sections in order:
 
@@ -78,7 +78,7 @@ Six `.cs-outcome-card` blocks on a dark (`#0d0d0d`) background. Each has:
 - `<h4 class="cs-detail-h4">Technical Scope Summary</h4>` + one lead sentence + a `.cs-scope-table-wrap` table (`.cs-scope-table`) with two columns, "System / Component" and "Upgrades Implemented". One row per scope item from section 8 (same groupings, written in fuller technical detail). This table and its CSS are not part of the `rhyddings-high-school.html` base template — copy the markup and styles from an existing page that has them (e.g. `rhyddings-high-school.html`) rather than inventing new classes.
 
 ### 11. Testimonial (`.cs-testimonial-section`)
-Dark (`#1a1a1a`) section. Opening `&#x201c;` quotation mark, `.cs-testimonial-quote` paragraph, `.cs-testimonial-divider`, optional `.cs-testimonial-name`, `.cs-testimonial-role`. Use placeholders if the quote is not yet available.
+Dark (`#1a1a1a`) section. Opening `&#x201c;` quotation mark, `.cs-testimonial-quote` paragraph, `.cs-testimonial-divider`, optional `.cs-testimonial-name`, `.cs-testimonial-role`. Always produce full quote text and a role — if the real quote is not yet available, use the fictional, project-grounded placeholder testimonial from Step 2 (prefixed `[PLACEHOLDER TESTIMONIAL — for client review]` / `[PLACEHOLDER ROLE]`), never a bare bracket with no real sentence.
 
 ### 12. Related Projects (`.cs-related-section`)
 Three `.cs-related-card` anchor links. Each has a thumbnail image, a `.csl-sector-badge` overlay, and a body with `.cs-related-h4` + `.cs-related-sub`.
@@ -95,10 +95,14 @@ node screenshot.mjs http://localhost:3000/[filename] [label]
 ```
 Read the PNG. Verify: hero image loads, meta bar shows correct value and dates, all six outcome cards render, scope grid glassmorphism cards are visible, the Technical Scope Summary table renders correctly, footer is intact, no broken images. Fix any issues and take a second screenshot.
 
-## Step 5 — Wire into the site (ask the user)
+## Step 5 — Wire into casestudies.html (mandatory, no need to ask)
 
-Every case study is a flat link — there is no Case Studies dropdown anywhere in the codebase. The header nav and burger modal nav link straight to `casestudies.html`, and that page's `.csl-grid` is the only listing of case studies. New pages are reachable only by being added to that grid (and optionally cross-linked via related-project cards).
+Every case study is a flat link — there is no Case Studies dropdown anywhere in the codebase. The header nav and burger modal nav link straight to `casestudies.html`, and that page's `.csl-grid` is the only listing of case studies. A new page is unreachable until it is added there, so this step is never optional and never skipped:
 
-Ask whether to also:
-1. Add a card to `casestudies.html`'s `.csl-grid`
-2. Add the new page as a related project on relevant existing case study pages (swap out the least-relevant of the existing three `.cs-related-card` entries on each page to keep reciprocal links sector-relevant)
+1. Add a new `.csl-card` to the `.csl-grid`, matching existing card markup exactly (thumbnail with `.csl-sector-badge`, `.csl-title`, `.csl-desc`, `.csl-footer` with value + CTA). If no real photo is supplied, use a sector-appropriate Unsplash placeholder image with the same `<!-- PLACEHOLDER IMAGE -->` comment convention used elsewhere in the file.
+2. Update the stats bar: increment "Projects Featured" by 1, and recompute "Disclosed Project Value" by adding the new project's value to the sum of all existing numeric (non-`£TBC`) project values, rounded to one decimal place in £m with a `+` suffix (matching existing style, e.g. `£9.6m+`).
+3. Screenshot `casestudies.html` after the edit to confirm the new card renders correctly in the grid.
+
+## Step 6 — Optional cross-linking (ask the user)
+
+Ask whether to also add the new page as a related project on relevant existing case study pages (swap out the least-relevant of the existing three `.cs-related-card` entries on each page to keep reciprocal links sector-relevant). This stays a question — it is not a default action.
