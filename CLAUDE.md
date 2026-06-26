@@ -123,4 +123,4 @@ The header nav and burger nav are **duplicated in every HTML file**.  When addin
 - Do not use `transition-all`.
 - Do not use default Tailwind blue/indigo as primary color.
 - Do not stop after one screenshot pass — do at least two comparison rounds.
-- Contact form `action` value is `https://formspree.io/f/REPLACE_WITH_YOUR_ID` until connected.
+- Contact form `action` value is `https://formspree.io/f/mdargajo` (Formspree, live).
