@@ -944,6 +944,8 @@ body {
   margin: 32px 0 10px;
 }
 .cs-detail-p { color: #555; font-size: 14px; line-height: 1.78; margin-bottom: 14px; }
+.cs-detail-ol { color: #555; font-size: 14px; line-height: 1.78; margin: 0 0 14px; padding-left: 20px; list-style: decimal outside; }
+.cs-detail-li { margin-bottom: 8px; display: list-item; }
 
 /* Document Download */
 .cs-doc-box {
