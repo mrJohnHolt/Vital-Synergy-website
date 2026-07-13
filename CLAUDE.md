@@ -12,10 +12,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - If the server is already running on port 3000 do not start a second instance — the error `EADDRINUSE` confirms it is already up.
 
 ## Screenshot Workflow
-- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000/page.html`
-- Optional label: `node screenshot.mjs http://localhost:3000/page.html label` → `screenshot-N-label.png`
-- Screenshots auto-increment into `./temporary screenshots/` and are never overwritten.
-- After screenshotting, read the PNG with the Read tool and compare visually.
+- **Screenshots are not required.** The user checks changes manually; do not run `screenshot.mjs` unless explicitly asked.
+- If asked to screenshot: `node screenshot.mjs http://localhost:3000/page.html`. Optional label: `node screenshot.mjs http://localhost:3000/page.html label` → `screenshot-N-label.png`. Screenshots auto-increment into `./temporary screenshots/` and are never overwritten.
 - Puppeteer viewport is **1440 × 900**. `backdrop-filter` and parallax do not render in headless screenshots — verify those in the live browser.
 
 ---
@@ -122,5 +120,4 @@ The header nav and burger nav are **duplicated in every HTML file**.  When addin
 ## Hard Rules
 - Do not use `transition-all`.
 - Do not use default Tailwind blue/indigo as primary color.
-- Do not stop after one screenshot pass — do at least two comparison rounds.
 - Contact form `action` value is `https://formspree.io/f/mdargajo` (Formspree, live).
