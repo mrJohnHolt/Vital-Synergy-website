@@ -95,3 +95,27 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); 
 
   showStep(0);
 }());
+
+// Rolling "Closes" date — always shows the next 28th of a month
+(function () {
+  const targets = document.querySelectorAll('.career-closes-date, .jv-meta-date');
+  if (!targets.length) return;
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const day = now.getDate();
+  const next28 = new Date(year, day <= 28 ? month : month + 1, 28);
+
+  const formatted = next28.toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+
+  targets.forEach(el => {
+    el.childNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes('Closes:')) {
+        node.textContent = `Closes: ${formatted}`;
+      }
+    });
+  });
+}());
