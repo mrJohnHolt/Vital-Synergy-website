@@ -118,4 +118,15 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); 
       }
     });
   });
+
+  const jobSchema = document.getElementById('jv-jobposting-schema');
+  if (jobSchema) {
+    try {
+      const data = JSON.parse(jobSchema.textContent);
+      data.validThrough = next28.toISOString().slice(0, 10) + 'T23:59:59Z';
+      jobSchema.textContent = JSON.stringify(data);
+    } catch (e) {
+      // leave the static validThrough in place if parsing fails
+    }
+  }
 }());
