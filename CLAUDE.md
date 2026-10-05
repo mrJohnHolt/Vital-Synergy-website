@@ -79,6 +79,8 @@ border: 1px solid rgba(255,255,255,0.14);
 ### Vacancy pages (`jv-*` prefix)
 Template: copy `bookkeeper.html` or `electrical-estimator.html`.  Page-specific CSS class prefix: `jv-`.
 
+Follow `VACANCY_CHECKLIST.md` for every new, extended or filled vacancy (schema dates, careers page, sitemap).
+
 Mandatory sections: breadcrumb → hero (50 vh, `jv-hero`) → opening summary (`.jv-exec-summary`) → About Vital Synergy → Role Overview + Key Responsibilities → Experience & Qualifications → What We Offer → Apply CTA (`.jv-apply-section`).
 
 ---
