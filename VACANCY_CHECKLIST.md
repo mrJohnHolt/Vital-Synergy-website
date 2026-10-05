@@ -7,6 +7,7 @@ Hosting is GitHub Pages: no server redirects or 410 responses. Use the steps bel
 - [ ] Set the title, meta description, canonical URL and breadcrumb.
 - [ ] Update the JobPosting schema (`id="jv-jobposting-schema"`): title, description, identifier, `datePosted`, `validThrough`, `employmentType` (FULL_TIME or PART_TIME).
 - [ ] Salary: add `baseSalary` only once the MD has approved the range (snippet below). Keep the on-page salary wording the same as the schema.
+- [ ] Add the Open Graph block (copy from another vacancy page; `og:image` is `Assets/og/default.jpg`).
 - [ ] Add a "View Role" card to `careers.html`.
 - [ ] Add the page URL to `sitemap.xml`.
 - [ ] Check the Apply button and form route work.

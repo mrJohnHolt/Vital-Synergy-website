@@ -51,6 +51,8 @@ Two responsibilities, both auto-run on every page:
 
 ## Page Templates
 
+**Every indexable page needs Open Graph tags** in the `<head>`, right after the canonical link: `og:type`, `og:site_name`, `og:locale`, `og:title`, `og:description`, `og:url` (same as canonical), `og:image` (+ width 1200, height 630, alt) and `twitter:card`. Copy the block from `stpeters.html`. `og:image` is a 1200x630 JPG in `Assets/og/`: use `<slug>.jpg` made from the page's real hero photo, or `default.jpg` if there is no real photo (never stock photos). Skip noindex and redirect pages. Company LinkedIn URL is `https://www.linkedin.com/company/37181399/` everywhere.
+
 ### Standard pages (index, about, services, careers, social-value)
 - Link to `css/style.css`; add page-specific styles in a `<style>` block.
 - Use existing section classes: `.sec-white`, `.sec-wwd`, `.wwd-bg`, `.sec-stats`, `.testi-bg`, etc.
