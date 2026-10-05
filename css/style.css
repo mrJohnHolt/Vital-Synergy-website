@@ -674,14 +674,14 @@ body {
 .footer-inner  { padding: 40px 24px 32px; }
 .footer-logo   { display: flex; align-items: center; text-decoration: none; margin-bottom: 20px; }
 .badges-row    { display: flex; gap: 8px; margin-top: 16px; }
-.badge         { background: rgba(255,255,255,0.1); border-radius: 3px; padding: 4px 10px; font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 600; }
+.badge         { background: rgba(255,255,255,0.1); border-radius: 3px; padding: 4px 10px; font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 600; }
 .footer-col-heading { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
-.footer-address { color: rgba(255,255,255,0.42); font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
-.footer-contact { color: rgba(255,255,255,0.42); font-size: 13px; display: block; margin-bottom: 6px; }
-.footer-contact-last { color: rgba(255,255,255,0.42); font-size: 13px; display: block; margin-bottom: 10px; }
-.footer-reg    { color: rgba(255,255,255,0.28); font-size: 11px; line-height: 1.7; }
+.footer-address { color: rgba(255,255,255,0.7); font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
+.footer-contact { color: rgba(255,255,255,0.7); font-size: 13px; display: block; margin-bottom: 6px; }
+.footer-contact-last { color: rgba(255,255,255,0.7); font-size: 13px; display: block; margin-bottom: 10px; }
+.footer-reg    { color: rgba(255,255,255,0.6); font-size: 11px; line-height: 1.7; }
 .socials-row   { display: flex; gap: 8px; margin-top: 20px; }
-.footer-link   { color: rgba(255,255,255,0.45); font-size: 13px; text-decoration: none; display: block; margin-bottom: 8px; transition: color 0.15s; }
+.footer-link   { color: rgba(255,255,255,0.7); font-size: 13px; text-decoration: none; display: block; margin-bottom: 8px; transition: color 0.15s; }
 .footer-link:hover { color: var(--brand); }
 @media (max-width: 767px) {
   .footer-grid > * { text-align: center; }
@@ -689,18 +689,18 @@ body {
 }
 .copyright-bar   { border-top: 1px solid rgba(255,255,255,0.08); }
 .copyright-inner { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.copyright-text  { color: rgba(255,255,255,0.25); font-size: 12px; }
+.copyright-text  { color: rgba(255,255,255,0.6); font-size: 12px; }
 .copyright-links { display: flex; gap: 20px; flex-wrap: wrap; }
-.copyright-link  { color: rgba(255,255,255,0.25); font-size: 12px; text-decoration: none; transition: color 0.15s; }
-.copyright-link:hover { color: rgba(255,255,255,0.5); }
+.copyright-link  { color: rgba(255,255,255,0.6); font-size: 12px; text-decoration: none; transition: color 0.15s; }
+.copyright-link:hover { color: #fff; }
 
 /* ─────────────────────────────────────────
    SOCIAL ICONS
 ───────────────────────────────────────── */
 .soc-btn {
-  width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.35);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.45); text-decoration: none;
+  color: rgba(255,255,255,0.7); text-decoration: none;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 .soc-btn:hover { color: #fff; border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.08); }
