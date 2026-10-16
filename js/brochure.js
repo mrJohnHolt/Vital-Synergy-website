@@ -1,5 +1,5 @@
 (function () {
-  var PDF_URL = 'Assets/Vital-Synergy-Brochure-2026.pdf';
+  var PDF_URL = 'Assets/Vital-Synergy-Brochure-2026.27.pdf';
   var book = document.getElementById('br-book');
   var loading = document.getElementById('br-loading');
   var errorBox = document.getElementById('br-error');
