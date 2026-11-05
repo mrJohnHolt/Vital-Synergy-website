@@ -390,7 +390,7 @@ body {
 .accred-strip-inner { padding-top: 16px; padding-bottom: 16px; }
 .accred-bar  { display: flex; align-items: center; gap: 20px; overflow: hidden; }
 .trust-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.35); white-space: nowrap; flex-shrink: 0; }
-.trust-item  { display: inline-flex; align-items: center; flex-shrink: 0; padding: 0 12px; }
+.trust-item  { display: inline-flex; align-items: center; flex-shrink: 0; padding: 0 28px; }
 .accred-img  { height: 48px; width: auto; display: block; }
 
 /* Ticker */
@@ -403,8 +403,9 @@ body {
 .ticker-track {
   display: flex;
   align-items: center;
-  gap: 2rem;
   width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
   animation: ticker 40s linear infinite;
 }
 .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
